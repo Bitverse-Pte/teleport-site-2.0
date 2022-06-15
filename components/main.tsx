@@ -1,6 +1,7 @@
 import React from "react"
 import FeaturesBlock from "./ContentBlock/FeaturesBlock"
-
+import Community from "./ContentBlock/CommunityBlock"
+import Footer from "./Footer"
 import Header from "./Header"
 
 export default function Main() {
@@ -8,6 +9,8 @@ export default function Main() {
 		<>
 			<Header />
 			<FeaturesBlock />
+			<Community></Community>
+			<Footer />
 		</>
 	)
 }
