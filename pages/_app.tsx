@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 					content="lix4hrWneSKRDr7ooDLj1wz3tuRDo1Zitxm_WAJZ8nY"
 				/>
 				<title>Teleport Network</title>
-				<link rel="icon" href="/teleport.png" />
+				<link rel="icon" href="/images/teleport.png" />
 			</Head>
 			<Component {...pageProps} />
 		</>
