@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://teleport.network/</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>1.00</priority>
+  <changefreq>always</changefreq>
+</url>
+<url>
+  <loc>https://chain-docs.teleport.network/</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://docs.teleport.network/</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://rinkeby-erc20-faucet.testnet.teleport.network</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://bsctest-erc20-faucet.testnet.teleport.network</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://evm-explorer.testnet.teleport.network</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://explorer.testnet.teleport.network</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://bridge.testnet.teleport.network</loc>
+  <lastmod>2022-03-01T08:19:37+00:00</lastmod>
+   <priority>0.8</priority>
+</url>
+</urlset>
