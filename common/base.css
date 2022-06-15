@@ -10,13 +10,13 @@ html body {
 }
 
 @font-face {
-	font-family: 'DelGophicOne';
-	src: url('../public/font-dela-gothic-one-regular.ttf');
+	font-family: "DelGophicOne";
+	src: url("../public/fonts/font-dela-gothic-one-regular.ttf");
 }
 
 @font-face {
 	font-family: 'Poppins';
-	src: url('../public/font-poppins-regular.ttf');
+	src: url('../public/fonts/font-poppins-regular.ttf');
 }
 
 @font-face {
