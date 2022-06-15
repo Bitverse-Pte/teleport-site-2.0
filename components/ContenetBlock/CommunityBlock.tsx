@@ -3,17 +3,6 @@ import Link from 'next/link'
 import styled from "styled-components";
 
 const CommunityBlock = styled.div`
-  @keyframes scaleDraw {  
-    0%{
-      transform: scale(1);
-    }
-    50%{
-      transform: scale(1);
-    }
-    100%{
-      transform: scale(1.2);
-    }
-  }
   .wrapCommunity {
     text-align: center;
 
@@ -80,15 +69,15 @@ const CommunityBlock = styled.div`
 
 const Community = () => {
     const communities = [
-        {title: "Twitter", link: "", image: "/images/icon-social-twitter.svg"},
-        {title: "Telegram", link: "", image: "/images/icon-social-telegram.svg"},
-        {title: "Discord", link: "", image: "/images/icon-social-discord.svg"},
-        {title: "Medium", link: "", image: "/images/icon-social-medium.svg"},
-        {title: "Email", link: "", image: "/images/icon-social-mail.svg"},
+        {title: "Twitter", link: "https://twitter.com/TeleportChain", image: "/images/icon-social-twitter.svg"},
+        {title: "Telegram", link: "https://t.me/TeleportNetwork", image: "/images/icon-social-telegram.svg"},
+        {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: "/images/icon-social-discord.svg"},
+        {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: "/images/icon-social-medium.svg"},
+        {title: "Email", link: "mailto:support@teleport.network", image: "/images/icon-social-mail.svg"},
     ]
     const items = communities.map((item) => {
         return (<Link href={item.link}>
-            <a>
+            <a target="_blank">
                 <div className="itemCommunity">
                     <img className="imgCommunity" src={item.image}/>
                     <div className="textCommunity">{item.title}<span className="lineCommunity"></span></div>
