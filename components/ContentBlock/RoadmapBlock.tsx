@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from 'rebass'
-import Image from 'next/image'
+import Image from 'components/Image'
 
 import startedLine from 'public/images/roadmap-stared-line.svg'
 
