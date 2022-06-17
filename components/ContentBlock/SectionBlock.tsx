@@ -4,9 +4,9 @@ import { Button } from 'rebass'
 import Image from 'components/Image'
 
 import iconGraph1 from 'public/images/icon-graph-1.svg'
-import iconGraph2 from 'public/images/icon-graph-1.svg'
-import iconGraph3 from 'public/images/icon-graph-1.svg'
-import iconGraph4 from 'public/images/icon-graph-1.svg'
+import iconGraph2 from 'public/images/icon-graph-2.svg'
+import iconGraph3 from 'public/images/icon-graph-3.svg'
+import iconGraph4 from 'public/images/icon-graph-4.svg'
 
 const SectionStyle = styled.div`
   .wrapSection {
