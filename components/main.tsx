@@ -1,5 +1,5 @@
-import React from "react"
 import FeaturesBlock from "./ContentBlock/FeaturesBlock"
+import SectionsBlock from "./ContentBlock/SectionBlock"
 import Community from "./ContentBlock/CommunityBlock"
 import Footer from "./Footer"
 import Header from "./Header"
@@ -9,6 +9,7 @@ export default function Main() {
 		<>
 			<Header />
 			<FeaturesBlock />
+			<SectionsBlock></SectionsBlock>
 			<Community></Community>
 			<Footer />
 		</>
