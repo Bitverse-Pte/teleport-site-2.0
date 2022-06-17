@@ -1,11 +1,12 @@
 import {memo} from "react";
 import Link from 'next/link'
 import styled from "styled-components";
+import {Image} from "rebass";
 
 const CommunityBlock = styled.div`
   .wrapCommunity {
     text-align: center;
-    padding-bottom: ;
+    padding-bottom: 250px;
 
     .textHeader {
       font-family: DelGophicOne;
@@ -80,7 +81,7 @@ const Community = () => {
         return (<Link href={item.link}>
             <a target="_blank">
                 <div className="itemCommunity">
-                    <img className="imgCommunity" src={item.image}/>
+                    <Image  className="imgCommunity" src={item.image}/>
                     <div className="textCommunity">{item.title}<span className="lineCommunity"></span></div>
                 </div>
             </a>

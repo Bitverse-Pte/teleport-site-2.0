@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Button} from "rebass";
+import {Button, Image} from "rebass";
 
 const SectionStyle = styled.div`
     .wrapSection {
@@ -68,7 +68,7 @@ function SectionItem(
     return (
         <SectionStyle>
             <div className="wrapSection centerView">
-                <img className="icon" src={`/images/icon-graph-${Index}.svg`}/>
+                <Image className="icon" src={`/images/icon-graph-${Index}.svg`}/>
                 <div className="wrapRow">
                     <div className="wrapColumn">
                         <h1 className="textTitle">{Title}</h1>
@@ -76,7 +76,7 @@ function SectionItem(
                     </div>
                     {RenderButton(ButtonTitle)}
                 </div>
-                <img className="gifFeature" src={ImageUrl}/>
+                <Image className="gifFeature" src={ImageUrl}/>
             </div>
         </SectionStyle>
     )
