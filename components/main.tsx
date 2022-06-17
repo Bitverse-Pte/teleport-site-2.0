@@ -1,14 +1,17 @@
-import React from "react"
-import Footer from "./Footer";
-import Community from "./ContentBlock/CommunityBlock";
-import Header from "./Header";
-import FeaturesBlock from "./ContentBlock/FeaturesBlock";
+import FeaturesBlock from "./ContentBlock/FeaturesBlock"
+import SectionsBlock from "./ContentBlock/SectionBlock"
+import Community from "./ContentBlock/CommunityBlock"
+import Footer from "./Footer"
+import Header from "./Header"
 
 export default function Main() {
-	return <>
-		<Header/>
-		<FeaturesBlock/>
-		<Community></Community>
-		<Footer></Footer>
-	</>
+	return (
+		<>
+			<Header />
+			<FeaturesBlock />
+			<SectionsBlock></SectionsBlock>
+			<Community></Community>
+			<Footer />
+		</>
+	)
 }
