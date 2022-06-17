@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Box } from 'rebass/styled-components'
-import Image from 'next/image'
+import Image from 'components/Image'
 
 import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
