@@ -1,6 +1,7 @@
 import {memo} from "react";
 import {FooterStyled} from "./styled";
 import Link from 'next/link'
+import {Image} from "rebass";
 
 const Footer = () => {
     return (
@@ -8,7 +9,7 @@ const Footer = () => {
             <div className="wrapFooter centerView">
                 <Link href="/">
                     <a>
-                        <img className="imgLogoHorizontal" src={"/images/teleport-horizontal.svg"}/>
+                        <Image className="imgLogoHorizontal" src={"/images/teleport-horizontal.svg"}/>
                     </a>
                 </Link>
                 <div className="lineFooter"></div>
