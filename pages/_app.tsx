@@ -1,3 +1,4 @@
+import { ReactElement } from 'react'
 import { AppProps } from 'next/app'
 
 import Head from 'next/head'
@@ -9,7 +10,8 @@ import 'common/base.css'
 import 'common/animation.css'
 import 'antd/dist/antd.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps): ReactElement {
+  const ConvertedComponent = Component as any
   return (
     <>
       <Head>
@@ -30,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Teleport Network</title>
         <link rel="icon" href="/images/teleport.png" />
       </Head>
-      <Component {...pageProps} />
+      <ConvertedComponent {...pageProps} />
     </>
   )
 }

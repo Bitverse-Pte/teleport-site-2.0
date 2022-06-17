@@ -36,7 +36,7 @@ export default function Header() {
       }}
     >
       <Banner />
-      <Box style={{ position: 'absolute', height: 'calc(100% - 80px)', left: '50%', transform: 'translateX(-50%)' }}>
+      <Box style={{ position: 'absolute', height: 'calc(100% - 80px)', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
         <AnimatedNavbar duration={300} />
       </Box>
     </Flex>

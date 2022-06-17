@@ -10,12 +10,6 @@ import GovernanceDrop from './DropdownContents/GovernanceDrop'
 import EcoSystemDrop from './DropdownContents/EcoSystemDrop'
 import CommunityDrop from './DropdownContents/CommunityDrop'
 
-/* 
-Docs
-Tool
-Governance
-Ecosystem
-Community */
 const navbarConfig = [
   { title: 'Docs', dropdown: DocsDropdown },
   { title: 'Tool', dropdown: ToolDropdown },

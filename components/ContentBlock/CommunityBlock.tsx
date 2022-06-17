@@ -1,6 +1,13 @@
-import { memo } from 'react'
+import React, { memo } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
+
+import iconSocialTwitter from 'public/images/icon-social-twitter.svg'
+import iconSocialTelegram from 'public/images/icon-social-telegram.svg'
+import iconSocialDiscord from 'public/images/icon-social-discord.svg'
+import iconSocialMedium from 'public/images/icon-social-medium.svg'
+import iconSocialMail from 'public/images/icon-social-mail.svg'
+
 import Image from 'components/Image'
 
 const CommunityBlock = styled.div`
@@ -71,11 +78,11 @@ const CommunityBlock = styled.div`
 
 const Community = () => {
   const communities = [
-    { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: '/images/icon-social-twitter.svg' },
-    { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: '/images/icon-social-telegram.svg' },
-    { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: '/images/icon-social-discord.svg' },
-    { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: '/images/icon-social-medium.svg' },
-    { title: 'Email', link: 'mailto:support@teleport.network', image: '/images/icon-social-mail.svg' },
+    { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: iconSocialTwitter },
+    { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: iconSocialTelegram },
+    { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: iconSocialDiscord },
+    { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: iconSocialMedium },
+    { title: 'Email', link: 'mailto:support@teleport.network', image: iconSocialMail },
   ]
   const items = communities.map((item) => {
     return (

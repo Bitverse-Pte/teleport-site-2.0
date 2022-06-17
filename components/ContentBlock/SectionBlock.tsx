@@ -1,6 +1,12 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Button } from 'rebass'
 import Image from 'components/Image'
+
+import iconGraph1 from 'public/images/icon-graph-1.svg'
+import iconGraph2 from 'public/images/icon-graph-2.svg'
+import iconGraph3 from 'public/images/icon-graph-3.svg'
+import iconGraph4 from 'public/images/icon-graph-4.svg'
 
 const SectionStyle = styled.div`
   .wrapSection {
@@ -52,11 +58,13 @@ const SectionStyle = styled.div`
   }
 `
 
+const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
+
 function SectionItem({ Index, Title, SubTitle, ImageUrl, ButtonTitle }: { Index: number; Title: string; SubTitle: string; ImageUrl: string; ButtonTitle: string }) {
   return (
     <SectionStyle>
       <div className="wrapSection centerView">
-        <Image className="icon" src={`/images/icon-graph-${Index}.svg`} alt={'section-icon'} />
+        <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
         <div className="wrapRow">
           <div className="wrapColumn">
             <h1 className="textTitle">{Title}</h1>
@@ -64,7 +72,7 @@ function SectionItem({ Index, Title, SubTitle, ImageUrl, ButtonTitle }: { Index:
           </div>
           {RenderButton(ButtonTitle)}
         </div>
-        <Image className="gifFeature" src={ImageUrl} alt={'section-icon'} />
+        {ImageUrl && <Image className="gifFeature" src={ImageUrl} alt={'section-icon'} />}
       </div>
     </SectionStyle>
   )

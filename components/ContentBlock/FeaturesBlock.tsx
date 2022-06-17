@@ -10,8 +10,10 @@ import dappLogo from 'public/dapp.svg'
 
 const FeatureBlock = styled(Box)`
 	height: 280px;
+  z-index: 0;
 	min-height: 280px;
-	max-width: 960px;
+	max-width: 1132px;
+	width: 1132px;
 	position: relative;
 	.feature-block-bg-box {
 		display: none;
