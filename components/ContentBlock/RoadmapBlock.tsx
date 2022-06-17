@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box, Flex, Text } from 'rebass'
 import Image from 'components/Image'
 
@@ -6,7 +7,7 @@ import startedLine from 'public/images/roadmap-stared-line.svg'
 export default function RoadmapBlock() {
   return (
     <Flex width={'100%'} height="500px" flexDirection={'row'} padding="60px 0" justifyContent={'center'}>
-      <Flex width={'960px'} style={{ position: 'relative' }} justifyContent="space-between">
+      <Flex width={'1132px'} style={{ position: 'relative' }} justifyContent="space-between">
         <Box style={{ position: 'absolute', top: '70px', zIndex: -1 }}>
           <Image src={startedLine} alt={'roadmap-stared-line'}></Image>
         </Box>
@@ -24,7 +25,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
   return (
     <Flex
       flexDirection={'column'}
-      width="178px"
+      width="210px"
       alignItems={'center'}
       sx={{
         transformOrigin: '50% 0%',
