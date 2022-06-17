@@ -5,6 +5,7 @@ import styled from "styled-components";
 const CommunityBlock = styled.div`
   .wrapCommunity {
     text-align: center;
+    padding-bottom: ;
 
     .textHeader {
       font-family: DelGophicOne;
@@ -39,7 +40,7 @@ const CommunityBlock = styled.div`
           display: inline-block;
           margin-top: 148px;
           font-family: DelGophicOne;
-          color: #05050E;
+          color: #05050e;
           font-size: 24px;
           line-height: 100%;
         }
@@ -52,15 +53,15 @@ const CommunityBlock = styled.div`
           background-color: black;
           display: block;
         }
-      }
 
-      .itemCommunity:hover {
-        .imgCommunity {
-          height: 130px;
-        }
-        .lineCommunity {
-          background-color: black;
-          width: 100%;
+        &:hover {
+          .imgCommunity {
+            height: 130px;
+          }
+          .lineCommunity {
+            background-color: black;
+            width: 100%;
+          }
         }
       }
     }
