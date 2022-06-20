@@ -33,11 +33,19 @@ export default function Header() {
         position: 'relative',
         padding: '40px',
         backgroundColor: '#05050E',
+        justifyContent: 'center',
       }}
     >
-      <Banner />
-      <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
-        <AnimatedNavbar duration={300} />
+      <Flex
+        sx={{
+          width: '1132px',
+          height: '100%',
+        }}
+      >
+        <Banner />
+        <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
+          <AnimatedNavbar duration={300} />
+        </Flex>
       </Flex>
     </Flex>
   )
