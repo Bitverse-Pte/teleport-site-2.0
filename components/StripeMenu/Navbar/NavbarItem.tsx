@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react'
+import { Box } from 'rebass'
 import styled from 'styled-components'
 
 const NavbarItemTitle = styled.button`
@@ -20,6 +21,17 @@ const NavbarItemTitle = styled.button`
   &:focus {
     opacity: 0.7;
     outline: none;
+    .nav-menu-title:after {
+      transform: scaleX(1);
+    }
+  }
+  & .nav-menu-title:after {
+    display: block;
+    content: '';
+    border-bottom: solid white 2px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 0% 50%;
   }
 `
 
@@ -37,6 +49,8 @@ const DropdownSlot = styled.div`
   perspective: 1500px;
 `
 
+const TitleBox = styled(Box)``
+
 export default function NavbarItem({ onMouseEnter, title, index, children }: { onMouseEnter: (index: number) => void; title: string; index: number; children: React.ReactNode }) {
   const onMouseEnterWrapper = useCallback(() => {
     onMouseEnter(index)
@@ -44,7 +58,9 @@ export default function NavbarItem({ onMouseEnter, title, index, children }: { o
 
   return (
     <NavbarItemEl onMouseEnter={onMouseEnterWrapper} onFocus={onMouseEnterWrapper}>
-      <NavbarItemTitle>{title}</NavbarItemTitle>
+      <NavbarItemTitle>
+        <Box className="nav-menu-title">{title}</Box>
+      </NavbarItemTitle>
       <DropdownSlot>{children}</DropdownSlot>
     </NavbarItemEl>
   )

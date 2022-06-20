@@ -36,9 +36,9 @@ export default function Header() {
       }}
     >
       <Banner />
-      <Box style={{ position: 'absolute', height: 'calc(100% - 80px)', left: '50%', transform: 'translateX(-50%)', zIndex: 1 }}>
+      <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
         <AnimatedNavbar duration={300} />
-      </Box>
+      </Flex>
     </Flex>
   )
 }
