@@ -7,8 +7,8 @@ import {Flex} from "rebass/styled-components"
 
 const Footer = () => {
     return (
-        <FooterStyled className={"centerView"}>
-            <div className="wrapFooter">
+        <FooterStyled>
+            <div className="wrapFooter centerView">
                 <Flex flexDirection={"row"} justifyContent={"space-between"}>
                     <Link href="/">
                         <a>

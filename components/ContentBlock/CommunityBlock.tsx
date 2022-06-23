@@ -77,11 +77,11 @@ const CommunityBlock = styled.div`
 
 const Community = () => {
     const communities = [
-        { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: iconSocialTwitter },
-        { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: iconSocialTelegram },
-        { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: iconSocialDiscord },
-        { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: iconSocialMedium },
-        { title: 'Email', link: 'https://linktr.ee/teleportnetwork', image: iconSocialLinkTree },
+        {title: "Twitter", link: "https://twitter.com/TeleportChain", image: iconSocialTwitter },
+        {title: "Telegram", link: "https://t.me/TeleportNetwork", image: iconSocialTelegram },
+        {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: iconSocialDiscord },
+        {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: iconSocialMedium },
+        {title: "Linktree", link: "https://linktr.ee/teleportnetwork", image: iconSocialLinkTree },
     ]
     const items = communities.map((item) => {
         return (
@@ -97,7 +97,6 @@ const Community = () => {
             </Link>
         )
     })
-
   return (
     <CommunityBlock>
       <div className='wrapCommunity centerView'>
