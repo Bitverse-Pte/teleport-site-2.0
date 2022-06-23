@@ -75,7 +75,7 @@ const Community = () => {
         {title: "Telegram", link: "https://t.me/TeleportNetwork", image: "/images/icon-social-telegram.svg"},
         {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: "/images/icon-social-discord.svg"},
         {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: "/images/icon-social-medium.svg"},
-        {title: "Email", link: "mailto:support@teleport.network", image: "/images/icon-social-mail.svg"},
+        {title: "Linktree", link: "https://linktr.ee/teleportnetwork", image: "/images/icon-social-linktree.svg"},
     ]
     const items = communities.map((item) => {
         return (<Link href={item.link}>
