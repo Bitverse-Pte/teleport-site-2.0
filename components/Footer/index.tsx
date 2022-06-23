@@ -6,8 +6,8 @@ import {Flex} from "rebass/styled-components";
 
 const Footer = () => {
     return (
-        <FooterStyled>
-            <div className="wrapFooter centerView">
+        <FooterStyled className={"centerView"}>
+            <div className="wrapFooter">
                 <Flex flexDirection={"row"} justifyContent={"space-between"}>
                     <Link href="/">
                         <a>
@@ -17,7 +17,7 @@ const Footer = () => {
                     <Flex flexDirection={"row"} justifyContent={"flex-end"} className={"wrapLinks"}>
                         <Flex flexDirection={"column"} className={"wrapColumn"}>
                             <div className={"textTitle"}>Apply</div>
-                            <Link href={"https://ambassador.teleport.network/"}>
+                            <Link href={"https://ambassador.teleport.network/"} key={"https://ambassador.teleport.network/"}>
                                 <a target={"_blank"}>
                                     Ambassador
                                 </a>
@@ -25,17 +25,17 @@ const Footer = () => {
                         </Flex>
                         <Flex flexDirection={"column"} className={"wrapColumn"}>
                             <div className={"textTitle"}>Developer</div>
-                            <Link href={"https://docs.teleport.network/"}>
+                            <Link href={"https://docs.teleport.network/"} key={"https://docs.teleport.network/"}>
                                 <a target={"_blank"}>
                                     Document
                                 </a>
                             </Link>
-                            <Link href={"https://github.com/teleport-network"}>
+                            <Link href={"https://github.com/teleport-network"} key={"https://github.com/teleport-network"}>
                                 <a target={"_blank"}>
                                     Github
                                 </a>
                             </Link>
-                            <Link href={"https://discord.gg/5YQtRDF4Rh"}>
+                            <Link href={"https://discord.gg/5YQtRDF4Rh"} key={"https://discord.gg/5YQtRDF4Rh"}>
                                 <a target={"_blank"}>
                                     Community (Discord)
                                 </a>

@@ -78,7 +78,8 @@ const Community = () => {
         {title: "Linktree", link: "https://linktr.ee/teleportnetwork", image: "/images/icon-social-linktree.svg"},
     ]
     const items = communities.map((item) => {
-        return (<Link href={item.link}>
+        return (
+            <Link href={item.link} key={item.link}>
             <a target="_blank">
                 <div className="itemCommunity">
                     <Image  className="imgCommunity" src={item.image}/>
