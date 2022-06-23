@@ -1,7 +1,14 @@
-import {memo} from "react";
+import React, { memo } from 'react'
 import Link from 'next/link'
-import styled from "styled-components";
-import {Image} from "rebass";
+import styled from 'styled-components'
+
+import iconSocialTwitter from 'public/images/icon-social-twitter.svg'
+import iconSocialTelegram from 'public/images/icon-social-telegram.svg'
+import iconSocialDiscord from 'public/images/icon-social-discord.svg'
+import iconSocialMedium from 'public/images/icon-social-medium.svg'
+import iconSocialLinktree from 'public/images/icon-social-linktree.svg'
+
+import Image from 'components/Image'
 
 const CommunityBlock = styled.div`
   .wrapCommunity {
@@ -12,7 +19,7 @@ const CommunityBlock = styled.div`
       font-family: DelGophicOne;
       font-size: 64px;
       line-height: 123.76%;
-      color: #05050E;
+      color: #05050e;
     }
 
     .boxCommunity {
@@ -71,11 +78,11 @@ const CommunityBlock = styled.div`
 
 const Community = () => {
     const communities = [
-        {title: "Twitter", link: "https://twitter.com/TeleportChain", image: "/images/icon-social-twitter.svg"},
-        {title: "Telegram", link: "https://t.me/TeleportNetwork", image: "/images/icon-social-telegram.svg"},
-        {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: "/images/icon-social-discord.svg"},
-        {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: "/images/icon-social-medium.svg"},
-        {title: "Linktree", link: "https://linktr.ee/teleportnetwork", image: "/images/icon-social-linktree.svg"},
+        {title: "Twitter", link: "https://twitter.com/TeleportChain", image: iconSocialTwitter },
+        {title: "Telegram", link: "https://t.me/TeleportNetwork", image: iconSocialTelegram },
+        {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: iconSocialDiscord },
+        {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: iconSocialMedium },
+        {title: "Linktree", link: "https://linktr.ee/teleportnetwork", iconSocialMail },
     ]
     const items = communities.map((item) => {
         return (<Link href={item.link}>
@@ -88,16 +95,27 @@ const Community = () => {
         </Link>)
     })
     return (
-        <CommunityBlock>
-            <div className="wrapCommunity centerView">
-                <h1 className="textHeader">Owned by the community</h1>
-                <div className="boxCommunity">
-                    {items}
-                </div>
+      <Link href={item.link} key={item.link}>
+        <a target="_blank">
+          <div className="itemCommunity">
+            <Image className="imgCommunity" src={item.image} alt={'community-block-icon'} />
+            <div className="textCommunity">
+              {item.title}
+              <span className="lineCommunity"></span>
             </div>
-        </CommunityBlock>
+          </div>
+        </a>
+      </Link>
     )
+  })
+  return (
+    <CommunityBlock>
+      <div className="wrapCommunity centerView">
+        <h1 className="textHeader">Owned by the community</h1>
+        <div className="boxCommunity">{items}</div>
+      </div>
+    </CommunityBlock>
+  )
 }
 
 export default memo(Community)
-

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Flex, Box } from 'rebass/styled-components'
-import Image from 'next/image'
+import Image from 'components/Image'
 
 import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
@@ -33,12 +33,20 @@ export default function Header() {
         position: 'relative',
         padding: '40px',
         backgroundColor: '#05050E',
+        justifyContent: 'center',
       }}
     >
-      <Banner />
-      <Box style={{ position: 'absolute', height: 'calc(100% - 80px)', left: '50%', transform: 'translateX(-50%)' }}>
-        <AnimatedNavbar duration={300} />
-      </Box>
+      <Flex
+        sx={{
+          width: '1132px',
+          height: '100%',
+        }}
+      >
+        <Banner />
+        <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
+          <AnimatedNavbar duration={300} />
+        </Flex>
+      </Flex>
     </Flex>
   )
 }

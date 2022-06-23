@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'components/Image'
 import { Box, Flex, Text } from 'rebass'
 import styled from 'styled-components'
 
@@ -10,9 +10,9 @@ import dappLogo from 'public/dapp.svg'
 
 const FeatureBlock = styled(Box)`
 	height: 280px;
+  z-index: 0;
 	min-height: 280px;
-	max-height: 280px;
-	max-width: 960px;
+	max-width: 1132px;
 	width: 1132px;
 	position: relative;
 	.feature-block-bg-box {

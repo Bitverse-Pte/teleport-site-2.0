@@ -1,8 +1,9 @@
-import {memo} from "react";
-import {FooterStyled} from "./styled";
+import React, { memo } from 'react'
+import { FooterStyled } from './styled'
 import Link from 'next/link'
-import {Image} from "rebass";
+import Image from 'components/Image'
 import {Flex} from "rebass/styled-components";
+import teleportHorizontal from 'public/images/teleport-horizontal.svg'
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                 <Flex flexDirection={"row"} justifyContent={"space-between"}>
                     <Link href="/">
                         <a>
-                            <Image className="imgLogoHorizontal" src={"/images/teleport-horizontal.svg"}/>
+                            <Image className="imgLogoHorizontal" src={teleportHorizontal} alt={'footer-horizontal-line'} />
                         </a>
                     </Link>
                     <Flex flexDirection={"row"} justifyContent={"flex-end"} className={"wrapLinks"}>
