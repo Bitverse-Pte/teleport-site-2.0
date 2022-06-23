@@ -6,9 +6,8 @@ import iconSocialTwitter from 'public/images/icon-social-twitter.svg'
 import iconSocialTelegram from 'public/images/icon-social-telegram.svg'
 import iconSocialDiscord from 'public/images/icon-social-discord.svg'
 import iconSocialMedium from 'public/images/icon-social-medium.svg'
-import iconSocialMail from 'public/images/icon-social-mail.svg'
-
-import Image from 'components/Image'
+import iconSocialLinkTree from 'public/images/icon-social-linktree.svg'
+import Image from 'components/Image';
 
 const CommunityBlock = styled.div`
   .wrapCommunity {
@@ -77,33 +76,32 @@ const CommunityBlock = styled.div`
 `
 
 const Community = () => {
-  const communities = [
-    { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: iconSocialTwitter },
-    { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: iconSocialTelegram },
-    { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: iconSocialDiscord },
-    { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: iconSocialMedium },
-    { title: 'Email', link: 'mailto:support@teleport.network', image: iconSocialMail },
-  ]
-  const items = communities.map((item) => {
-    return (
-      <Link href={item.link} key={item.link}>
-        <a target="_blank">
-          <div className="itemCommunity">
-            <Image className="imgCommunity" src={item.image} alt={'community-block-icon'} />
-            <div className="textCommunity">
-              {item.title}
-              <span className="lineCommunity"></span>
-            </div>
-          </div>
-        </a>
-      </Link>
-    )
-  })
+    const communities = [
+        {title: "Twitter", link: "https://twitter.com/TeleportChain", image: iconSocialTwitter },
+        {title: "Telegram", link: "https://t.me/TeleportNetwork", image: iconSocialTelegram },
+        {title: "Discord", link: "https://discord.gg/5YQtRDF4Rh", image: iconSocialDiscord },
+        {title: "Medium", link: "https://medium.com/@TeleportNetwork", image: iconSocialMedium },
+        {title: "Linktree", link: "https://linktr.ee/teleportnetwork", image: iconSocialLinkTree },
+    ]
+    const items = communities.map((item) => {
+        return (
+            <Link href={item.link} key={item.link}>
+                <a target='_blank'>
+                    <div className='itemCommunity'>
+                        <div className={'imgCommunity'}>
+                            <Image src={item.image}/>
+                        </div>
+                        <div className='textCommunity'>{item.title}<span className='lineCommunity'></span></div>
+                    </div>
+                </a>
+            </Link>
+        )
+    })
   return (
     <CommunityBlock>
-      <div className="wrapCommunity centerView">
-        <h1 className="textHeader">Owned by the community</h1>
-        <div className="boxCommunity">{items}</div>
+      <div className='wrapCommunity centerView'>
+        <h1 className='textHeader'>Owned by the community</h1>
+        <div className='boxCommunity'>{items}</div>
       </div>
     </CommunityBlock>
   )
