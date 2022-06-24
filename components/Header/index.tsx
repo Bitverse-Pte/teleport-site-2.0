@@ -57,7 +57,7 @@ function Banner() {
       sx={{
         height: '100%',
         alignItems: 'center',
-        width: '240px',
+        minWidth: '240px',
       }}
     >
       <Image src={mainLogo} alt={'main-logo'} height="55px" />

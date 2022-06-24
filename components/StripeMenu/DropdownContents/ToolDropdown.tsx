@@ -13,10 +13,94 @@ EVM
 Tendermint */
 export default function DocsDropdown() {
   return (
-    <DropdownEl minWidth="3rem" minHeight={'4rem'} display="flex" padding="0.5rem">
+    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.5rem">
       {/* <DropdownSection data-first-dropdown-section> */}
-      <Flex width={'100%'} minHeight="100%" flexDirection={'row'}>
-        <Flex width={'50%'} minHeight="100%" flexDirection={'column'} alignItems="center" justifyContent="flex-start">
+      <Flex width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content">
+        <Flex flexDirection={'column'} flex={2} minWidth="fit-content">
+          <Flex
+            justifyContent={'flex-start'}
+            sx={{
+              fontFamily: 'IBM Plex Sans',
+              fontStyle: 'normal',
+              fontWeight: 700,
+              fontSize: '16px',
+              lineHeight: '20px',
+              opacity: 0.5,
+            }}
+          >
+            Faucet
+          </Flex>
+          <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+          <Flex width={'100%'} flexDirection={'row'} minWidth="fit-content">
+            <Flex flexDirection={'column'} width="fit-content" alignItems={'flex-start'}>
+              <Flex
+                sx={{
+                  whiteSpace: 'nowrap',
+                  fontFamily: 'IBM Plex Sans',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  opacity: 0.5,
+                  lineHeight: '18px',
+                }}
+              >
+                {'Faucet (TELE)'}
+              </Flex>
+              <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+              <HeadingLink noMarginBottom color="white">
+                Discord
+              </HeadingLink>
+            </Flex>
+            <Flex flexDirection={'column'} width="fit-content" marginLeft={'15px'} alignItems={'flex-start'}>
+              <Flex
+                sx={{
+                  whiteSpace: 'nowrap',
+                  fontFamily: 'IBM Plex Sans',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  fontSize: '14px',
+                  opacity: 0.5,
+                  lineHeight: '18px',
+                }}
+              >
+                {'Faucet (TUSDT)'}
+              </Flex>
+              <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+              <HeadingLink noMarginBottom color="white">
+                Teleport Testnet
+              </HeadingLink>
+              <HeadingLink noMarginBottom color="white">
+                BNB Testnet
+              </HeadingLink>
+              <HeadingLink noMarginBottom color="white">
+                Rinkeby
+              </HeadingLink>
+            </Flex>
+          </Flex>
+        </Flex>
+        <Flex flexDirection={'column'} flex={1} marginLeft="15px" alignItems={'flex-start'}>
+          <Flex
+            justifyContent={'flex-start'}
+            sx={{
+              fontFamily: 'IBM Plex Sans',
+              fontStyle: 'normal',
+              fontWeight: 700,
+              fontSize: '16px',
+              lineHeight: '20px',
+              opacity: 0.5,
+            }}
+          >
+            Explorer
+          </Flex>
+          <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+          <HeadingLink noMarginBottom color="white">
+            EVM
+          </HeadingLink>
+          <HeadingLink noMarginBottom color="white">
+            Tendermint
+          </HeadingLink>
+        </Flex>
+        {/*  <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
           <HeadingLink noMarginBottom color="white" style={{ fontSize: '18px', maxHeight: '15%', minHeight: '15%' }}>
             Faucet
           </HeadingLink>
@@ -31,7 +115,7 @@ export default function DocsDropdown() {
             Rinkeby
           </HeadingLink>
         </Flex>
-        <Flex width={'50%'} minHeight="100%" flexDirection={'column'} alignItems="center" justifyContent="flex-start">
+        <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
           <HeadingLink noMarginBottom color="white" style={{ fontSize: '18px', maxHeight: '15%', minHeight: '15%' }}>
             Explorer
           </HeadingLink>
@@ -42,34 +126,8 @@ export default function DocsDropdown() {
           <HeadingLink noMarginBottom color="white" style={{ margin: '0.36rem 0' }}>
             Tendermint
           </HeadingLink>
-        </Flex>
+        </Flex> */}
       </Flex>
-      {/* </DropdownSection> */}
-      {/*      <DropdownSection>
-        <div>
-          <Heading color="white">
-            <Icon />
-            From the Blog
-          </Heading>
-          <LinkList marginLeft="25px">
-            <li>
-              <Link href="/" passHref>
-                Stripe Atlas &rsaquo;
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                Stripe Home &rsaquo;
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                Improved Fraud Detection &rsaquo;
-              </Link>
-            </li>
-          </LinkList>
-        </div>
-      </DropdownSection> */}
     </DropdownEl>
   )
 }

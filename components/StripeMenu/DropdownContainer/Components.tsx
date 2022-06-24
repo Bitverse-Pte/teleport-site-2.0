@@ -45,8 +45,9 @@ export const Caret = styled.div`
 
 export const DropdownBackground = styled.div`
   transform-origin: 0 0;
-  background-color: black;
-  border-radius: 0.5rem;
+  background: rgba(30, 30, 30, 0.95);
+  color: #ffffff;
+  border-radius: 12px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1);
@@ -54,14 +55,14 @@ export const DropdownBackground = styled.div`
 `
 
 export const AltBackground = styled.div<{ duration: number }>`
-  background-color: black;
+  // background-color: black;
   width: 300%;
   height: 100%;
   position: absolute;
   top: 0;
   left: -100%;
   transform-origin: 0 0;
-  border-radius: 0.5rem;
+  // border-radius: 0.5rem;
   z-index: 0;
   transition: transform ${({ duration }) => duration}ms;
 `

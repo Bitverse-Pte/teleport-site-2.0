@@ -4,16 +4,23 @@ import styled from 'styled-components'
 export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
   text-transform: capitalize;
   font-weight: bold;
+  font-size: 18px;
   margin-top: 0;
+  display: flex;
+  align-items: center;
   color: white;
+  white-space: nowrap;
+  line-height: 40px;
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
   color: ${({ color }) => (color ? `${color}` : 'var(--blue)')};
-  transition: opacity 250ms;
+  transition: all 250ms ease-in-out;
   &:hover,
   &:focus {
     cursor: pointer;
-    opacity: 0.7;
+    // opacity: 0.7;
+    color: #59c3aa;
     outline: none;
+    transform: translateX(5px);
   }
 `
 

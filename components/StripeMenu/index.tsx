@@ -6,16 +6,25 @@ import NavbarItem from './Navbar/NavbarItem'
 import DropdownContainer from './DropdownContainer'
 import DocsDropdown from './DropdownContents/DocsDropdown'
 import ToolDropdown from './DropdownContents/ToolDropdown'
-import GovernanceDrop from './DropdownContents/GovernanceDrop'
-import EcoSystemDrop from './DropdownContents/EcoSystemDrop'
-import CommunityDrop from './DropdownContents/CommunityDrop'
+import GovernanceDropdown from './DropdownContents/GovernanceDropdown'
+import EcoSystemDropdown from './DropdownContents/EcoSystemDropdown'
+import CommunityDropdown from './DropdownContents/CommunityDropdown'
+
+import ambassadorLogo from 'public/ambassador.svg'
+import Image from 'components/Image'
+import { Flex } from 'rebass'
 
 const navbarConfig = [
   { title: 'Docs', dropdown: DocsDropdown },
   { title: 'Tool', dropdown: ToolDropdown },
-  { title: 'Governance', dropdown: GovernanceDrop },
-  { title: 'Ecosystem', dropdown: EcoSystemDrop },
-  { title: 'Community', dropdown: CommunityDrop },
+  // { title: 'Governance', dropdown: GovernanceDrop },
+  // { title: 'Ecosystem', dropdown: EcoSystemDrop },
+  { title: 'Community', dropdown: CommunityDropdown },
+  // {
+  //   title: 'Ambassador',
+  //   logo: ambassadorLogo,
+  //   dropdown: null,
+  // },
 ]
 
 export default function AnimatedNavbar({ duration }: { duration: number }) {
@@ -77,9 +86,9 @@ export default function AnimatedNavbar({ duration }: { duration: number }) {
   return (
     <Flipper flipKey={currentIndex} spring={duration === 300 ? 'noWobble' : { stiffness: 10, damping: 10 }} className="stripe-menu-container">
       <Navbar onMouseLeave={onMouseLeave}>
-        {navbarConfig.map((n, index) => {
+        {navbarConfig.map(({ title }, index) => {
           return (
-            <NavbarItem key={n.title} title={n.title} index={index} onMouseEnter={onMouseEnter}>
+            <NavbarItem key={title} title={title} index={index} onMouseEnter={onMouseEnter}>
               {currentIndex === index && (
                 <DropdownContainer direction={direction} animatingOut={animatingOut} duration={duration}>
                   {CurrentDropdown && <CurrentDropdown />}
@@ -90,6 +99,21 @@ export default function AnimatedNavbar({ duration }: { duration: number }) {
           )
         })}
       </Navbar>
+      <Flex
+        alignItems={'center'}
+        width="fit-content"
+        sx={{
+          fontFamily: 'IBM Plex Sans',
+          fontStyle: 'normal',
+          fontWeight: 500,
+          fontSize: '24px',
+          color: '#0ACBE4',
+          cursor: 'pointer',
+        }}
+      >
+        <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
+        {'Ambassador'}
+      </Flex>
     </Flipper>
   )
 }
