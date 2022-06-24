@@ -6,9 +6,12 @@ import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } fro
 
 export default function DocsDropdown() {
   return (
-    <DropdownEl width="3rem" minHeight={'4rem'} display="flex" padding="0.125rem 0">
-      {/* <DropdownSection data-first-dropdown-section> */}
-      <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="center" justifyContent="space-around">
+    <DropdownEl width="3rem" minHeight={'4rem'} display="flex" padding="0.125rem 0" textAlign={'left'}>
+      <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
+        <HeadingLink noMarginBottom color="white">
+          White Paper
+        </HeadingLink>
+        <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
         <HeadingLink noMarginBottom color="white">
           Teleport Chain
         </HeadingLink>
@@ -16,38 +19,16 @@ export default function DocsDropdown() {
           XIBC
         </HeadingLink>
         <HeadingLink noMarginBottom color="white">
-          Docs for Devs
+          Developer
         </HeadingLink>
         <HeadingLink noMarginBottom color="white">
-          Docs for Validators
+          Validator
+        </HeadingLink>
+        <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+        <HeadingLink noMarginBottom color="white">
+          Wallet
         </HeadingLink>
       </Flex>
-      {/* </DropdownSection> */}
-      {/*      <DropdownSection>
-        <div>
-          <Heading color="white">
-            <Icon />
-            From the Blog
-          </Heading>
-          <LinkList marginLeft="25px">
-            <li>
-              <Link href="/" passHref>
-                Stripe Atlas &rsaquo;
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                Stripe Home &rsaquo;
-              </Link>
-            </li>
-            <li>
-              <Link href="/" passHref>
-                Improved Fraud Detection &rsaquo;
-              </Link>
-            </li>
-          </LinkList>
-        </div>
-      </DropdownSection> */}
     </DropdownEl>
   )
 }
