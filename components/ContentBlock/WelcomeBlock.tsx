@@ -18,9 +18,10 @@ export default function WelcomeBlock() {
         width: '100%',
         height: '288px',
         justifyContent: 'space-between',
-        transition: 'all 0.2s ease-in-out 0.2s',
+        transitionDelay: '0s',
+        transition: 'all 0.2s ease-in-out',
         '.vanish-to-left': {
-          transition: 'all 0.2s ease-in-out 0.2s',
+          transition: 'all 0.2s ease-in-out',
         },
         ':after': {
           borderBottom: 'solid 2px white',
@@ -91,7 +92,7 @@ export default function WelcomeBlock() {
               height: '100%',
               transform: 'scale(1.6)',
               transformOrigin: '50% 0',
-              transition: 'all 0.2s ease-in-out 0.2s',
+              transition: 'all 0.2s ease-in-out',
             }}
           >
             <Image src={circledT} alt="welcome-gif" layout="fill" objectFit="contain" /* objectPosition={'right -50px'} */ quality={100}></Image>
@@ -109,7 +110,7 @@ export default function WelcomeBlock() {
             top: '120px',
           },
           left: '0px',
-          transition: 'all 0.2s ease-in-out 0.2s',
+          transition: 'all 0.2s ease-in-out',
           transformOrigin: '0% 50%',
         }}
       >
@@ -119,7 +120,7 @@ export default function WelcomeBlock() {
         sx={{
           justifyContent: 'space-between',
           marginTop: 10,
-          transition: 'all 0.2s ease-in-out 0.2s',
+          transition: 'all 0.2s ease-in-out',
         }}
       >
         <Flex
@@ -132,7 +133,7 @@ export default function WelcomeBlock() {
               content: '';
               border-bottom: solid white 2px;
               transform: scaleX(1);
-              transition: all 0.2s ease-in-out 0.2s;
+              transition: all 0.2s ease-in-out;
               transform-origin: 0% 50%;
             }
           `}
@@ -142,7 +143,7 @@ export default function WelcomeBlock() {
               className="vanish-to-left"
               sx={{
                 transformOrigin: '50% 0',
-                transition: 'all 0.2s ease-in-out 0.2s',
+                transition: 'all 0.2s ease-in-out',
               }}
             >
               <Image src={leftBottomArrow} alt="welcome-gif"></Image>
@@ -150,7 +151,7 @@ export default function WelcomeBlock() {
             <Box
               className="translate-to-left"
               sx={{
-                transition: 'all 0.2s ease-in-out 0.2s',
+                transition: 'all 0.2s ease-in-out',
                 transformOrigin: '0% 50%',
               }}
             >
@@ -166,7 +167,7 @@ export default function WelcomeBlock() {
           flexWrap="wrap"
           sx={{
             maxWidth: '100px!important',
-            transition: 'all 0.2s ease-in-out 0.2s',
+            transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
           }}
         >
@@ -185,7 +186,7 @@ export default function WelcomeBlock() {
                 maxWidth: '155px',
                 fontSize: '20px',
               },
-              transition: 'all 0.2s ease-in-out 0.2s',
+              transition: 'all 0.2s ease-in-out',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               fontWeight: 600,
@@ -212,7 +213,7 @@ export default function WelcomeBlock() {
                 fontSize: '20px',
               },
               marginLeft: 10,
-              transition: 'all 0.2s ease-in-out 0.2s',
+              transition: 'all 0.2s ease-in-out',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               fontWeight: 600,

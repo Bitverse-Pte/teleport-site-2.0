@@ -20,7 +20,7 @@ export default function RoadmapBlock() {
       >
         Teleport Roadmap
       </Text>
-      <Flex width={'1132px'} maxWidth={'1132px'} style={{ position: 'relative' }} justifyContent="space-between">
+      <Flex width={'100%'} style={{ position: 'relative' }} justifyContent="space-between">
         <Image src={startedLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
         <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
         <MapColumn milestoneDate="2022.Q1" description="Testnet launch Cross-chain transfer & contract call via IBC& TSS" />
@@ -40,7 +40,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
       alignItems={'center'}
       sx={{
         transformOrigin: '50% 0%',
-        transition: 'transform 0.2s ease-in-out 0.2s',
+        transition: 'transform 0.2s ease-in-out',
         zIndex: 1,
         color: 'black',
         '&:hover': {

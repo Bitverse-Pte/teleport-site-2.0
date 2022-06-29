@@ -28,11 +28,13 @@ const FeatureBlock = styled(Box)`
 		content: "";
 		border-bottom: solid white 2px;
 		transform: scaleX(0);
-		transition: transform 0.2s ease-in-out 0.2s;
+    transition-delay: 0s;
+		transition: transform 0.2s ease-in-out;
 		transform-origin: 0% 50%;
 	}
 	& .main-title {
-		transition: all 0.3s ease-in-out 0.2s;
+		transition: all 0.2s ease-in-out;
+    transition-delay: 0s;
 		transform-origin: left; 
 	}
 	&:hover .main-title {
