@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        height: '200px',
+        height: '120px',
         minWidth: '802px',
         width: '70%',
         maxWidth: '1132px',
@@ -34,7 +34,6 @@ export default function Header() {
         flexDirection: 'row',
         alignItems: 'start',
         position: 'relative',
-        padding: '40px 0',
         justifyContent: 'center',
         marginBottom: '1rem',
       }}
