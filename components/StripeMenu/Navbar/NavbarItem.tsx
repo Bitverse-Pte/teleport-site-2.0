@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const NavbarItemTitle = styled.button`
   background: transparent;
+  cursor: auto;
   border: 0;
   font-family: 'IBM Plex Sans';
   font-style: normal;
@@ -13,7 +14,6 @@ const NavbarItemTitle = styled.button`
   display: flex;
   justify-content: center;
   transition: opacity 250ms;
-  cursor: pointer;
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   position: relative;
   z-index: 2;
