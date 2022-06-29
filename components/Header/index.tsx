@@ -25,14 +25,15 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        width: '100%',
         height: '200px',
+        minWidth: '802px',
+        width: '70%',
+        maxWidth: '1132px',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'start',
         position: 'relative',
-        padding: '40px',
-        backgroundColor: '#05050E',
+        padding: '40px 0',
         justifyContent: 'center',
       }}
     >

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from 'rebass'
+import { Button, Flex } from 'rebass'
 import Image from 'components/Image'
 
 import iconGraph1 from 'public/images/icon-graph-1.svg'
@@ -92,10 +92,10 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-    <>
+    <Flex flexDirection="column">
       <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" ImageUrl="" ButtonTitle="Launch App" />
       <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported<br>Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" ImageUrl="" ButtonTitle="Download" />
       <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" ImageUrl="" ButtonTitle="" />
-    </>
+    </Flex>
   )
 }
