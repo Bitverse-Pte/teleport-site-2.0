@@ -28,7 +28,7 @@ export default function Main() {
       >
         <Image src={bg} alt={'background-image'} layout="fill" objectFit="contain" objectPosition={'left top'} quality={100}></Image>
         <Header />
-        <Flex minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1400} flexDirection="column" justifyContent={'flex-start'} alignItems="space-between">
+        <Flex minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
           <WelcomeBlock />
           <FeaturesBlock />
         </Flex>
