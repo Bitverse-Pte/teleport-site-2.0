@@ -8,6 +8,8 @@ html body {
   box-sizing: border-box;
   font-size: 0.16rem;
   background-color: white;
+  user-select: none;
+  transition-delay: 0s;
 }
 
 @font-face {
