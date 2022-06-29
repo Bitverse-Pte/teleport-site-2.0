@@ -30,7 +30,8 @@ const CommunityBlock = styled.div`
       border: 1px solid #000000;
       border-radius: 48px;
       padding: 84px 0px;
-
+      transition-duration: all 0.2s ease-in-out;
+      transform-origin: 0 50%;
       .itemCommunity {
         width: 160px;
         position: relative;
@@ -41,7 +42,7 @@ const CommunityBlock = styled.div`
           left: 0;
           right: 0;
           margin: auto;
-          transition-duration: 0.3s;
+          transition: all 0.2s ease-in-out;
           height: 124px;
         }
         .textCommunity {
@@ -64,6 +65,7 @@ const CommunityBlock = styled.div`
 
         &:hover {
           .imgCommunity {
+            transform: scale(1.2);
             height: 130px;
           }
           .lineCommunity {
