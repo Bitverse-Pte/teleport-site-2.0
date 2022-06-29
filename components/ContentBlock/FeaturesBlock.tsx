@@ -28,17 +28,24 @@ const FeatureBlock = styled(Box)`
 		content: "";
 		border-bottom: solid white 2px;
 		transform: scaleX(0);
-		transition: transform 250ms ease-in-out;
+		transition: transform 0.2s ease-in-out 0.2s;
 		transform-origin: 0% 50%;
 	}
 	& .main-title {
 		transition: all 0.3s ease-in-out 0.2s;
-		transform-origin: left;
+		transform-origin: left; 
 	}
 	&:hover .main-title {
-			transition: all 0.3s ease-in-out 0.1s;
-			transform: scale(1.25);
-		}
+    transform: scale(1.25);
+  }
+  @media screen and (max-width: 1300px) {
+      & .main-title {
+        transform: scale(0.7);
+      }
+      &:hover .main-title {
+        transform: scale(0.95);
+      }
+    }
 	}
 `
 

@@ -4,6 +4,7 @@ import Image from 'components/Image'
 
 import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
+import ambassadorLogo from 'public/ambassador.svg'
 /* 
 const Container = styled.div`
 	width: 100%;
@@ -35,6 +36,7 @@ export default function Header() {
         position: 'relative',
         padding: '40px 0',
         justifyContent: 'center',
+        marginBottom: '1rem',
       }}
     >
       <Flex
@@ -46,6 +48,22 @@ export default function Header() {
         <Banner />
         <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
           <AnimatedNavbar duration={300} />
+          <Flex
+            alignItems={'center'}
+            width="fit-content"
+            minWidth={168}
+            sx={{
+              fontFamily: 'IBM Plex Sans',
+              fontStyle: 'normal',
+              fontWeight: 500,
+              fontSize: '24px',
+              color: '#0ACBE4',
+              cursor: 'pointer',
+            }}
+          >
+            <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
+            {'Ambassador'}
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

@@ -6,13 +6,10 @@ import NavbarItem from './Navbar/NavbarItem'
 import DropdownContainer from './DropdownContainer'
 import DocsDropdown from './DropdownContents/DocsDropdown'
 import ToolDropdown from './DropdownContents/ToolDropdown'
-import GovernanceDropdown from './DropdownContents/GovernanceDropdown'
+/* import GovernanceDropdown from './DropdownContents/GovernanceDropdown'
 import EcoSystemDropdown from './DropdownContents/EcoSystemDropdown'
+ */
 import CommunityDropdown from './DropdownContents/CommunityDropdown'
-
-import ambassadorLogo from 'public/ambassador.svg'
-import Image from 'components/Image'
-import { Flex } from 'rebass'
 
 const navbarConfig = [
   { title: 'Docs', dropdown: DocsDropdown },
@@ -99,21 +96,6 @@ export default function AnimatedNavbar({ duration }: { duration: number }) {
           )
         })}
       </Navbar>
-      <Flex
-        alignItems={'center'}
-        width="fit-content"
-        sx={{
-          fontFamily: 'IBM Plex Sans',
-          fontStyle: 'normal',
-          fontWeight: 500,
-          fontSize: '24px',
-          color: '#0ACBE4',
-          cursor: 'pointer',
-        }}
-      >
-        <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
-        {'Ambassador'}
-      </Flex>
     </Flipper>
   )
 }

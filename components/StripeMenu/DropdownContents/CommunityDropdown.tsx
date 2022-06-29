@@ -13,7 +13,7 @@ const Base64SvgHolder = styled.div<{ base64String: string }>`
 
 export default function CommunityDropdown() {
   return (
-    <DropdownEl width="3rem" minHeight={'4rem'} display="flex" padding="0.125rem 0">
+    <DropdownEl maxWidth="200px" width="200px" minHeight={'240px'} display="flex" padding="0.125rem 0">
       <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
         <HeadingLink noMarginBottom color="white">
           <Base64SvgHolder base64String={twitterLogoBase64String} />
