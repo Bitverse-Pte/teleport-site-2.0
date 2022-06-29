@@ -1,360 +1,354 @@
 html body {
-	/* font-family: 'Poppins'; */
-	-webkit-font-smoothing: antialiased;
-	font-style: normal;
-	font-weight: normal;
-	box-sizing: border-box;
-	color: #999999;
-	box-sizing: border-box;
-	font-size: 0.16rem;
-	background-color: white;
+  /* font-family: 'Poppins'; */
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  box-sizing: border-box;
+  color: #999999;
+  box-sizing: border-box;
+  font-size: 0.16rem;
+  background-color: white;
 }
 
 @font-face {
-	font-family: "DelGophicOne";
-	src: url("../public/fonts/font-dela-gothic-one-regular.ttf");
+  font-family: 'DelGophicOne';
+  src: url('../public/fonts/font-dela-gothic-one-regular.ttf');
 }
 
 @font-face {
-	font-family: 'Poppins';
-	src: url('../public/fonts/font-poppins-regular.ttf');
+  font-family: 'Poppins';
+  src: url('../public/fonts/font-poppins-regular.ttf');
 }
 
 @font-face {
-	font-family: "iconfont";
-	/* Project id 3085910 */
-	src: url("//at.alicdn.com/t/font_3085910_26g2n2idvkx.woff2?t=1640685340944")
-			format("woff2"),
-		url("//at.alicdn.com/t/font_3085910_26g2n2idvkx.woff?t=1640685340944")
-			format("woff"),
-		url("//at.alicdn.com/t/font_3085910_26g2n2idvkx.ttf?t=1640685340944")
-			format("truetype");
+  font-family: 'iconfont';
+  /* Project id 3085910 */
+  src: url('//at.alicdn.com/t/font_3085910_26g2n2idvkx.woff2?t=1640685340944') format('woff2'), url('//at.alicdn.com/t/font_3085910_26g2n2idvkx.woff?t=1640685340944') format('woff'), url('//at.alicdn.com/t/font_3085910_26g2n2idvkx.ttf?t=1640685340944') format('truetype');
 }
 
 /* <i className="iconfont">&#xeaf2;</i> */
 .iconfont {
-	font-family: "iconfont" !important;
-	font-size: 0.16rem;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-stroke-width: 0.2px;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'iconfont' !important;
+  font-size: 0.16rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .dtest {
-	border: 1px solid red;
+  border: 1px solid red;
 }
 
 .ddspInlineBlock {
-	display: inline-block;
+  display: inline-block;
 }
 
 .dclearBoth:after {
-	content: "";
-	display: block;
-	clear: both;
-	line-height: 0;
-	visibility: hidden;
+  content: '';
+  display: block;
+  clear: both;
+  line-height: 0;
+  visibility: hidden;
 }
 
 .dfl {
-	float: left;
+  float: left;
 }
 
 .dfr {
-	float: right;
+  float: right;
 }
 
 .dfontSize20 {
-	font-size: 0.2rem;
+  font-size: 0.2rem;
 }
 
 .dfontSize25 {
-	font-size: 0.25rem;
+  font-size: 0.25rem;
 }
 
 .dfontSize30 {
-	font-size: 0.3rem;
+  font-size: 0.3rem;
 }
 
 .dpd_0_5 {
-	padding: 0 0.05rem !important;
+  padding: 0 0.05rem !important;
 }
 
 .dpd_0_10 {
-	padding: 0 0.1rem !important;
+  padding: 0 0.1rem !important;
 }
 
 .dmt30 {
-	margin-top: 0.3rem !important;
+  margin-top: 0.3rem !important;
 }
 
 .dmt50 {
-	margin-top: 0.5rem !important;
+  margin-top: 0.5rem !important;
 }
 
 .dmb5 {
-	margin-bottom: 0.05rem !important;
+  margin-bottom: 0.05rem !important;
 }
 
 .dmb10 {
-	margin-bottom: 0.1rem !important;
+  margin-bottom: 0.1rem !important;
 }
 
 .dmb15 {
-	margin-bottom: 0.15rem !important;
+  margin-bottom: 0.15rem !important;
 }
 
 .dmb20 {
-	margin-bottom: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
 }
 
 .dmb30 {
-	margin-bottom: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .dmb35 {
-	margin-bottom: 0.35rem !important;
+  margin-bottom: 0.35rem !important;
 }
 
 .dmb40 {
-	margin-bottom: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
 }
 
 .dmb50 {
-	margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .dmb90 {
-	margin-bottom: 0.9rem !important;
+  margin-bottom: 0.9rem !important;
 }
 
 .dml10 {
-	margin-left: 0.1rem !important;
+  margin-left: 0.1rem !important;
 }
 
 .dml15 {
-	margin-left: 0.15rem !important;
+  margin-left: 0.15rem !important;
 }
 
 .dml20 {
-	margin-left: 0.2rem !important;
+  margin-left: 0.2rem !important;
 }
 
 .dml30 {
-	margin-left: 0.3rem !important;
+  margin-left: 0.3rem !important;
 }
 
 .dml60 {
-	margin-left: 0.6rem !important;
+  margin-left: 0.6rem !important;
 }
 
 .dmr5 {
-	margin-right: 0.05rem !important;
+  margin-right: 0.05rem !important;
 }
 
 .dmr10 {
-	margin-right: 0.1rem !important;
+  margin-right: 0.1rem !important;
 }
 
 .dmr15 {
-	margin-right: 0.15rem !important;
+  margin-right: 0.15rem !important;
 }
 
 .dmr20 {
-	margin-right: 0.2rem !important;
+  margin-right: 0.2rem !important;
 }
 
 .dmr30 {
-	margin-right: 0.3rem !important;
+  margin-right: 0.3rem !important;
 }
 
 .dflexRowStartCenter {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .dflexRowStartStart {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .dflexRowEndCenter {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .dflexRowCenterCenter {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .dflexRowBetweenCenter {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dflexRowAroundCenter {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .dflexColumnCenterCenter {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dflexColumnStartCenter {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .dflexColumnCenterStart {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .dflexColumnStartStart {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .dflexColumnStartEnd {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .dflexColumnEndStart {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .dflexColumnEndCenter {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .dflex1 {
-	flex: 1 !important;
+  flex: 1 !important;
 }
 
 .dflex2 {
-	flex: 2 !important;
+  flex: 2 !important;
 }
 
 .dflex3 {
-	flex: 3 !important;
+  flex: 3 !important;
 }
 
 .dflex4 {
-	flex: 4 !important;
+  flex: 4 !important;
 }
 .dflex5 {
-	flex: 5 !important;
+  flex: 5 !important;
 }
 .dflex6 {
-	flex: 6 !important;
-	border: 1px solid red;
+  flex: 6 !important;
+  border: 1px solid red;
 }
 
-
 .dtal {
-	text-align: left !important;
+  text-align: left !important;
 }
 
 .dtac {
-	text-align: center !important;
+  text-align: center !important;
 }
 
 .dtar {
-	text-align: right !important;
+  text-align: right !important;
 }
 
 .dcp {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .dcp:hover {
-	color: red;
-	border: 1px solid red;
+  color: red;
+  border: 1px solid red;
 }
 
 .dpdtop30 {
-	padding-top: 0.3rem;
+  padding-top: 0.3rem;
 }
 
 .dpdlr30 {
-	padding-left: 0.3rem;
-	padding-right: 0.3rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
 }
 
 .dfs16 {
-	font-size: 0.16rem;
+  font-size: 0.16rem;
 }
 
 .dfs20 {
-	font-size: 0.2rem;
+  font-size: 0.2rem;
 }
 
 .dfs36 {
-	font-size: 0.36rem;
+  font-size: 0.36rem;
 }
 
 .dcl999999 {
-	color: #999999;
+  color: #999999;
 }
 
 .dcl000000 {
-	color: #000000;
+  color: #000000;
 }
 
 .dh80 {
-	height: 0.8rem !important;
+  height: 0.8rem !important;
 }
 
 .dh110 {
-	height: 1.1rem !important;
+  height: 1.1rem !important;
 }
 
 .dbd1Color142 {
-	border: 1px solid rgba(142, 142, 142, 1);
-	border-radius: 0.1rem;
+  border: 1px solid rgba(142, 142, 142, 1);
+  border-radius: 0.1rem;
 }
 
 .dbdRed {
-	border: 1px solid red;
+  border: 1px solid red;
 }
 
 .dbdGreen {
-	border: 1px solid green;
+  border: 1px solid green;
 }
 
-.centerView {
+/* .centerView {
 	width: 14.4rem !important;
 	margin: 0 auto !important;
 }
@@ -362,148 +356,147 @@ html body {
 .centerViewMobile {
 	width: 3.43rem !important;
 	margin: 0 auto !important;
-}
+} */
 
 .contactItem {
-	display: inline-block;
-	width: 0.7rem;
-	height: 0.7rem;
-	line-height: 0.7rem;
-	border: 1px solid #ffffff;
-	border-radius: 50%;
-	text-align: center;
-	margin-right: 0.2rem;
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 0.2rem;
 }
 
 .contactItem img {
-	width: 0.38rem;
-	height: auto;
+  width: 0.38rem;
+  height: auto;
 }
 
 .contactItem svg {
-	width: 0.38rem;
-	height: auto;
-	position: relative;
-	top: 0.08rem;
-	fill: white;
+  width: 0.38rem;
+  height: auto;
+  position: relative;
+  top: 0.08rem;
+  fill: white;
 }
 
 .contactItem:hover {
-	border: 1px solid #00c6a9;
-	box-sizing: border-box;
-	box-shadow: 0px 0px 6px 1px #00c6a9;
+  border: 1px solid #00c6a9;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 1px #00c6a9;
 }
 
 .contactItem:hover svg {
-	fill: #00c6a9;
+  fill: #00c6a9;
 }
 
 .communityView {
-	width: 1.86 rem;
-	box-sizing: border-box;
-	background: #212525;
-	border-radius: 5px;
-	margin-top: 0.2rem;
-	padding-bottom: 0.26rem;
+  width: 1.86 rem;
+  box-sizing: border-box;
+  background: #212525;
+  border-radius: 5px;
+  margin-top: 0.2rem;
+  padding-bottom: 0.26rem;
 }
 
 .communityView .arrow {
-	width: 0.48rem;
-	height: auto;
-	position: relative;
-	top: -0.2rem;
-	left: 0.2rem;
+  width: 0.48rem;
+  height: auto;
+  position: relative;
+  top: -0.2rem;
+  left: 0.2rem;
 }
 
 .communityView .communityViewItem {
-	height: 0.56rem;
-	line-height: 0.5rem;
-	padding: 0 0.24rem;
+  height: 0.56rem;
+  line-height: 0.5rem;
+  padding: 0 0.24rem;
 }
 
 .communityViewItem:hover {
-	background: rgba(49, 54, 54, 1);
+  background: rgba(49, 54, 54, 1);
 }
 
 .communityView img {
-	width: 0.24rem;
-	height: auto;
-	margin-right: 0.12rem;
+  width: 0.24rem;
+  height: auto;
+  margin-right: 0.12rem;
 }
 
 .communityView .media {
-	font-size: 0.2rem;
-	text-align: center;
-	color: #ffffff;
+  font-size: 0.2rem;
+  text-align: center;
+  color: #ffffff;
 }
 
 .dropdown_arrow {
-	display: inline-block;
-	width: 10px;
-	height: auto;
-	margin-left: 0.12rem;
+  display: inline-block;
+  width: 10px;
+  height: auto;
+  margin-left: 0.12rem;
 }
 
 .addView {
-	/* width: 1.4rem;
+  /* width: 1.4rem;
     height: .3rem;
     color: rgba(31,230,169,1);
     border-radius: 15px; */
-	display: inline-block;
-	width: 0.14rem;
-	height: 0.14rem;
-	border: 2px solid #00c6a9;
-	border-radius: 50%;
+  display: inline-block;
+  width: 0.14rem;
+  height: 0.14rem;
+  border: 2px solid #00c6a9;
+  border-radius: 50%;
 }
 
 .communityViewMobile {
-	width: 1.5 rem;
-	box-sizing: border-box;
-	background: #212525;
-	border-radius: 5px;
-	margin-top: 0.2rem;
-	padding-bottom: 0.26rem;
+  width: 1.5 rem;
+  box-sizing: border-box;
+  background: #212525;
+  border-radius: 5px;
+  margin-top: 0.2rem;
+  padding-bottom: 0.26rem;
 }
 
 .communityViewMobile .communityViewItem {
-	height: 0.46rem;
-	line-height: 0.5rem;
-	padding: 0 0.24rem;
+  height: 0.46rem;
+  line-height: 0.5rem;
+  padding: 0 0.24rem;
 }
 
 .communityViewMobile img {
-	width: 0.16rem;
-	height: auto;
-	margin-right: 0.12rem;
+  width: 0.16rem;
+  height: auto;
+  margin-right: 0.12rem;
 }
 .ambassadorImg {
-	width: 0.18rem !important;
-	height: auto;
-	margin-right: 0.12rem;
+  width: 0.18rem !important;
+  height: auto;
+  margin-right: 0.12rem;
 }
 
 .communityViewMobile .media {
-	font-size: 0.16rem;
-	text-align: center;
-	color: #ffffff;
+  font-size: 0.16rem;
+  text-align: center;
+  color: #ffffff;
 }
 
 .communityViewMobile .arrow {
-	width: 0.42rem;
-	height: auto;
-	position: relative;
-	top: -0.2rem;
-	left: 0.2rem;
+  width: 0.42rem;
+  height: auto;
+  position: relative;
+  top: -0.2rem;
+  left: 0.2rem;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-
 .hoverOpacity7:hover {
-	opacity: 0.7 !important;
+  opacity: 0.7 !important;
 }
 .hoverOpacity8:hover {
-	opacity: 0.8 !important;
+  opacity: 0.8 !important;
 }
