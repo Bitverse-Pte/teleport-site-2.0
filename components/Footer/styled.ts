@@ -1,12 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const FooterStyled = styled.div`
-  background: #F8FAFC;
+  background: #f8fafc;
   padding: 50px 0 25px;
-
+  width: 100%;
   .wrapFooter {
+    max-width: 1132px;
     margin: 0 auto;
-
+    width: 70%;
     .imgLogoHorizontal {
       height: 70px;
     }
@@ -20,11 +21,11 @@ export const FooterStyled = styled.div`
 
     .textCopyright {
       font-size: 16px;
-      color: #05050E;
+      color: #05050e;
       font-family: Poppins;
       line-height: 24px;
     }
-    
+
     .wrapLinks {
       width: 60%;
 
@@ -38,7 +39,7 @@ export const FooterStyled = styled.div`
           font-weight: 600;
           font-size: 24px;
           line-height: 32px;
-          color: #05050E;
+          color: #05050e;
           margin-bottom: 24px;
         }
 
@@ -55,10 +56,7 @@ export const FooterStyled = styled.div`
             font-weight: 800;
           }
         }
-
       }
     }
-    
   }
-
 `

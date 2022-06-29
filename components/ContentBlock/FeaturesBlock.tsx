@@ -12,8 +12,7 @@ const FeatureBlock = styled(Box)`
 	height: 280px;
   z-index: 0;
 	min-height: 280px;
-	max-width: 1132px;
-	width: 1132px;
+	width: 100%;
 	position: relative;
 	.feature-block-bg-box {
 		display: none;
@@ -29,23 +28,30 @@ const FeatureBlock = styled(Box)`
 		content: "";
 		border-bottom: solid white 2px;
 		transform: scaleX(0);
-		transition: transform 250ms ease-in-out;
+		transition: transform 0.2s ease-in-out 0.2s;
 		transform-origin: 0% 50%;
 	}
 	& .main-title {
 		transition: all 0.3s ease-in-out 0.2s;
-		transform-origin: left;
+		transform-origin: left; 
 	}
 	&:hover .main-title {
-			transition: all 0.3s ease-in-out 0.1s;
-			transform: scale(1.25);
-		}
+    transform: scale(1.25);
+  }
+  @media screen and (max-width: 1300px) {
+      & .main-title {
+        transform: scale(0.7);
+      }
+      &:hover .main-title {
+        transform: scale(0.95);
+      }
+    }
 	}
 `
 
 export default function FeaturesBlock() {
   return (
-    <Flex flexDirection={'column'} alignItems="center" backgroundColor={'#05050E'} padding="60px 0">
+    <Flex flexDirection={'column'} alignItems="center" width={'100%'} padding="60px 0">
       <Feature MainTitle="Omni-Chain" SecondTitle="Chain Integration" instruction="Support EVM & non-EVM chains via XIBC protocol" logoSrc={omniChainLogo} />
       <Feature MainTitle="Alternative Cross -" SecondTitle="Chain Approach" instruction="State Relay - Trustless Oracle TSS - Cost effective" logoSrc={alternativeCrossLogo} />
       <Feature MainTitle="Dapp -" SecondTitle="Interoperability" instruction="Non-invasive SDK for seamless dApp integration" logoSrc={dappLogo} />
@@ -62,9 +68,10 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
           position: 'absolute',
           width: '100%',
           height: '100%',
+          zIndex: -1,
         }}
       >
-        <Image src={featureBlockBg} layout="fill" alt={'feature-block-bg'} objectFit="cover" quality={100}></Image>
+        <Image src={featureBlockBg} layout="fill" alt={'feature-block-bg'} objectFit="cover" objectPosition={'left bottom'} quality={100}></Image>
       </Box>
       <Flex height="100%" justifyContent={'space-between'} padding="60px 0">
         <Flex flexDirection={'column'}>
@@ -108,7 +115,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
               fontFamily: 'Poppins',
               fontStyle: 'normal',
               maxHeight: '20%',
-              maxWidth: '360px',
+              maxWidth: '420px',
               textAlign: 'end',
               lineHeight: '32px',
               fontSize: '24px',

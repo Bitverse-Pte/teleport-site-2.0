@@ -8,9 +8,7 @@ export default function RoadmapBlock() {
   return (
     <Flex width={'100%'} height="500px" flexDirection={'row'} padding="60px 0" justifyContent={'center'}>
       <Flex width={'1132px'} maxWidth={'1132px'} style={{ position: 'relative' }} justifyContent="space-between">
-        <Box style={{ position: 'absolute', top: '70px', zIndex: -1 }}>
-          <Image src={startedLine} alt={'roadmap-stared-line'}></Image>
-        </Box>
+        <Image src={startedLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
         <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
         <MapColumn milestoneDate="2022.Q1" description="Testnet launch Cross-chain transfer & contract call via IBC& TSS" />
         <MapColumn milestoneDate="2022.Q2" description="Mainnet launch  EVM chain support Cross-chain relayer Incentive Program Multi-chain wallet release" />
@@ -30,33 +28,19 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
       sx={{
         transformOrigin: '50% 0%',
         transition: 'transform 0.2s ease-in-out 0.2s',
+        zIndex: 1,
         '&:hover': {
           transform: 'scale(1.1)',
         },
       }}
     >
-      <Text textAlign={'center'} fontWeight={400} fontSize="24px" fontFamily={'DelGophicOne'} color="#05050e">
+      <Text textAlign={'center'} height={'40px'} fontWeight={400} fontSize="24px" fontFamily={'DelGophicOne'} color="#05050e">
         {milestoneDate}
       </Text>
-      <Box height={'120px'}></Box>
+      <Box height={'100px'}></Box>
       <Text textAlign={'center'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="18px">
         {description}
       </Text>
     </Flex>
   )
 }
-
-/* 
-transform: scaleX(0);
-transition: transform 250ms ease-in-out;
-transform-origin: 0% 50%;
-}
-& .main-title {
-transition: all 0.3s ease-in-out 0.2s;
-transform-origin: left;
-}
-&:hover .main-title {
-  transition: all 0.3s ease-in-out 0.1s;
-  transform: scale(1.25);
-}
-} */

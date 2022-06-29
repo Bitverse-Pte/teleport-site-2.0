@@ -6,7 +6,7 @@ import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } fro
 
 export default function DocsDropdown() {
   return (
-    <DropdownEl width="3rem" minHeight={'4rem'} display="flex" padding="0.125rem 0" textAlign={'left'}>
+    <DropdownEl maxWidth="200px" width="200px" minHeight={'240px'} display="flex" padding="0.125rem 0" textAlign={'left'}>
       <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
         <HeadingLink noMarginBottom color="white">
           White Paper
