@@ -10,6 +10,7 @@ import iconSocialLinkTree from 'public/images/icon-social-linktree.svg'
 import Image from 'components/Image'
 
 const CommunityBlock = styled.div`
+  width: 100%;
   .wrapCommunity {
     text-align: center;
     padding-bottom: 250px;

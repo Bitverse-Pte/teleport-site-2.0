@@ -10,7 +10,7 @@ export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
   align-items: center;
   color: white;
   white-space: nowrap;
-  line-height: 40px;
+  line-height: 48px;
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
   color: ${({ color }) => (color ? `${color}` : 'var(--blue)')};
   transition: all 250ms ease-in-out;

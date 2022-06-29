@@ -31,12 +31,12 @@ export default function WelcomeBlock() {
             height: '480px',
           },
           '.vanish-to-left': {
-            transform: 'translateX(-500px)',
+            transform: 'translateX(-100px)',
             opacity: '0',
             // width: 0,
           },
           '.vanish-to-right': {
-            transform: 'scale(1.6) translateX(100%)',
+            transform: 'scale(1.6) translateX(100px)',
             opacity: '0',
           },
           '.with-after-border:after': {

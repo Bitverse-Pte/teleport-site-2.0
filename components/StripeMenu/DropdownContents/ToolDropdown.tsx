@@ -13,9 +13,8 @@ EVM
 Tendermint */
 export default function DocsDropdown() {
   return (
-    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.5rem">
-      {/* <DropdownSection data-first-dropdown-section> */}
-      <Flex width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content">
+    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.125rem 0">
+      <Flex width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content" padding="20px 24px">
         <Flex flexDirection={'column'} flex={2} minWidth="fit-content">
           <Flex
             justifyContent={'flex-start'}

@@ -6,7 +6,20 @@ import startedLine from 'public/images/roadmap-stared-line.svg'
 
 export default function RoadmapBlock() {
   return (
-    <Flex width={'100%'} height="500px" flexDirection={'row'} padding="60px 0" justifyContent={'center'}>
+    <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} marginBottom="1rem">
+      <Text
+        sx={{
+          fontFamily: 'DelGophicOne',
+          fontSize: '64px',
+          lineHeight: '123.76%',
+          color: '#05050e',
+          width: '100%',
+          textAlign: 'center',
+          marginBottom: '0.5rem',
+        }}
+      >
+        Teleport Roadmap
+      </Text>
       <Flex width={'1132px'} maxWidth={'1132px'} style={{ position: 'relative' }} justifyContent="space-between">
         <Image src={startedLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
         <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
@@ -29,6 +42,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
         transformOrigin: '50% 0%',
         transition: 'transform 0.2s ease-in-out 0.2s',
         zIndex: 1,
+        color: 'black',
         '&:hover': {
           transform: 'scale(1.1)',
         },
