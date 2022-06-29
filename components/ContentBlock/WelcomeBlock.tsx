@@ -199,7 +199,7 @@ export default function WelcomeBlock() {
           <Button
             className="shrink-button"
             height={'45%'}
-            backgroundColor="#161929"
+            backgroundColor="transparent"
             color="white"
             sx={{
               width: '316px',
