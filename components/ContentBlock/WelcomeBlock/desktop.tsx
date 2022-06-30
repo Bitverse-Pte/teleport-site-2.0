@@ -177,9 +177,9 @@ export default function WelcomeBlock() {
             backgroundColor="white"
             color="#161929"
             sx={{
-              width: '316px',
-              minWidth: '316px',
-              maxWidth: '316px',
+              width: '270px',
+              minWidth: '270px',
+              maxWidth: '270px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
@@ -203,9 +203,9 @@ export default function WelcomeBlock() {
             backgroundColor="transparent"
             color="white"
             sx={{
-              width: '316px',
-              minWidth: '316px',
-              maxWidth: '316px',
+              width: '270px',
+              minWidth: '270px',
+              maxWidth: '270px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',

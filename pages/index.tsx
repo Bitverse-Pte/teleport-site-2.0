@@ -1,24 +1,25 @@
-import Main from "components/main"
-import React, { useEffect, useState } from "react"
+import { useIsSmallScreen } from 'hooks/isSmallScreen'
+import React, { useEffect, useState, Suspense, lazy, useMemo } from 'react'
+import { Text } from 'rebass'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { parse } from 'next-useragent'
 
-export default function Home() {
-	useEffect(() => {
-		require("common/rem.js")
-		if (
-			window.navigator.userAgent.match(
-				/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
-			)
-		) {
-		} else {
-		}
-		import("utils/skynet").then((skynet) => {
-			skynet.default.start()
-		})
-	}, [])
+const Desktop = lazy(() => import('components/desktop'))
+const Mobile = lazy(() => import('components/mobile'))
 
-	return (
-		<>
-			<Main />
-		</>
-	)
+export default function Home({ isMobile }: { isMobile: boolean }) {
+  useEffect(() => {
+    import('utils/skynet').then((skynet) => {
+      skynet.default.start()
+    })
+  }, [])
+
+  return <Suspense fallback={() => <Text>loading</Text>}>{isMobile ? <Mobile /> : <Desktop />}</Suspense>
+}
+
+export async function getServerSideProps({ req, res }: { req: NextApiRequest; res: NextApiResponse }) {
+  const ua = parse(req.headers['user-agent'] || '')
+  return {
+    props: { isMobile: ua.isMobile },
+  }
 }

@@ -1,17 +1,17 @@
 import { Flex } from 'rebass'
 
-import FeaturesBlock from './ContentBlock/FeaturesBlock'
+import FeaturesBlock from 'components/ContentBlock/FeaturesBlock/desktop'
 import SectionsBlock from './ContentBlock/SectionBlock'
 import Community from './ContentBlock/CommunityBlock'
 import Footer from './Footer'
-import Header from './Header'
+import Header from './Header/desktop'
 import RoadmapBlock from './ContentBlock/RoadmapBlock'
 
 import bg from 'public/background.svg'
 import Image from 'components/Image'
-import WelcomeBlock from './ContentBlock/WelcomeBlock'
+import WelcomeBlock from 'components/ContentBlock/WelcomeBlock/desktop'
 
-export default function Main() {
+export default function Desktop() {
   return (
     <>
       <Flex
