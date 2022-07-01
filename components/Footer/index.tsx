@@ -9,13 +9,15 @@ import teleportHorizontal from 'public/images/teleport-horizontal.svg'
 const Footer = () => {
   return (
     <FooterStyled>
-      <div className="wrapFooter centerView">
-        <Flex flexDirection={'row'} justifyContent={'space-between'}>
-          <Link href="/">
-            <a>
-              <Image className="imgLogoHorizontal" src={teleportHorizontal} alt={'footer-horizontal-line'} />
-            </a>
-          </Link>
+      <div className="wrapFooter">
+        <Flex className={"flexTop"} flexDirection={'row'} justifyContent={'space-between'}>
+          <div>
+            <Link href="/">
+              <a>
+                <Image className="imgLogoHorizontal" src={teleportHorizontal} alt={'footer-horizontal-line'} />
+              </a>
+            </Link>
+          </div>
           <Flex flexDirection={'row'} justifyContent={'flex-end'} className={'wrapLinks'}>
             <Flex flexDirection={'column'} className={'wrapColumn'}>
               <div className={'textTitle'}>Apply</div>

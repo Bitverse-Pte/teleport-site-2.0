@@ -12,12 +12,14 @@ import Image from 'components/Image'
 const CommunityBlock = styled.div`
   width: 100%;
   .wrapCommunity {
+    width: 80%;
     text-align: center;
     padding-bottom: 250px;
+    margin:0 auto;
 
     .textHeader {
       font-family: DelGophicOne;
-      font-size: 64px;
+      font-size: 6.4rem;
       line-height: 123.76%;
       color: #05050e;
     }
@@ -27,6 +29,7 @@ const CommunityBlock = styled.div`
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      row-gap: 5rem;
       border: 1px solid #000000;
       border-radius: 48px;
       padding: 84px 0px;
@@ -106,7 +109,7 @@ const Community = () => {
   }, [])
   return (
     <CommunityBlock>
-      <div className="wrapCommunity centerView">
+      <div className="wrapCommunity">
         <h1 className="textHeader">Owned by the community</h1>
         <div className="boxCommunity">{items}</div>
       </div>
