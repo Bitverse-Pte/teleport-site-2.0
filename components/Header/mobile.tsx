@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        minHeight: '144px',
+        minHeight: '96px',
         width: '100%',
         alignItems: 'center',
         top: 0,

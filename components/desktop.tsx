@@ -1,11 +1,11 @@
 import { Flex } from 'rebass'
 
 import FeaturesBlock from 'components/ContentBlock/FeaturesBlock/desktop'
-import SectionsBlock from './ContentBlock/SectionBlock'
-import Community from './ContentBlock/CommunityBlock'
-import Footer from './Footer'
+import SectionsBlock from 'components/ContentBlock/SectionsBlock/desktop'
+import Community from './ContentBlock/CommunityBlock/desktop'
+import Footer from './Footer/desktop'
 import Header from './Header/desktop'
-import RoadmapBlock from './ContentBlock/RoadmapBlock'
+import RoadmapBlock from './ContentBlock/RoadmapBlock/desktop'
 
 import bg from 'public/background.svg'
 import Image from 'components/Image'

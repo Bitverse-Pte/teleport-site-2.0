@@ -5,6 +5,10 @@ import bg from 'public/background.svg'
 import Header from './Header/mobile'
 import WelcomeBlock from 'components/ContentBlock/WelcomeBlock/mobile'
 import FeaturesBlock from 'components/ContentBlock/FeaturesBlock/mobile'
+import SectionsBlock from 'components/ContentBlock/SectionsBlock/mobile'
+import RoadmapBlock from 'components/ContentBlock/RoadmapBlock/mobile'
+import CommunityBlock from 'components/ContentBlock/CommunityBlock/mobile'
+import Footer from 'components/Footer/mobile'
 
 export default function Mobile() {
   return (
@@ -47,11 +51,11 @@ export default function Mobile() {
         </Flex>
         <Flex width={'100%'} minHeight={900} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
           <Flex width={'80%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
-            {/* <SectionsBlock /> */}
-            {/* <RoadmapBlock /> */}
-            {/* <Community /> */}
+            <SectionsBlock />
+            <RoadmapBlock />
+            <CommunityBlock />
           </Flex>
-          {/* <Footer /> */}
+          <Footer />
         </Flex>
       </Box>
     </Flex>
