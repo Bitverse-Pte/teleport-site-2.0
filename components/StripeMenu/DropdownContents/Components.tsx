@@ -1,7 +1,7 @@
 import { Box } from 'rebass'
 import styled from 'styled-components'
 
-export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
+export const Heading = styled.h3<{ noMarginBottom?: boolean; notAllowSelect?: boolean }>`
   text-transform: capitalize;
   font-weight: bold;
   font-size: 18px;
@@ -14,14 +14,17 @@ export const Heading = styled.h3<{ noMarginBottom?: boolean }>`
   margin-bottom: ${({ noMarginBottom }) => (noMarginBottom ? 0 : '1rem')};
   color: ${({ color }) => (color ? `${color}` : 'var(--blue)')};
   transition: all 250ms ease-in-out;
-  &:hover,
+  ${({ notAllowSelect = false }) =>
+    notAllowSelect
+      ? ''
+      : `&:hover,
   &:focus {
     cursor: pointer;
     // opacity: 0.7;
     color: #59c3aa;
     outline: none;
     transform: translateX(5px);
-  }
+  }`}
 `
 
 export const HeadingLink = Heading.withComponent('li')

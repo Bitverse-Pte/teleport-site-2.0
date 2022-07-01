@@ -2,11 +2,11 @@ import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { Box, Flex, Text } from 'rebass'
 
-import iconSocialTwitter from 'public/images/icon-social-twitter.svg'
-import iconSocialTelegram from 'public/images/icon-social-telegram.svg'
-import iconSocialDiscord from 'public/images/icon-social-discord.svg'
-import iconSocialMedium from 'public/images/icon-social-medium.svg'
-import iconSocialLinkTree from 'public/images/icon-social-linktree.svg'
+import iconSocialTwitter from 'public/mobile-community-discord-logo.svg'
+import iconSocialTelegram from 'public/mobile-community-linktree-logo.svg'
+import iconSocialDiscord from 'public/mobile-community-medium-logo.svg'
+import iconSocialMedium from 'public/mobile-community-telegram-logo.svg'
+import iconSocialLinkTree from 'public/mobile-community-twitter-logo.svg'
 import Image from 'components/Image'
 
 const Community = () => {

@@ -43,7 +43,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
           {milestoneDate}
         </Text>
       </Flex>
-      <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="18px" lineHeight={'18px'}>
+      <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="18px" lineHeight={'20px'}>
         {description}
       </Text>
     </Flex>

@@ -10,6 +10,8 @@ import RoadmapBlock from 'components/ContentBlock/RoadmapBlock/mobile'
 import CommunityBlock from 'components/ContentBlock/CommunityBlock/mobile'
 import Footer from 'components/Footer/mobile'
 
+export const SCROLL_ROOT_ID = 'scroll_root'
+
 export default function Mobile() {
   return (
     <Flex
@@ -22,6 +24,7 @@ export default function Mobile() {
       }}
     >
       <Box
+        id={SCROLL_ROOT_ID}
         width={'100%'}
         sx={{
           overflowX: 'hidden',
