@@ -10,10 +10,11 @@ const NavbarItemTitle = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
+  line-height: 24px;
   color: white;
   display: flex;
   justify-content: center;
-  transition: opacity 250ms;
+  transition: transform 250ms ease-in-out;
   /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
   position: relative;
   z-index: 2;
@@ -40,6 +41,13 @@ const NavbarItemEl = styled.li`
   position: relative;
   display: flex;
   align-items: center;
+  margin: 0 42px;
+  @media screen and (max-width: 1300px) {
+    margin: 0 21px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin: 0 12px;
+  }
 `
 
 const DropdownSlot = styled.div`
@@ -55,8 +63,6 @@ const DropdownSlot = styled.div`
   font-size: 18px;
   font-weight: bold;
 `
-
-const TitleBox = styled(Box)``
 
 export default function NavbarItem({ onMouseEnter, title, index, children }: { onMouseEnter: (index: number) => void; title: string; index: number; children: React.ReactNode }) {
   const onMouseEnterWrapper = useCallback(() => {
