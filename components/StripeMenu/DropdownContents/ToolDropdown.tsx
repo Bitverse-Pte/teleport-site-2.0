@@ -3,14 +3,6 @@ import Link from 'next/link'
 import { Flex, Text } from 'rebass'
 
 import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } from './Components'
-/* Faucet
-Teleport Chain
-BSC Testnet
-Rinkeby
-
-Explorer
-EVM
-Tendermint */
 export default function DocsDropdown() {
   return (
     <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.125rem 0">

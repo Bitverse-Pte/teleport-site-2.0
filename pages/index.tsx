@@ -1,10 +1,10 @@
 import React, { useEffect, useState, Suspense, lazy, useMemo } from 'react'
-import { Text } from 'rebass'
+import { Box, Text } from 'rebass'
 import { NextApiRequest, NextApiResponse } from 'next'
 import { parse, UserAgent } from 'next-useragent'
 
-const Desktop = lazy(() => import('components/desktop'))
-const Mobile = lazy(() => import('components/mobile'))
+const Desktop = lazy(() => import('components/Desktop'))
+const Mobile = lazy(() => import('components/Mobile'))
 
 export default function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
   useEffect(() => {

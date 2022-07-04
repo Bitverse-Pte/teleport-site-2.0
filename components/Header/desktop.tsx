@@ -27,43 +27,32 @@ export default function Header() {
     <Flex
       sx={{
         height: '120px',
-        minWidth: '802px',
-        width: '70%',
-        maxWidth: '1132px',
+        width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'start',
+        alignItems: 'center',
         position: 'relative',
-        justifyContent: 'center',
-        marginBottom: '1rem',
+        justifyContent: 'flex-end',
+        marginRight: '5%',
       }}
     >
+      <Banner />
+      <AnimatedNavbar duration={300} />
       <Flex
+        alignItems={'center'}
+        width="fit-content"
+        minWidth={168}
         sx={{
-          width: '1132px',
-          height: '100%',
+          fontFamily: 'IBM Plex Sans',
+          fontStyle: 'normal',
+          fontWeight: 500,
+          fontSize: '24px',
+          color: '#0ACBE4',
+          cursor: 'pointer',
         }}
       >
-        <Banner />
-        <Flex style={{ flex: 1, /* position: 'absolute',  */ height: '100%', /* left: '50%', transform: 'translateX(-50%)',  */ zIndex: 1, justifyContent: 'flex-end' }}>
-          <AnimatedNavbar duration={300} />
-          <Flex
-            alignItems={'center'}
-            width="fit-content"
-            minWidth={168}
-            sx={{
-              fontFamily: 'IBM Plex Sans',
-              fontStyle: 'normal',
-              fontWeight: 500,
-              fontSize: '24px',
-              color: '#0ACBE4',
-              cursor: 'pointer',
-            }}
-          >
-            <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
-            {'Ambassador'}
-          </Flex>
-        </Flex>
+        <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
+        {'Ambassador'}
       </Flex>
     </Flex>
   )
@@ -73,9 +62,11 @@ function Banner() {
   return (
     <Flex
       sx={{
+        position: 'absolute',
+        left: '5%',
         height: '100%',
         alignItems: 'center',
-        minWidth: '240px',
+        minWidth: '180px',
       }}
     >
       <Image src={mainLogo} alt={'main-logo'} height="55px" />
