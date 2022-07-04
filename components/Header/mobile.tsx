@@ -8,10 +8,9 @@ import mobileMenuIcon from 'public/mobile-menu-icon.svg'
 import mobileMenuCloseIcon from 'public/mobile-menu-close-icon.svg'
 import arrow from 'public/mobile-menu-arrow.svg'
 import ambassador from 'public/ambassador.svg'
-import { HeadingLink } from 'components/StripeMenu/DropdownContents/Components'
 import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
 import { mobileMenuDiscordIcon, mobileMenuLinktreeIcon, mobileMenuMediumIcon, mobileMenuTelegramIcon, mobileMenuTwitterIcon } from 'components/Image/base64Images'
-import { SCROLL_ROOT_ID } from 'components/mobile'
+import { SCROLL_ROOT_ID } from 'components/Mobile'
 
 export default function Header() {
   const [menuSpread, setMenuSpread] = useState<SxStyleProp | undefined>(undefined)
@@ -210,7 +209,6 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
     <Flex
       sx={{
         transition: 'all 0.2s ease-in-out',
-        opacity: opacityOrNot ? 1 : 0.5,
       }}
       height="60px"
       alignItems="center"
@@ -226,7 +224,7 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
           fontWeight: 500,
           fontSize: '18px',
           lineHeight: '18px',
-          color: '#05050E',
+          color: `rgba(5,5,14,${opacityOrNot ? 1 : 0.5})`,
           minWidth: '70%',
         }}
       >
