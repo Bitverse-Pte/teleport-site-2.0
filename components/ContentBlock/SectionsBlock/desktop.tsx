@@ -7,14 +7,12 @@ import iconGraph1 from 'public/images/icon-graph-1.svg'
 import iconGraph2 from 'public/images/icon-graph-2.svg'
 import iconGraph3 from 'public/images/icon-graph-3.svg'
 import iconGraph4 from 'public/images/icon-graph-4.svg'
-import imgBridge from 'public/images/img-bridge.png'
-import imgWallet from 'public/images/img-wallet.png'
-import imgMetaverse from 'public/images/img-metaverse.png'
 import gifBridge from 'public/gif/bridge.gif'
 import gifWallet from 'public/gif/wallet.gif'
 import gifMetaverse from 'public/gif/metaverse.gif'
 
 const SectionStyle = styled.div`
+  
   .wrapSection {
     color: #05050e;
     padding: 150px 0 0;
@@ -98,27 +96,27 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
       <Flex flexDirection="column">
-        {/*<SectionItem*/}
-        {/*    Index={1}*/}
-        {/*    Title="Teleport Bridge"*/}
-        {/*    SubTitle="Empower cross-chain token transfer"*/}
-        {/*    ImageRes={gifBridge}*/}
-        {/*    ButtonTitle="Launch App"*/}
-        {/*/>*/}
-        {/*<SectionItem*/}
-        {/*    Index={2}*/}
-        {/*    Title="Teleport Wallet"*/}
-        {/*    SubTitle="Multi-Chain & Multi-Identity supported<br>Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"*/}
-        {/*    ImageRes={gifWallet}*/}
-        {/*    ButtonTitle="Download"*/}
-        {/*/>*/}
-        {/*<SectionItem*/}
-        {/*    Index={3}*/}
-        {/*    Title="Metaverse Hub"*/}
-        {/*    SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"*/}
-        {/*    ImageRes={gifMetaverse}*/}
-        {/*    ButtonTitle=""*/}
-        {/*/>*/}
+        <SectionItem
+            Index={1}
+            Title="Teleport Bridge"
+            SubTitle="Empower cross-chain token transfer"
+            ImageRes={gifBridge}
+            ButtonTitle="Launch App"
+        />
+        <SectionItem
+            Index={2}
+            Title="Teleport Wallet"
+            SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
+            ImageRes={gifWallet}
+            ButtonTitle="Download"
+        />
+        <SectionItem
+            Index={3}
+            Title="Metaverse Hub"
+            SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
+            ImageRes={gifMetaverse}
+            ButtonTitle=""
+        />
       </Flex>
   )
 }
