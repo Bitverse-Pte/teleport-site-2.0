@@ -48,6 +48,9 @@ const NavbarItemEl = styled.li`
   @media screen and (max-width: 1000px) {
     margin: 0 12px;
   }
+  @media screen and (max-width: 840px) {
+    margin: 0 6px;
+  }
 `
 
 const DropdownSlot = styled.div`
