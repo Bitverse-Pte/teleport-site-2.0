@@ -20,7 +20,7 @@ export default function WelcomeBlock() {
         <Image src={mobileWelcomeImg} alt="welcome-main-img" objectFit="contain"></Image>
       </Flex>
       <Flex marginBottom={30}>
-        <Box>
+        <Box sx={{ display: 'flex', alignItems: 'end' }}>
           <Image src={leftBottomArrow} alt="welcome-gif"></Image>
         </Box>
         <Box>
