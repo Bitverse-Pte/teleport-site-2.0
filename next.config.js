@@ -10,6 +10,9 @@ const nextConfig = {
   images: {
     loader: 'custom',
   },
+  publicRuntimeConfig: {
+    BUILD_ENV: process.env.BUILD_ENV || 'development',
+  },
 }
 
 module.exports = withPlugins(

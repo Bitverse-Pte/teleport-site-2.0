@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Flex, Text } from 'rebass'
 import Image from 'components/Image'
 
-import startedLine from 'public/images/roadmap-stared-line.svg'
+import staredLine from 'public/images/roadmap-stared-line.svg'
 
 export default function RoadmapBlock() {
   return (
@@ -21,7 +21,7 @@ export default function RoadmapBlock() {
         Teleport Roadmap
       </Text>
       <Flex width={'100%'} style={{ position: 'relative' }} justifyContent="space-between">
-        <Image src={startedLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
+        <Image src={staredLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
         <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
         <MapColumn milestoneDate="2022.Q1" description="Testnet launch Cross-chain transfer & contract call via IBC& TSS" />
         <MapColumn milestoneDate="2022.Q2" description="Mainnet launch  EVM chain support Cross-chain relayer Incentive Program Multi-chain wallet release" />

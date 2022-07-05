@@ -1,17 +1,19 @@
-import { Flex } from 'rebass'
+import { Box, Flex } from 'rebass'
 
 import FeaturesBlock from 'components/ContentBlock/FeaturesBlock/desktop'
-import SectionsBlock from './ContentBlock/SectionBlock'
-import Community from './ContentBlock/CommunityBlock'
-import Footer from './Footer'
+import SectionsBlock from 'components/ContentBlock/SectionsBlock/desktop'
+import Community from './ContentBlock/CommunityBlock/desktop'
+import Footer from './Footer/desktop'
 import Header from './Header/desktop'
-import RoadmapBlock from './ContentBlock/RoadmapBlock'
+import RoadmapBlock from './ContentBlock/RoadmapBlock/desktop'
 
 import bg from 'public/background.svg'
+import colorfulDownArrow from 'public/colorful-down-arrow.svg'
 import Image from 'components/Image'
 import WelcomeBlock from 'components/ContentBlock/WelcomeBlock/desktop'
+import { WithLoading } from './WithLoading'
 
-export default function Desktop() {
+function Desktop() {
   return (
     <>
       <Flex
@@ -28,8 +30,11 @@ export default function Desktop() {
       >
         <Image src={bg} alt={'background-image'} layout="fill" objectFit="contain" objectPosition={'left top'} quality={100}></Image>
         <Header />
-        <Flex minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
+        <Flex marginTop={'240px'} minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
           <WelcomeBlock />
+          <Box marginTop={64}>
+            <Image src={colorfulDownArrow} alt="colorful-down-arrow" />
+          </Box>
           <FeaturesBlock />
         </Flex>
       </Flex>
@@ -44,3 +49,4 @@ export default function Desktop() {
     </>
   )
 }
+export default WithLoading(Desktop)
