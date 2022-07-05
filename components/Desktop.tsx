@@ -32,7 +32,7 @@ function Desktop() {
         <Header />
         <Flex marginTop={'240px'} minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
           <WelcomeBlock />
-          <Box marginTop={48}>
+          <Box marginTop={64}>
             <Image src={colorfulDownArrow} alt="colorful-down-arrow" />
           </Box>
           <FeaturesBlock />
