@@ -2,8 +2,10 @@ import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import { Flex, Box, SxStyleProp, Text, FlexProps } from 'rebass/styled-components'
 import Image from 'components/Image'
 import throttle from 'lodash-es/throttle'
+import { css } from 'styled-components'
 
 import mobileLogo from 'public/mobile-logo.svg'
+import mobileLogoBlackText from 'public/mobile-logo-black-text.svg'
 import mobileMenuIcon from 'public/mobile-menu-icon.svg'
 import mobileMenuCloseIcon from 'public/mobile-menu-close-icon.svg'
 import arrow from 'public/mobile-menu-arrow.svg'
@@ -14,20 +16,23 @@ import { SCROLL_ROOT_ID } from 'components/Mobile'
 
 export default function Header() {
   const [menuSpread, setMenuSpread] = useState<SxStyleProp | undefined>(undefined)
+  const [headerBackground, setHeaderBackground] = useState<SxStyleProp | undefined>(undefined)
+  const [headerLogoStyle, setHeaderLogoStyle] = useState<SxStyleProp | undefined>(undefined)
   const [menuIconOpacity, setMenuIconOpacity] = useState(1)
-  const menuButtonClick = useCallback(() => {
-    if (menuSpread) {
-      setMenuIconOpacity(1)
-      setMenuSpread(undefined)
-    } else {
-      setMenuIconOpacity(0)
-      setMenuSpread({
-        transform: 'scaleY(1)',
-        height: '500px',
-        minHeight: 'fit-content',
-      })
-    }
-  }, [menuSpread])
+  /* {
+    '.white-text': {
+      opacity: 0,
+    },
+    '.black-text': {
+      opacity: 1,
+    },
+  } */
+  const spreadMenu = useCallback(() => {
+    setMenuSpread({
+      transform: 'scaleY(1)',
+      height: '100vh',
+    })
+  }, [])
 
   const [selectedMenu, setSelectedMenu] = useState('Docs')
   const [atTop, setAtTop] = useState(true)
@@ -49,9 +54,35 @@ export default function Header() {
     }
   }, [])
 
-  useEffect(() => {
-    console.log(atTop)
-  }, [atTop])
+  const menuButtonClick = useCallback(() => {
+    if (menuSpread) {
+      setMenuIconOpacity(1)
+      setMenuSpread(undefined)
+      setHeaderBackground(undefined)
+      setHeaderLogoStyle({
+        '.white-text': {
+          opacity: 1,
+        },
+        '.black-text': {
+          opacity: 0,
+        },
+      })
+      scroll()
+    } else {
+      setAtTop(false)
+      setHeaderLogoStyle({
+        '.white-text': {
+          opacity: 0,
+        },
+        '.black-text': {
+          opacity: 1,
+        },
+      })
+      setHeaderBackground({ backgroundColor: 'white' })
+      setMenuIconOpacity(0)
+      spreadMenu()
+    }
+  }, [menuSpread, scroll, spreadMenu])
 
   return (
     <Flex
@@ -66,10 +97,16 @@ export default function Header() {
         background: 'rgba(0, 0, 0, 0.5)',
       }}
     >
-      <Flex sx={{ backdropFilter: 'blur(10px)', alignItems: 'center', width: '100%', minHeight: '96px', position: 'fixed', justifyContent: 'center' }}>
+      <Flex sx={{ backdropFilter: 'blur(5px)', alignItems: 'center', width: '100%', minHeight: '96px', position: 'fixed', justifyContent: 'center', ...headerBackground, transition: 'all 0.2 ease-in-out' }}>
         <Banner
           sx={{
-            ...(atTop ? {} : { left: '5%', transform: 'translateX(0)' }),
+            ...(atTop
+              ? {}
+              : {
+                  left: '5%',
+                  transform: 'translateX(0)',
+                }),
+            ...headerLogoStyle,
           }}
         />
         <Box
@@ -122,9 +159,10 @@ export default function Header() {
           transform: 'scaleY(0)',
           color: 'black',
           top: '100%',
-          boxShadow: '0px 5px 10px 0px rgba(128,128,128,0.5)',
-          background: 'rgba(255,255,255, 0.8)',
-          backdropFilter: 'blur(10px)',
+          // boxShadow: '0px 5px 10px 0px rgba(128,128,128,0.5)',
+          borderTop: '1px solid rgba(0, 0, 0, 0.26)',
+          backdropFilter: 'blur(15px)',
+          background: 'rgba(255,255,255, 1)',
           ...(menuSpread || {}),
         }}
       >
@@ -133,7 +171,7 @@ export default function Header() {
           maxWidth="45%"
           minWidth="45%"
           sx={{
-            boxShadow: '5px 0px 10px 0px rgba(128,128,128,0.8)',
+            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.5)',
             padding: '24px 0',
           }}
         >
@@ -141,11 +179,7 @@ export default function Header() {
             title="Docs"
             onClick={() => {
               setSelectedMenu('Docs')
-              setMenuSpread({
-                transform: 'scaleY(1)',
-                height: '500px',
-                minHeight: 'fit-content',
-              })
+              spreadMenu()
             }}
             opacityOrNot={selectedMenu === 'Docs'}
           />
@@ -153,11 +187,7 @@ export default function Header() {
             title="Tool"
             onClick={() => {
               setSelectedMenu('Tool')
-              setMenuSpread({
-                transform: 'scaleY(1)',
-                height: '600px',
-                minHeight: 'fit-content',
-              })
+              spreadMenu()
             }}
             opacityOrNot={selectedMenu === 'Tool'}
           />
@@ -165,11 +195,7 @@ export default function Header() {
             title="Community"
             onClick={() => {
               setSelectedMenu('Community')
-              setMenuSpread({
-                transform: 'scaleY(1)',
-                height: '400px',
-                minHeight: 'fit-content',
-              })
+              spreadMenu()
             }}
             opacityOrNot={selectedMenu === 'Community'}
           />
@@ -199,10 +225,27 @@ function Banner({ sx }: FlexProps) {
         alignItems: 'center',
         minWidth: '240px',
         maxWidth: '240px',
+        /*  '& > span': {
+          position: 'absolute',
+        }, */
+        '.mobile-logo': {
+          transition: 'all 0.2s ease-in-out',
+        },
+        '.white-text': {
+          opacity: 1,
+        },
+        '.black-text': {
+          opacity: 0,
+        },
         ...sx,
       }}
     >
-      <Image src={mobileLogo} alt={'main-logo'} height="55px" width={'266px'} />
+      <Box className="mobile-logo white-text" style={{ position: 'absolute' }}>
+        <Image src={mobileLogo} alt={'main-logo'} height="55px" width={'266px'} />
+      </Box>
+      <Box className="mobile-logo black-text" style={{ position: 'absolute' }}>
+        <Image src={mobileLogoBlackText} alt={'main-logo'} height="55px" width={'266px'} />
+      </Box>
     </Flex>
   )
 }
@@ -245,7 +288,7 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
   )
 }
 
-function DocsMenuItem({ itemText }: { itemText: string }) {
+function DocsMenuItem({ itemText, showBottomBorder }: { itemText: string; showBottomBorder?: boolean }) {
   return (
     <Text
       sx={{
@@ -253,10 +296,29 @@ function DocsMenuItem({ itemText }: { itemText: string }) {
         fontStyle: 'normal',
         fontWeight: 500,
         fontSize: '20px',
-        lineHeight: '20px',
+        lineHeight: '60px',
+        width: '100%',
         color: '#05050E',
-        margin: '12px 0',
+        // margin: '24px 0',
+        // ...(showBottomBorder && {
+        '::after': {
+          display: 'block',
+          content: '',
+          borderBottom: 'solid rgba(0,0,0, 0.26) 1px',
+        },
+        // }),
       }}
+      {...(showBottomBorder
+        ? {
+            css: css`
+              &:after {
+                display: block;
+                content: '';
+                border-bottom: solid rgba(0, 0, 0, 0.26) 1px;
+              }
+            `,
+          }
+        : {})}
     >
       {itemText}
     </Text>
@@ -270,8 +332,8 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       minHeight="100%"
       flexDirection={'column'}
       alignItems="flex-start"
-      justifyContent="space-around"
-      padding="32px"
+      justifyContent="flex-start"
+      padding="24px"
       color="black"
       sx={{
         position: 'absolute',
@@ -279,13 +341,13 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         opacity: opacityOrNot ? 1 : 0,
       }}
     >
-      <DocsMenuItem itemText="White Paper" />
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+      <DocsMenuItem itemText="White Paper" showBottomBorder={true} />
+      {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
       <DocsMenuItem itemText=" Teleport Chain" />
       <DocsMenuItem itemText=" XIBC" />
       <DocsMenuItem itemText=" Developer" />
-      <DocsMenuItem itemText=" Validator" />
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+      <DocsMenuItem itemText=" Validator" showBottomBorder />
+      {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
       <DocsMenuItem itemText=" Wallet" />
     </Flex>
   )
@@ -293,18 +355,17 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
 
 function CommunityMenuItem({ base64String, itemText }: { base64String: string; itemText: string }) {
   return (
-    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'} margin="12px 0">
-      <Base64SvgHolder base64String={base64String} width="32px" height="32px" />
+    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'}>
       &nbsp;
+      <Base64SvgHolder base64String={base64String} width="28px" height="28px" />
       <Text
         sx={{
           fontFamily: 'Poppins',
           fontStyle: 'normal',
           fontWeight: 500,
           fontSize: '20px',
-          lineHeight: '20px',
+          lineHeight: '60px',
           color: '#05050E',
-          margin: '12px 0',
         }}
       >
         &nbsp;{itemText}
@@ -320,7 +381,7 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
       minHeight="100%"
       flexDirection={'column'}
       alignItems="flex-start"
-      padding="32px"
+      padding="24px"
       sx={{
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
