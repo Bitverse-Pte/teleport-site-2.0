@@ -56,13 +56,13 @@ function Mobile() {
                 paddingTop: '144px',
               }}
             >
-              <Flex width={'80%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
+              <Flex width={'88%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
                 <WelcomeBlock />
                 <FeaturesBlock />
               </Flex>
             </Flex>
             <Flex width={'100%'} minHeight={900} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
-              <Flex width={'80%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
+              <Flex width={'88%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
                 <SectionsBlock />
                 <RoadmapBlock />
                 <CommunityBlock />

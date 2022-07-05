@@ -103,7 +103,7 @@ export default function Header() {
             ...(atTop
               ? {}
               : {
-                  left: '5%',
+                  left: '6%',
                   transform: 'translateX(0)',
                 }),
             ...headerLogoStyle,
@@ -119,7 +119,7 @@ export default function Header() {
             alignItems: 'center',
             maxWidth: ' 36px',
             minWidth: ' 36px',
-            marginRight: '24px',
+            marginRight: '6vw',
           }}
         >
           <Box
