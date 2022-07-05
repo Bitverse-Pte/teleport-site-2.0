@@ -39,10 +39,10 @@ const SectionStyle = styled.div`
           line-height: 72px;
         }
         .textSubTitle {
-          margin-top: 32px;
+          margin-top: 12px;
           font-family: Poppins;
-          font-size: 24px;
-          line-height: 24px;
+          font-size: 14px;
+          line-height: 20px;
           letter-spacing: 0.06em;
           opacity: 0.8;
         }
@@ -107,8 +107,8 @@ export default function SectionsBlock() {
 function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { imageSrc: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string }) {
   return (
     <Flex flexDirection={'column'} margin="36px 0" alignItems="flex-start">
-      <Box width={60} height={60}>
-        <Image src={iconSrc} width={48} height={48} alt="section-icon" quality={100}></Image>
+      <Box width={30} height={30}>
+        <Image src={iconSrc} width={30} height={30} alt="section-icon" quality={100}></Image>
       </Box>
       <Text
         sx={{
@@ -116,10 +116,10 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
           fontFamily: 'DelGophicOne',
           fontStyle: 'normal',
           fontWeight: 400,
-          fontSize: '32px',
+          fontSize: '20px',
           lineHeight: '100%',
           color: '#05050E',
-          margin: '12px 0',
+          margin: '24px 0 12px',
         }}
       >
         {mainTitle}
@@ -130,11 +130,10 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
           fontStyle: 'normal',
           width: '100%',
           fontWeight: 400,
-          fontSize: '18px',
+          fontSize: '14px',
           lineHeight: '20px',
           letterSpacing: '0.02em',
           color: '#05050E',
-          margin: '12px 0',
           opacity: 0.8,
         }}
       >
@@ -149,13 +148,13 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
             sx={{
               background: '#59C3AA',
               borderRadius: '8px',
-              width: '240px',
+              width: '200px',
               height: '48px',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               fontWeight: 600,
-              fontSize: '20px',
-              lineHeight: '20px',
+              fontSize: '16px',
+              lineHeight: '16px',
               color: '#161929',
             }}
           >

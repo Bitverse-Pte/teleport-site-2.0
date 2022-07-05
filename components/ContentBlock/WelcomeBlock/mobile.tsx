@@ -9,7 +9,7 @@ import welcomeSubTitle from 'public/welcome-sub-title.svg'
 
 export default function WelcomeBlock() {
   return (
-    <Flex flexDirection={'column'} width="100%" minHeight={'fit-content'} justifyContent="space-between" alignItems={'center'} margin={'72px 0'}>
+    <Flex flexDirection={'column'} width="100%" minHeight={'fit-content'} justifyContent="space-between" alignItems={'center'} margin={'57px 0'}>
       <Flex marginBottom={12}>
         <Image src={welcomeTeleport} alt="welcome-main-title" objectFit="contain"></Image>
       </Flex>
