@@ -43,7 +43,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
           sx={{
             fontFamily: 'DelGophicOne',
             fontStyle: 'normal',
-            fontWeight: 900,
+            fontWeight: 400,
             fontSize: '20px',
             lineHeight: '20px',
             whiteSpace: 'nowrap',
