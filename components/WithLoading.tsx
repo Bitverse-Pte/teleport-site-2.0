@@ -21,7 +21,7 @@ export function WithLoading(Component: { (props: any): JSX.Element; displayName?
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
-            transition: 'all 1s ease-in-out',
+            transition: 'opacity 1s ease-in-out',
             position: 'fixed',
             zIndex: 999,
             backgroundColor: '#375A6C',

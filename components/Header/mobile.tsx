@@ -42,8 +42,11 @@ export default function Header() {
   }, [])
   useEffect(() => {
     const throttledScroll = throttle(scroll, 16)
-    document.getElementById(SCROLL_ROOT_ID)!.addEventListener('scroll', throttledScroll)
-    return () => document.getElementById(SCROLL_ROOT_ID)!.removeEventListener('scroll', throttledScroll)
+    const scrollRoot = document.getElementById(SCROLL_ROOT_ID)
+    scrollRoot && scrollRoot!.addEventListener('scroll', throttledScroll)
+    return () => {
+      scrollRoot && scrollRoot!.removeEventListener('scroll', throttledScroll)
+    }
   }, [])
 
   useEffect(() => {
