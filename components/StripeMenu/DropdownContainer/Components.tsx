@@ -45,9 +45,9 @@ export const Caret = styled.div`
 
 export const DropdownBackground = styled.div`
   transform-origin: 0 0;
-  // background: rgba(30, 30, 30, 0.9);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(79px);
+  background: rgba(30, 30, 30, 1);
+  // background: rgba(255, 255, 255, 0.1);
+  // backdrop-filter: blur(79px);
   mix-blend-mode: normal;
   color: #ffffff;
   border-radius: 12px;
