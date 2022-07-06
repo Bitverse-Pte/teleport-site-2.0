@@ -41,7 +41,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
         <Text
           className="main-title"
           sx={{
-            fontFamily: 'DelGophicOne',
+            fontFamily: 'Dela Gothic One',
             fontStyle: 'normal',
             fontWeight: 400,
             fontSize: '20px',
@@ -56,7 +56,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
       <Flex marginBottom={'18px'}>
         <Text
           sx={{
-            fontFamily: 'DelGophicOne',
+            fontFamily: 'Dela Gothic One',
             fontStyle: 'normal',
             color: 'white',
             fontWeight: 400,

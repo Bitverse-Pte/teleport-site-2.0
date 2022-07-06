@@ -33,7 +33,7 @@ const SectionStyle = styled.div`
 
       .wrapColumn {
         .textTitle {
-          font-family: DelGophicOne;
+          font-family: Dela Gothic One;
           font-size: 72px;
           line-height: 72px;
         }

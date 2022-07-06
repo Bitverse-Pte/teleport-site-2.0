@@ -22,7 +22,7 @@ const Community = () => {
         <Link href={item.link} key={item.link}>
           <a target={'_blank'}
             style={{
-              fontFamily: 'DelGophicOne',
+              fontFamily: 'Dela Gothic One',
               fontStyle: 'normal',
               fontWeight: 400,
               fontSize: '12px',
@@ -60,7 +60,7 @@ const Community = () => {
       <Text
         width={'100%'}
         sx={{
-          fontFamily: 'DelGophicOne',
+          fontFamily: 'Dela Gothic One',
           fontSize: '20px',
           lineHeight: '20px',
           whiteSpace: 'nowrap',

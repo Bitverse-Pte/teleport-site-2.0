@@ -17,7 +17,7 @@ const CommunityBlock = styled.div`
     margin:0 auto;
 
     .textHeader {
-      font-family: DelGophicOne;
+      font-family: Dela Gothic One;
       font-size: 6.4rem;
       line-height: 123.76%;
       color: #05050e;
@@ -50,7 +50,7 @@ const CommunityBlock = styled.div`
         .textCommunity {
           display: inline-block;
           margin-top: 148px;
-          font-family: DelGophicOne;
+          font-family: Dela Gothic One;
           color: #05050e;
           font-size: 24px;
           line-height: 100%;

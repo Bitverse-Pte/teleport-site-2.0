@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+import { css } from 'styled-components'
 import { Box, Button, Flex, Text } from 'rebass'
 
 import Image from 'components/Image'
@@ -7,8 +9,6 @@ import circledT from 'public/circledT.svg'
 import welcomeGif from 'public/gif/welcome.gif'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
-import { css } from 'styled-components'
-import { useEffect, useRef, useState } from 'react'
 
 export default function WelcomeBlock() {
   const containerRef = useRef<HTMLDivElement>()

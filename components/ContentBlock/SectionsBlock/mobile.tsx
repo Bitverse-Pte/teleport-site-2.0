@@ -34,7 +34,7 @@ const SectionStyle = styled.div`
 
       .wrapColumn {
         .textTitle {
-          font-family: DelGophicOne;
+          font-family: Dela Gothic One;
           font-size: 72px;
           line-height: 72px;
         }
@@ -96,7 +96,7 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" width={'100%'}>
       <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} imageSrc={image1} buttonValue={'Launch App'} />
       <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} imageSrc={image2} buttonValue={'Download'} />
       <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} imageSrc={image3} />
@@ -113,7 +113,7 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
       <Text
         sx={{
           width: '100%',
-          fontFamily: 'DelGophicOne',
+          fontFamily: 'Dela Gothic One',
           fontStyle: 'normal',
           fontWeight: 400,
           fontSize: '20px',

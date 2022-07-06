@@ -4,9 +4,7 @@ html body {
   font-style: normal;
   font-weight: normal;
   box-sizing: border-box;
-  color: #999999;
   box-sizing: border-box;
-  font-size: 0.16rem;
   background-color: white;
   user-select: none;
   transition-delay: 0s;
@@ -16,14 +14,14 @@ html body {
   font-size: 10px;
 }
 
-@media(max-width: 900px) {
+@media screen and (max-width: 750px) {
   :root {
     font-size: 8px;
   }
 }
 
 @font-face {
-  font-family: 'DelGophicOne';
+  font-family: 'Dela Gothic One';
   src: url('../public/fonts/font-dela-gothic-one-regular.ttf');
 }
 
@@ -405,7 +403,7 @@ html body {
 }
 
 .communityView {
-  width: 1.86 rem;
+  width: 1.86rem;
   box-sizing: border-box;
   background: #212525;
   border-radius: 5px;
@@ -463,7 +461,7 @@ html body {
 }
 
 .communityViewMobile {
-  width: 1.5 rem;
+  width: 1.5rem;
   box-sizing: border-box;
   background: #212525;
   border-radius: 5px;

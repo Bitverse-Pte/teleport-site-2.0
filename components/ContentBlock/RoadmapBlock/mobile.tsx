@@ -9,7 +9,7 @@ export default function RoadmapBlock() {
     <Flex width={'100%'} height="500px" flexDirection={'column'} justifyContent={'center'}>
       <Text
         sx={{
-          fontFamily: 'DelGophicOne',
+          fontFamily: 'Dela Gothic One',
           fontSize: '20px',
           lineHeight: '20px',
           whiteSpace: 'nowrap',
@@ -39,7 +39,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
         <Box marginRight={12}>
           <Image src={star} width={13} height={14} alt="section-icon"></Image>
         </Box>
-        <Text fontWeight={400} fontSize="14px" lineHeight={'14px'} fontFamily={'DelGophicOne'} color="#05050e">
+        <Text fontWeight={400} fontSize="14px" lineHeight={'14px'} fontFamily={'Dela Gothic One'} color="#05050e">
           {milestoneDate}
         </Text>
       </Flex>

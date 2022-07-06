@@ -82,7 +82,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
               className="main-title"
               sx={{
                 whiteSpace: 'nowrap',
-                fontFamily: 'DelGophicOne',
+                fontFamily: 'Dela Gothic One',
                 fontStyle: 'normal',
                 color: 'white',
                 fontWeight: 900,
@@ -96,7 +96,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
           </Flex>
           <Text
             sx={{
-              fontFamily: 'DelGophicOne',
+              fontFamily: 'Dela Gothic One',
               fontStyle: 'normal',
               color: 'white',
               maxHeight: '20%',
