@@ -34,18 +34,18 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
           : {}
       }
     >
-      <Flex marginBottom={24}>
-        <Image src={logoSrc} width={48} height={48} alt="feature-logo"></Image>
+      <Flex marginBottom={'20px'}>
+        <Image src={logoSrc} width={30} height={30} alt="feature-logo"></Image>
       </Flex>
-      <Flex marginBottom={12}>
+      <Flex marginBottom={'6px'}>
         <Text
           className="main-title"
           sx={{
             fontFamily: 'DelGophicOne',
             fontStyle: 'normal',
-            fontWeight: 900,
-            fontSize: '28px',
-            lineHeight: '28px',
+            fontWeight: 400,
+            fontSize: '20px',
+            lineHeight: '20px',
             whiteSpace: 'nowrap',
             color: 'white',
           }}
@@ -53,15 +53,15 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
           {MainTitle}
         </Text>
       </Flex>
-      <Flex marginBottom={36}>
+      <Flex marginBottom={'18px'}>
         <Text
           sx={{
             fontFamily: 'DelGophicOne',
             fontStyle: 'normal',
             color: 'white',
             fontWeight: 400,
-            fontSize: '20px',
-            lineHeight: '20px',
+            fontSize: '14px',
+            lineHeight: '14px',
           }}
         >
           {SecondTitle}
@@ -74,8 +74,8 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
             fontFamily: 'Poppins',
             fontStyle: 'normal',
             fontWeight: 300,
-            fontSize: '18px',
-            lineHeight: '18px',
+            fontSize: '12px',
+            lineHeight: '16px',
             textAlign: 'left',
           }}
         >

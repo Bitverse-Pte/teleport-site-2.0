@@ -7,17 +7,20 @@ import iconGraph1 from 'public/images/icon-graph-1.svg'
 import iconGraph2 from 'public/images/icon-graph-2.svg'
 import iconGraph3 from 'public/images/icon-graph-3.svg'
 import iconGraph4 from 'public/images/icon-graph-4.svg'
+import gifBridge from 'public/gif/bridge.gif'
+import gifWallet from 'public/gif/wallet.gif'
+import gifMetaverse from 'public/gif/metaverse.gif'
 
 const SectionStyle = styled.div`
+  
   .wrapSection {
     color: #05050e;
-    padding: 150px 0;
+    padding: 150px 0 0;
 
     .icon {
       height: 88px;
     }
     .gifFeature {
-      background-color: lightgray;
       width: 100%;
       height: 30vw;
       margin: 0 auto;
@@ -60,7 +63,7 @@ const SectionStyle = styled.div`
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 
-function SectionItem({ Index, Title, SubTitle, ImageUrl, ButtonTitle }: { Index: number; Title: string; SubTitle: string; ImageUrl: string; ButtonTitle: string }) {
+function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle }: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string }) {
   return (
     <SectionStyle>
       <div className="wrapSection centerView">
@@ -72,7 +75,7 @@ function SectionItem({ Index, Title, SubTitle, ImageUrl, ButtonTitle }: { Index:
           </div>
           {RenderButton(ButtonTitle)}
         </div>
-        {ImageUrl && <Image className="gifFeature" src={ImageUrl} alt={'section-icon'} />}
+        <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
       </div>
     </SectionStyle>
   )
@@ -92,10 +95,28 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-    <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" ImageUrl="" ButtonTitle="Launch App" />
-      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported<br>Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" ImageUrl="" ButtonTitle="Download" />
-      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" ImageUrl="" ButtonTitle="" />
-    </Flex>
+      <Flex flexDirection="column">
+        <SectionItem
+            Index={1}
+            Title="Teleport Bridge"
+            SubTitle="Empower cross-chain token transfer"
+            ImageRes={gifBridge}
+            ButtonTitle="Launch App"
+        />
+        <SectionItem
+            Index={2}
+            Title="Teleport Wallet"
+            SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
+            ImageRes={gifWallet}
+            ButtonTitle="Download"
+        />
+        <SectionItem
+            Index={3}
+            Title="Metaverse Hub"
+            SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
+            ImageRes={gifMetaverse}
+            ButtonTitle=""
+        />
+      </Flex>
   )
 }
