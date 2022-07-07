@@ -8,27 +8,28 @@ import styled from 'styled-components'
 import teleportHorizontal from 'public/images/teleport-horizontal.svg'
 
 const StyledLink = (props: { text: string } & LinkProps) => {
-  return (
-    <Link {...props} passHref={true}>
-      <Text
-        sx={{
-          fontFamily: 'Poppins',
-          fontStyle: 'normal',
-          fontWeight: '400',
-          fontSize: '18px',
-          lineHeight: '27px',
-          color: '#000000',
-          marginBottom: '16px',
-          cursor: 'pointer',
-          ':hover': {
-            color: '#59C3AA',
-          },
-        }}
-      >
-        {props.text}
-      </Text>
-    </Link>
-  )
+    return (
+        <Link {...props} passHref={true}>
+            <Text
+                sx={{
+                    fontFamily: 'Poppins',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    fontSize: '18px',
+                    lineHeight: '27px',
+                    color: '#000000',
+                    marginBottom: '16px',
+                    cursor: 'pointer',
+                    ':hover': {
+                        color: '#59C3AA',
+                        fontWeight: '800',
+                    },
+                }}
+            >
+                {props.text}
+            </Text>
+        </Link>
+    )
 }
 
 const Footer = () => {

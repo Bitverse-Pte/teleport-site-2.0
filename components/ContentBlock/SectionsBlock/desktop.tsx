@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Flex } from 'rebass'
+import Link from 'next/link'
 import Image from 'components/Image'
 
 import iconGraph1 from 'public/images/icon-graph-1.svg'
@@ -10,6 +11,9 @@ import iconGraph4 from 'public/images/icon-graph-4.svg'
 import gifBridge from 'public/gif/bridge.gif'
 import gifWallet from 'public/gif/wallet.gif'
 import gifMetaverse from 'public/gif/metaverse.gif'
+import imgBridge from 'public/images/img-bridge.png'
+import imgWallet from 'public/images/img-wallet.png'
+import imgMetaverse from 'public/images/img-metaverse.png'
 
 const SectionStyle = styled.div`
   
@@ -38,6 +42,7 @@ const SectionStyle = styled.div`
           line-height: 72px;
         }
         .textSubTitle {
+          max-width: 800px;
           margin-top: 32px;
           font-family: Poppins;
           font-size: 24px;
@@ -47,6 +52,7 @@ const SectionStyle = styled.div`
         }
       }
       .buttonSection {
+        cursor: pointer;
         width: 316px;
         height: 72px;
         background: #59c3aa;
@@ -56,6 +62,13 @@ const SectionStyle = styled.div`
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
+        text-align: center;
+        line-height: 72px;
+        
+        &:hover {
+          transition: all 0.2s ease 0s;
+          box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
+        }
       }
     }
   }
@@ -63,34 +76,29 @@ const SectionStyle = styled.div`
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 
-function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle }: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string }) {
-  return (
-    <SectionStyle>
-      <div className="wrapSection centerView">
-        <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
-        <div className="wrapRow">
-          <div className="wrapColumn">
-            <h1 className="textTitle">{Title}</h1>
-            <h6 className="textSubTitle">{SubTitle}</h6>
-          </div>
-          {RenderButton(ButtonTitle)}
-        </div>
-        <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
-      </div>
-    </SectionStyle>
-  )
+function SectionItem({ Index, Title, SubTitle, GifRes, ImageRes, ButtonTitle, Link }: { Index: number; Title: string; SubTitle: string; GifRes: any; ImageRes: any; ButtonTitle: string; Link: string }) {
+    return (
+        <SectionStyle>
+            <div className="wrapSection centerView">
+                <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
+                <div className="wrapRow">
+                    <div className="wrapColumn">
+                        <h1 className="textTitle">{Title}</h1>
+                        <h6 className="textSubTitle">{SubTitle}</h6>
+                    </div>
+                    {RenderButton(ButtonTitle, Link)}
+                </div>
+                <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
+            </div>
+        </SectionStyle>
+    )
 }
 
-function RenderButton(title: string) {
-  if (title !== '') {
-    if (title === 'Launch App') {
-      return <Button className="buttonSection">{title}</Button>
+function RenderButton(title: string, link: string) {
+    if (title !== '') {
+        return <Link href={link} key={link}><a className="buttonSection" target="_blank" >{title}</a></Link>
     }
-    if (title === 'Download') {
-      return <Button className="buttonSection">{title}</Button>
-    }
-  }
-  return ''
+    return ''
 }
 
 export default function SectionsBlock() {
@@ -100,22 +108,28 @@ export default function SectionsBlock() {
             Index={1}
             Title="Teleport Bridge"
             SubTitle="Empower cross-chain token transfer"
-            ImageRes={gifBridge}
+            ImageRes={imgBridge}
+            GifRes={gifBridge}
             ButtonTitle="Launch App"
+            Link="https://bridge.testnet.teleport.network"
         />
         <SectionItem
             Index={2}
             Title="Teleport Wallet"
             SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
-            ImageRes={gifWallet}
+            GifRes={gifWallet}
+            ImageRes={imgWallet}
             ButtonTitle="Download"
+            Link="https://chrome.google.com/webstore/detail/teleport-wallet/gkeelndblnomfmjnophbhfhcjbcnemka"
         />
         <SectionItem
             Index={3}
             Title="Metaverse Hub"
             SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
-            ImageRes={gifMetaverse}
+            ImageRes={imgMetaverse}
+            GifRes={gifMetaverse}
             ButtonTitle=""
+            Link=""
         />
       </Flex>
   )
