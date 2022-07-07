@@ -373,14 +373,15 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : -1,
       }}
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
-      <DocsMenuItem itemText=" Teleport Chain" onClick={presetSensors.header.docChain} />
+      <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
       <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
       <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
-      <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} />
+      {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
       <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
@@ -420,6 +421,7 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : 0,
       }}
     >
       <CommunityMenuItem onClick={presetSensors.header.twitter} base64String={mobileMenuTwitterIcon} itemText="Twitter" />
@@ -508,6 +510,7 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : 0,
       }}
       padding="32px"
       flexDirection={'column'}
