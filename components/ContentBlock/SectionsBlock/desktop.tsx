@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Button, Flex } from 'rebass'
+import Link from 'next/link'
 import Image from 'components/Image'
 
 import iconGraph1 from 'public/images/icon-graph-1.svg'
@@ -38,6 +39,7 @@ const SectionStyle = styled.div`
           line-height: 72px;
         }
         .textSubTitle {
+          max-width: 800px;
           margin-top: 32px;
           font-family: Poppins;
           font-size: 24px;
@@ -47,6 +49,7 @@ const SectionStyle = styled.div`
         }
       }
       .buttonSection {
+        cursor: pointer;
         width: 316px;
         height: 72px;
         background: #59c3aa;
@@ -57,6 +60,11 @@ const SectionStyle = styled.div`
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
+        
+        &:hover {
+          transition: all 0.2s ease 0s;
+          box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
+        }
       }
     }
   }
@@ -64,22 +72,22 @@ const SectionStyle = styled.div`
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 
-function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle }: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string }) {
-  return (
-    <SectionStyle>
-      <div className="wrapSection centerView">
-        <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
-        <div className="wrapRow">
-          <div className="wrapColumn">
-            <h1 className="textTitle">{Title}</h1>
-            <h6 className="textSubTitle">{SubTitle}</h6>
-          </div>
-          {RenderButton(ButtonTitle)}
-        </div>
-        <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
-      </div>
-    </SectionStyle>
-  )
+function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle}: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string }) {
+    return (
+        <SectionStyle>
+            <div className="wrapSection centerView">
+                <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
+                <div className="wrapRow">
+                    <div className="wrapColumn">
+                        <h1 className="textTitle">{Title}</h1>
+                        <h6 className="textSubTitle">{SubTitle}</h6>
+                    </div>
+                    {RenderButton(ButtonTitle)}
+                </div>
+                <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
+            </div>
+        </SectionStyle>
+    )
 }
 
 function RenderButton(title: string) {
@@ -104,10 +112,28 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-    <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" ImageRes={gifBridge} ButtonTitle="Launch App" />
-      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" ImageRes={gifWallet} ButtonTitle="Download" />
-      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" ImageRes={gifMetaverse} ButtonTitle="" />
-    </Flex>
+      <Flex flexDirection="column">
+        <SectionItem
+            Index={1}
+            Title="Teleport Bridge"
+            SubTitle="Empower cross-chain token transfer"
+            ImageRes={gifBridge}
+            ButtonTitle="Launch App"
+        />
+        <SectionItem
+            Index={2}
+            Title="Teleport Wallet"
+            SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
+            ImageRes={gifWallet}
+            ButtonTitle="Download"
+        />
+        <SectionItem
+            Index={3}
+            Title="Metaverse Hub"
+            SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
+            ImageRes={gifMetaverse}
+            ButtonTitle=""
+        />
+      </Flex>
   )
 }
