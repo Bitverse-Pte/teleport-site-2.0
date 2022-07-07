@@ -28,8 +28,8 @@ function getSize() {
 export default function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
   useEffect(() => {
     publicRuntimeConfig.BUILD_ENV !== 'development' &&
-      import('utils/skynet').then((skynet) => {
-        skynet.default.start()
+      import('utils/skynet').then(({ start }) => {
+        start()
       })
   }, [])
 

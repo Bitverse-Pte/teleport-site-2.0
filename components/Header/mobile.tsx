@@ -9,10 +9,11 @@ import mobileLogoBlackText from 'public/mobile-logo-black-text.svg'
 import mobileMenuIcon from 'public/mobile-menu-icon.svg'
 import mobileMenuCloseIcon from 'public/mobile-menu-close-icon.svg'
 import arrow from 'public/mobile-menu-arrow.svg'
-import ambassador from 'public/ambassador.svg'
+import ambassadorFire from 'public/ambassador.svg'
 import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
 import { mobileMenuDiscordIcon, mobileMenuLinktreeIcon, mobileMenuMediumIcon, mobileMenuTelegramIcon, mobileMenuTwitterIcon } from 'components/Image/base64Images'
 import { SCROLL_ROOT_ID } from 'components/Mobile'
+import { presetSensors } from 'utils/presetSensors'
 
 export default function Header() {
   const [menuSpread, setMenuSpread] = useState<SxStyleProp | undefined>(undefined)
@@ -168,11 +169,11 @@ export default function Header() {
       >
         <Flex
           flexDirection={'column'}
-          maxWidth="45%"
+          maxWidth="50%"
           minWidth="45%"
           sx={{
             boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.5)',
-            padding: '24px 0',
+            padding: '20px 0',
           }}
         >
           <MobileMenuItem
@@ -199,10 +200,10 @@ export default function Header() {
             }}
             opacityOrNot={selectedMenu === 'Community'}
           />
-          <MobileMenuItem title="Ambassador" opacityOrNot={true} imageSrc={ambassador} />
+          <MobileMenuAmbassadorItem title="Ambassador" onClick={presetSensors.header.ambassador} />
         </Flex>
         <Flex sx={{ width: '55%', height: '100%', minHeight: 'fit-content', position: 'relative' }}>
-          <Flex sx={{ width: '100%', height: '100%', minHeight: 'fit-content', position: 'absolute' }}>
+          <Flex sx={{ width: '100%', height: '100%', minHeight: 'fit-content', position: 'absolute', overflowY: 'auto' }}>
             <DocsMenu opacityOrNot={selectedMenu === 'Docs'} />
             <ToolMenu opacityOrNot={selectedMenu === 'Tool'} />
             <CommunityMenu opacityOrNot={selectedMenu === 'Community'} />
@@ -220,7 +221,7 @@ function Banner({ sx }: FlexProps) {
         position: 'absolute',
         left: '50%',
         transform: 'translate(-50%)',
-        transition: 'all 0.2s ease-in-out',
+        transition: 'all 0.2s ease-in-out, opacity 1s ease-in-out',
         height: '100%',
         alignItems: 'center',
         minWidth: '240px',
@@ -229,7 +230,7 @@ function Banner({ sx }: FlexProps) {
           position: 'absolute',
         }, */
         '.mobile-logo': {
-          transition: 'all 0.2s ease-in-out',
+          transition: 'all 0.2s ease-in-out, opacity 1s ease-in-out',
         },
         '.white-text': {
           opacity: 1,
@@ -250,7 +251,7 @@ function Banner({ sx }: FlexProps) {
   )
 }
 
-function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc, onClick }: { imageSrc?: string; title: string; showArrow?: boolean; opacityOrNot?: boolean } & FlexProps) {
+function MobileMenuAmbassadorItem({ title, onClick }: { title: string; showArrow?: boolean } & FlexProps) {
   return (
     <Flex
       sx={{
@@ -259,7 +260,39 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
       height="60px"
       alignItems="center"
       width={'100%'}
-      padding="0 18px"
+      padding="0 10px"
+      justifyContent={'flex-start'}
+      onClick={onClick}
+    >
+      <Text
+        sx={{
+          fontFamily: 'Poppins',
+          fontStyle: 'normal',
+          fontWeight: 500,
+          fontSize: '14px',
+          lineHeight: '14px',
+          color: `rgba(5,5,14,1)`,
+          minWidth: '70%',
+        }}
+      >
+        {title}
+      </Text>
+      &nbsp;
+      <Image src={ambassadorFire} width={14} height={14} alt={'mobile-menu-icon'} />
+    </Flex>
+  )
+}
+
+function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc = arrow, onClick }: { imageSrc?: string; title: string; showArrow?: boolean; opacityOrNot?: boolean } & FlexProps) {
+  return (
+    <Flex
+      sx={{
+        transition: 'all 0.2s ease-in-out',
+      }}
+      height="60px"
+      alignItems="center"
+      width={'100%'}
+      padding="0 10px"
       justifyContent={'space-between'}
       onClick={onClick}
     >
@@ -268,8 +301,8 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
           fontFamily: 'Poppins',
           fontStyle: 'normal',
           fontWeight: 500,
-          fontSize: '18px',
-          lineHeight: '18px',
+          fontSize: '14px',
+          lineHeight: '14px',
           color: `rgba(5,5,14,${opacityOrNot ? 1 : 0.5})`,
           minWidth: '70%',
         }}
@@ -279,24 +312,25 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
       <Box
         sx={{
           transition: 'all 0.2s ease-in-out',
-          opacity: opacityOrNot || imageSrc ? 1 : 0,
+          opacity: opacityOrNot ? 1 : 0,
         }}
       >
-        <Image src={imageSrc || arrow} width={20} height={20} alt={'mobile-menu-arrow'} />
+        <Image src={imageSrc} width={14} height={14} alt={'mobile-menu-icon'} />
       </Box>
     </Flex>
   )
 }
 
-function DocsMenuItem({ itemText, showBottomBorder }: { itemText: string; showBottomBorder?: boolean }) {
+function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: string; showBottomBorder?: boolean; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
     <Text
+      onClick={onClick}
       sx={{
         fontFamily: 'Poppins',
         fontStyle: 'normal',
         fontWeight: 500,
-        fontSize: '20px',
-        lineHeight: '60px',
+        fontSize: '14px',
+        lineHeight: showBottomBorder ? '59px' : '60px',
         width: '100%',
         color: '#05050E',
         // margin: '24px 0',
@@ -333,42 +367,43 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       flexDirection={'column'}
       alignItems="flex-start"
       justifyContent="flex-start"
-      padding="24px"
+      padding="20px"
       color="black"
       sx={{
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : -1,
       }}
     >
-      <DocsMenuItem itemText="White Paper" showBottomBorder={true} />
+      <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
-      <DocsMenuItem itemText=" Teleport Chain" />
-      <DocsMenuItem itemText=" XIBC" />
-      <DocsMenuItem itemText=" Developer" />
-      <DocsMenuItem itemText=" Validator" showBottomBorder />
+      <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
+      <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
+      <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
+      {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
-      <DocsMenuItem itemText=" Wallet" />
+      <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
   )
 }
 
-function CommunityMenuItem({ base64String, itemText }: { base64String: string; itemText: string }) {
+function CommunityMenuItem({ base64String, itemText, onClick }: { base64String: string; itemText: string; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
-    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'}>
-      &nbsp;
+    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'} onClick={onClick}>
       <Base64SvgHolder base64String={base64String} width="28px" height="28px" />
+      &nbsp; &nbsp;
       <Text
         sx={{
           fontFamily: 'Poppins',
           fontStyle: 'normal',
           fontWeight: 500,
-          fontSize: '20px',
+          fontSize: '14px',
           lineHeight: '60px',
           color: '#05050E',
         }}
       >
-        &nbsp;{itemText}
+        {itemText}
       </Text>
     </Flex>
   )
@@ -381,18 +416,19 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
       minHeight="100%"
       flexDirection={'column'}
       alignItems="flex-start"
-      padding="24px"
+      padding="20px"
       sx={{
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : 0,
       }}
     >
-      <CommunityMenuItem base64String={mobileMenuTwitterIcon} itemText="Twitter" />
-      <CommunityMenuItem base64String={mobileMenuTelegramIcon} itemText="Telegram" />
-      <CommunityMenuItem base64String={mobileMenuDiscordIcon} itemText="Discord" />
-      <CommunityMenuItem base64String={mobileMenuMediumIcon} itemText="Medium" />
-      <CommunityMenuItem base64String={mobileMenuLinktreeIcon} itemText="Linktree" />
+      <CommunityMenuItem onClick={presetSensors.header.twitter} base64String={mobileMenuTwitterIcon} itemText="Twitter" />
+      <CommunityMenuItem onClick={presetSensors.header.telegram} base64String={mobileMenuTelegramIcon} itemText="Telegram" />
+      <CommunityMenuItem onClick={presetSensors.header.discord} base64String={mobileMenuDiscordIcon} itemText="Discord" />
+      <CommunityMenuItem onClick={presetSensors.header.medium} base64String={mobileMenuMediumIcon} itemText="Medium" />
+      <CommunityMenuItem onClick={presetSensors.header.linktree} base64String={mobileMenuLinktreeIcon} itemText="Linktree" />
     </Flex>
   )
 }
@@ -405,8 +441,8 @@ function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
           fontFamily: 'Poppins',
           fontStyle: 'normal',
           fontWeight: 600,
-          fontSize: '24px',
-          lineHeight: '24px',
+          fontSize: '14px',
+          lineHeight: '14px',
           color: '#05050E',
           opacity: 0.5,
           marginBottom: '12px',
@@ -429,8 +465,8 @@ function ToolMenuSubBlock({ title, children }: { title?: string } & FlexProps) {
             fontFamily: 'Poppins',
             fontStyle: 'normal',
             fontWeight: 400,
-            fontSize: '22px',
-            lineHeight: '22px',
+            fontSize: '12px',
+            lineHeight: '12px',
             color: '#05050E',
             opacity: 0.5,
             whiteSpace: 'nowrap',
@@ -446,16 +482,17 @@ function ToolMenuSubBlock({ title, children }: { title?: string } & FlexProps) {
   )
 }
 
-function ToolMenuItem({ itemText }: { itemText: string }) {
+function ToolMenuItem({ itemText, onClick }: { itemText: string; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
     <Text
+      onClick={onClick}
       sx={{
         whiteSpace: 'nowrap',
         fontFamily: 'Poppins',
         fontStyle: 'normal',
         fontWeight: 500,
-        fontSize: '20px',
-        lineHeight: '20px',
+        fontSize: '14px',
+        lineHeight: '14px',
         color: '#05050E',
         margin: '12px 0',
       }}
@@ -473,6 +510,7 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
         opacity: opacityOrNot ? 1 : 0,
+        zIndex: opacityOrNot ? 1 : 0,
       }}
       padding="32px"
       flexDirection={'column'}
@@ -480,18 +518,18 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
     >
       <ToolMenuBlock title="Faucet">
         <ToolMenuSubBlock title="Faucet (TELE)">
-          <ToolMenuItem itemText="Discord" />
+          <ToolMenuItem itemText="Discord" onClick={presetSensors.header.discord} />
         </ToolMenuSubBlock>
         <ToolMenuSubBlock title=" Faucet (TUSDT)">
-          <ToolMenuItem itemText="Teleport Testnet" />
-          <ToolMenuItem itemText="BNB Testnet" />
-          <ToolMenuItem itemText="Rinkeby" />
+          {/* <ToolMenuItem itemText="Teleport Testnet" /> */}
+          <ToolMenuItem itemText="BNB Testnet" onClick={presetSensors.header.bscFaucet} />
+          <ToolMenuItem itemText="Rinkeby" onClick={presetSensors.header.rinkebyFaucet} />
         </ToolMenuSubBlock>
       </ToolMenuBlock>
       <ToolMenuBlock title="Explorer">
         <ToolMenuSubBlock>
-          <ToolMenuItem itemText="EVM" />
-          <ToolMenuItem itemText="Tendermint" />
+          <ToolMenuItem itemText="EVM" onClick={presetSensors.header.evmExplorer} />
+          <ToolMenuItem itemText="Tendermint" onClick={presetSensors.header.tendermintExplorer} />
         </ToolMenuSubBlock>
       </ToolMenuBlock>
     </Flex>

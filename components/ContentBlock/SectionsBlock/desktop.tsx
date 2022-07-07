@@ -11,12 +11,9 @@ import iconGraph4 from 'public/images/icon-graph-4.svg'
 import gifBridge from 'public/gif/bridge.gif'
 import gifWallet from 'public/gif/wallet.gif'
 import gifMetaverse from 'public/gif/metaverse.gif'
-import imgBridge from 'public/images/img-bridge.png'
-import imgWallet from 'public/images/img-wallet.png'
-import imgMetaverse from 'public/images/img-metaverse.png'
+import { presetSensors } from 'utils/presetSensors'
 
 const SectionStyle = styled.div`
-  
   .wrapSection {
     color: #05050e;
     padding: 150px 0 0;
@@ -56,14 +53,13 @@ const SectionStyle = styled.div`
         width: 316px;
         height: 72px;
         background: #59c3aa;
+        cursor: pointer;
         border-radius: 12px;
 
         color: #05050e;
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
-        text-align: center;
-        line-height: 72px;
         
         &:hover {
           transition: all 0.2s ease 0s;
@@ -76,7 +72,7 @@ const SectionStyle = styled.div`
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 
-function SectionItem({ Index, Title, SubTitle, GifRes, ImageRes, ButtonTitle, Link }: { Index: number; Title: string; SubTitle: string; GifRes: any; ImageRes: any; ButtonTitle: string; Link: string }) {
+function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle}: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string }) {
     return (
         <SectionStyle>
             <div className="wrapSection centerView">
@@ -86,7 +82,7 @@ function SectionItem({ Index, Title, SubTitle, GifRes, ImageRes, ButtonTitle, Li
                         <h1 className="textTitle">{Title}</h1>
                         <h6 className="textSubTitle">{SubTitle}</h6>
                     </div>
-                    {RenderButton(ButtonTitle, Link)}
+                    {RenderButton(ButtonTitle)}
                 </div>
                 <Image className="gifFeature" src={ImageRes} alt={'section-icon'} />
             </div>
@@ -94,11 +90,24 @@ function SectionItem({ Index, Title, SubTitle, GifRes, ImageRes, ButtonTitle, Li
     )
 }
 
-function RenderButton(title: string, link: string) {
-    if (title !== '') {
-        return <Link href={link} key={link}><a className="buttonSection" target="_blank" >{title}</a></Link>
+function RenderButton(title: string) {
+  if (title !== '') {
+    if (title === 'Launch App') {
+      return (
+        <Button className="buttonSection" onClick={presetSensors.body.launchBridge}>
+          {title}
+        </Button>
+      )
     }
-    return ''
+    if (title === 'Download') {
+      return (
+        <Button className="buttonSection" onClick={presetSensors.body.downloadWallet}>
+          {title}
+        </Button>
+      )
+    }
+  }
+  return ''
 }
 
 export default function SectionsBlock() {
@@ -108,28 +117,22 @@ export default function SectionsBlock() {
             Index={1}
             Title="Teleport Bridge"
             SubTitle="Empower cross-chain token transfer"
-            ImageRes={imgBridge}
-            GifRes={gifBridge}
+            ImageRes={gifBridge}
             ButtonTitle="Launch App"
-            Link="https://bridge.testnet.teleport.network"
         />
         <SectionItem
             Index={2}
             Title="Teleport Wallet"
             SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
-            GifRes={gifWallet}
-            ImageRes={imgWallet}
+            ImageRes={gifWallet}
             ButtonTitle="Download"
-            Link="https://chrome.google.com/webstore/detail/teleport-wallet/gkeelndblnomfmjnophbhfhcjbcnemka"
         />
         <SectionItem
             Index={3}
             Title="Metaverse Hub"
             SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
-            ImageRes={imgMetaverse}
-            GifRes={gifMetaverse}
+            ImageRes={gifMetaverse}
             ButtonTitle=""
-            Link=""
         />
       </Flex>
   )

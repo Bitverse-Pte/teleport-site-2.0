@@ -9,6 +9,7 @@ import circledT from 'public/circledT.svg'
 import welcomeGif from 'public/gif/welcome.gif'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
+import { presetSensors } from 'utils/presetSensors'
 
 export default function WelcomeBlock() {
   const containerRef = useRef<HTMLDivElement>()
@@ -220,6 +221,7 @@ export default function WelcomeBlock() {
             height={'45%'}
             backgroundColor="white"
             color="#161929"
+            onClick={presetSensors.body.doc}
             sx={{
               width: '270px',
               minWidth: '270px',
@@ -233,6 +235,7 @@ export default function WelcomeBlock() {
               transition: 'all 0.2s ease-in-out',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
+              cursor: 'pointer',
               fontWeight: 600,
               fontSize: '24px',
               lineHeight: '24px',
@@ -246,6 +249,7 @@ export default function WelcomeBlock() {
             height={'45%'}
             backgroundColor="transparent"
             color="white"
+            onClick={presetSensors.body.whitepaper}
             sx={{
               width: '270px',
               minWidth: '270px',
@@ -260,6 +264,7 @@ export default function WelcomeBlock() {
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               fontWeight: 600,
+              cursor: 'pointer',
               fontSize: '24px',
               lineHeight: '24px',
               borderColor: 'white',

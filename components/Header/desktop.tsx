@@ -5,6 +5,7 @@ import Image from 'components/Image'
 import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
 import ambassadorLogo from 'public/ambassador.svg'
+import { presetSensors } from 'utils/presetSensors'
 /* 
 const Container = styled.div`
 	width: 100%;
@@ -42,6 +43,7 @@ export default function Header() {
         alignItems={'center'}
         width="fit-content"
         minWidth={168}
+        onClick={presetSensors.header.ambassador}
         sx={{
           fontFamily: 'IBM Plex Sans',
           fontStyle: 'normal',

@@ -3,9 +3,10 @@ import { FooterStyled } from './styled'
 import Link, { LinkProps } from 'next/link'
 import Image from 'components/Image'
 import { Flex, Text } from 'rebass/styled-components'
-import styled from 'styled-components'
 
 import teleportHorizontal from 'public/images/teleport-horizontal.svg'
+import { presetSensors } from 'utils/presetSensors'
+import { ambassador_link, discord_link, docs_link, github_link } from 'constants/url'
 
 const StyledLink = (props: { text: string } & LinkProps) => {
     return (
@@ -54,13 +55,13 @@ const Footer = () => {
           <Flex flexDirection={'row'} justifyContent={'flex-end'} className={'wrapLinks'}>
             <Flex flexDirection={'column'} className={'wrapColumn'}>
               <div className={'textTitle'}>Apply</div>
-              <StyledLink href={'https://ambassador.teleport.network/'} key={'https://ambassador.teleport.network/'} text="Ambassador" />
+              <StyledLink href={ambassador_link} key={'ambassador'} text="Ambassador" onClick={presetSensors.footer.ambassador} />
             </Flex>
             <Flex flexDirection={'column'} className={'wrapColumn'}>
               <div className={'textTitle'}>Developer</div>
-              <StyledLink href={'https://ambassador.teleport.network/'} key={'https://ambassador.teleport.network/'} text="Document" />
-              <StyledLink href={'https://ambassador.teleport.network/'} key={'https://ambassador.teleport.network/'} text="Github" />
-              <StyledLink href={'https://ambassador.teleport.network/'} key={'https://ambassador.teleport.network/'} text="Community (Discord)" />
+              <StyledLink href={docs_link} key={'doc'} text="Document" onClick={presetSensors.footer.doc} />
+              <StyledLink href={github_link} key={'github'} text="Github" onClick={presetSensors.footer.github} />
+              <StyledLink href={discord_link} key={'community'} text="Community (Discord)" onClick={presetSensors.footer.discord} />
             </Flex>
           </Flex>
         </Flex>

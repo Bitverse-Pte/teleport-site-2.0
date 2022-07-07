@@ -11,6 +11,7 @@ import iconGraph4 from 'public/images/icon-graph-4.svg'
 import image1 from 'public/mobile-section-image-1.svg'
 import image2 from 'public/mobile-section-image-2.svg'
 import image3 from 'public/mobile-section-image-3.svg'
+import { presetSensors } from 'utils/presetSensors'
 
 const SectionStyle = styled.div`
   .wrapSection {
@@ -48,6 +49,7 @@ const SectionStyle = styled.div`
         }
       }
       .buttonSection {
+        cursor: pointer;
         width: 316px;
         height: 72px;
         background: #59c3aa;
@@ -97,14 +99,14 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column" width={'100%'}>
-      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} imageSrc={image1} buttonValue={'Launch App'} />
-      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} imageSrc={image2} buttonValue={'Download'} />
+      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} imageSrc={image1} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
+      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} imageSrc={image2} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
       <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} imageSrc={image3} />
     </Flex>
   )
 }
 
-function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { imageSrc: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string }) {
+function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { imageSrc: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string; buttonOnClick?: React.MouseEventHandler<HTMLButtonElement> }) {
   return (
     <Flex flexDirection={'column'} margin="36px 0" alignItems="flex-start">
       <Box width={30} height={30}>
