@@ -8,13 +8,15 @@ import iconSocialDiscord from 'public/images/icon-social-discord.svg'
 import iconSocialMedium from 'public/images/icon-social-medium.svg'
 import iconSocialLinkTree from 'public/images/icon-social-linktree.svg'
 import Image from 'components/Image'
+import { presetSensors } from 'utils/presetSensors'
+import { discord_link, linktree_link, medium_link, telegram_link, twitter_link } from 'constants/url'
 
 const CommunityBlock = styled.div`
   width: 100%;
   .wrapCommunity {
     text-align: center;
     padding-bottom: 250px;
-    margin:0 auto;
+    margin: 0 auto;
 
     .textHeader {
       font-family: Dela Gothic One;
@@ -83,14 +85,39 @@ const CommunityBlock = styled.div`
 const Community = () => {
   const items = useMemo(() => {
     return [
-      { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: iconSocialTwitter },
-      { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: iconSocialTelegram },
-      { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: iconSocialDiscord },
-      { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: iconSocialMedium },
-      { title: 'Linktree', link: 'https://linktr.ee/teleportnetwork', image: iconSocialLinkTree },
+      {
+        title: 'Twitter',
+        link: twitter_link,
+        image: iconSocialTwitter,
+        onClick: presetSensors.body.twitter,
+      },
+      {
+        title: 'Telegram',
+        link: telegram_link,
+        image: iconSocialTelegram,
+        onClick: presetSensors.body.telegram,
+      },
+      {
+        title: 'Discord',
+        link: discord_link,
+        image: iconSocialDiscord,
+        onClick: presetSensors.body.discord,
+      },
+      {
+        title: 'Medium',
+        link: medium_link,
+        image: iconSocialMedium,
+        onClick: presetSensors.body.medium,
+      },
+      {
+        title: 'Linktree',
+        link: linktree_link,
+        image: iconSocialLinkTree,
+        onClick: presetSensors.body.linktree,
+      },
     ].map((item) => {
       return (
-        <Link href={item.link} key={item.link}>
+        <Link href={item.link} key={item.link} onClick={item.onClick}>
           <a target="_blank">
             <div className="itemCommunity">
               <div className={'imgCommunity'}>

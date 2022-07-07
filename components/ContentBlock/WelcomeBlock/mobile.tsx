@@ -6,6 +6,7 @@ import leftBottomArrow from 'public/leftBottomArrow.svg'
 import mobileWelcomeImg from 'public/mobile-welcome-img.svg'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
+import { presetSensors } from 'utils/presetSensors'
 
 export default function WelcomeBlock() {
   return (
@@ -37,6 +38,7 @@ export default function WelcomeBlock() {
             borderRadius: '12px',
             lineHeight: '16px',
           }}
+          onClick={presetSensors.body.doc}
           padding={'15px 0'}
           height={'100%'}
           width={'45%'}
@@ -55,6 +57,7 @@ export default function WelcomeBlock() {
             lineHeight: '16px',
             border: 'solid 1px white',
           }}
+          onClick={presetSensors.body.downloadWallet}
           padding={'15px 0'}
           height={'100%'}
           width={'45%'}

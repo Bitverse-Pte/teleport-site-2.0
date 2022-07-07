@@ -10,9 +10,9 @@ import iconGraph4 from 'public/images/icon-graph-4.svg'
 import gifBridge from 'public/gif/bridge.gif'
 import gifWallet from 'public/gif/wallet.gif'
 import gifMetaverse from 'public/gif/metaverse.gif'
+import { presetSensors } from 'utils/presetSensors'
 
 const SectionStyle = styled.div`
-  
   .wrapSection {
     color: #05050e;
     padding: 150px 0 0;
@@ -50,6 +50,7 @@ const SectionStyle = styled.div`
         width: 316px;
         height: 72px;
         background: #59c3aa;
+        cursor: pointer;
         border-radius: 12px;
 
         color: #05050e;
@@ -84,10 +85,18 @@ function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle }: { Index:
 function RenderButton(title: string) {
   if (title !== '') {
     if (title === 'Launch App') {
-      return <Button className="buttonSection">{title}</Button>
+      return (
+        <Button className="buttonSection" onClick={presetSensors.body.launchBridge}>
+          {title}
+        </Button>
+      )
     }
     if (title === 'Download') {
-      return <Button className="buttonSection">{title}</Button>
+      return (
+        <Button className="buttonSection" onClick={presetSensors.body.downloadWallet}>
+          {title}
+        </Button>
+      )
     }
   }
   return ''
@@ -95,28 +104,10 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-      <Flex flexDirection="column">
-        <SectionItem
-            Index={1}
-            Title="Teleport Bridge"
-            SubTitle="Empower cross-chain token transfer"
-            ImageRes={gifBridge}
-            ButtonTitle="Launch App"
-        />
-        <SectionItem
-            Index={2}
-            Title="Teleport Wallet"
-            SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction"
-            ImageRes={gifWallet}
-            ButtonTitle="Download"
-        />
-        <SectionItem
-            Index={3}
-            Title="Metaverse Hub"
-            SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game"
-            ImageRes={gifMetaverse}
-            ButtonTitle=""
-        />
-      </Flex>
+    <Flex flexDirection="column">
+      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" ImageRes={gifBridge} ButtonTitle="Launch App" />
+      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" ImageRes={gifWallet} ButtonTitle="Download" />
+      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" ImageRes={gifMetaverse} ButtonTitle="" />
+    </Flex>
   )
 }

@@ -8,19 +8,24 @@ import iconSocialDiscord from 'public/mobile-community-discord-logo.svg'
 import iconSocialMedium from 'public/mobile-community-medium-logo.svg'
 import iconSocialLinkTree from 'public/mobile-community-linktree-logo.svg'
 import Image from 'components/Image'
+import { presetSensors } from 'utils/presetSensors'
+import { twitter_link, telegram_link, discord_link, medium_link, linktree_link } from 'constants/url'
+import { map } from 'lodash-es'
+import image from 'next/image'
 
 const Community = () => {
   const items = useMemo(() => {
     return [
-      { title: 'Twitter', link: 'https://twitter.com/TeleportChain', image: iconSocialTwitter },
-      { title: 'Telegram', link: 'https://t.me/TeleportNetwork', image: iconSocialTelegram },
-      { title: 'Discord', link: 'https://discord.gg/5YQtRDF4Rh', image: iconSocialDiscord },
-      { title: 'Medium', link: 'https://medium.com/@TeleportNetwork', image: iconSocialMedium },
-      { title: 'Linktree', link: 'https://linktr.ee/teleportnetwork', image: iconSocialLinkTree },
+      { title: 'Twitter', link: twitter_link, image: iconSocialTwitter, onClick: presetSensors.body.twitter },
+      { title: 'Telegram', link: telegram_link, image: iconSocialTelegram, onClick: presetSensors.body.telegram },
+      { title: 'Discord', link: discord_link, image: iconSocialDiscord, onClick: presetSensors.body.discord },
+      { title: 'Medium', link: medium_link, image: iconSocialMedium, onClick: presetSensors.body.medium },
+      { title: 'Linktree', link: linktree_link, image: iconSocialLinkTree, onClick: presetSensors.body.linktree },
     ].map((item) => {
       return (
-        <Link href={item.link} key={item.link}>
-          <a target={'_blank'}
+        <Link href={item.link} key={item.link} onClick={item.onClick}>
+          <a
+            target={'_blank'}
             style={{
               fontFamily: 'Dela Gothic One',
               fontStyle: 'normal',
@@ -41,11 +46,11 @@ const Community = () => {
             <Text
               textAlign={'center'}
               sx={{
-                  fontSize: '10px',
-                  position: 'absolute',
-                  left: '50%',
-                  bottom: 0,
-                  transform: 'translateX(-50%)',
+                fontSize: '10px',
+                position: 'absolute',
+                left: '50%',
+                bottom: 0,
+                transform: 'translateX(-50%)',
               }}
             >
               {item.title}

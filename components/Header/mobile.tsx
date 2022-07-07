@@ -13,6 +13,7 @@ import ambassadorFire from 'public/ambassador.svg'
 import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
 import { mobileMenuDiscordIcon, mobileMenuLinktreeIcon, mobileMenuMediumIcon, mobileMenuTelegramIcon, mobileMenuTwitterIcon } from 'components/Image/base64Images'
 import { SCROLL_ROOT_ID } from 'components/Mobile'
+import { presetSensors } from 'utils/presetSensors'
 
 export default function Header() {
   const [menuSpread, setMenuSpread] = useState<SxStyleProp | undefined>(undefined)
@@ -199,7 +200,7 @@ export default function Header() {
             }}
             opacityOrNot={selectedMenu === 'Community'}
           />
-          <MobileMenuAmbassadorItem title="Ambassador" />
+          <MobileMenuAmbassadorItem title="Ambassador" onClick={presetSensors.header.ambassador} />
         </Flex>
         <Flex sx={{ width: '55%', height: '100%', minHeight: 'fit-content', position: 'relative' }}>
           <Flex sx={{ width: '100%', height: '100%', minHeight: 'fit-content', position: 'absolute', overflowY: 'auto' }}>
@@ -320,9 +321,10 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
   )
 }
 
-function DocsMenuItem({ itemText, showBottomBorder }: { itemText: string; showBottomBorder?: boolean }) {
+function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: string; showBottomBorder?: boolean; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
     <Text
+      onClick={onClick}
       sx={{
         fontFamily: 'Poppins',
         fontStyle: 'normal',
@@ -373,21 +375,21 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         opacity: opacityOrNot ? 1 : 0,
       }}
     >
-      <DocsMenuItem itemText="White Paper" showBottomBorder={true} />
+      <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
-      <DocsMenuItem itemText=" Teleport Chain" />
-      <DocsMenuItem itemText=" XIBC" />
-      <DocsMenuItem itemText=" Developer" />
-      <DocsMenuItem itemText=" Validator" showBottomBorder />
+      <DocsMenuItem itemText=" Teleport Chain" onClick={presetSensors.header.docChain} />
+      <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
+      <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
+      <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} />
       {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
-      <DocsMenuItem itemText=" Wallet" />
+      <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
   )
 }
 
-function CommunityMenuItem({ base64String, itemText }: { base64String: string; itemText: string }) {
+function CommunityMenuItem({ base64String, itemText, onClick }: { base64String: string; itemText: string; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
-    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'}>
+    <Flex width={'100%'} justifyContent="flex-start" alignItems={'center'} onClick={onClick}>
       <Base64SvgHolder base64String={base64String} width="28px" height="28px" />
       &nbsp; &nbsp;
       <Text
@@ -420,11 +422,11 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
         opacity: opacityOrNot ? 1 : 0,
       }}
     >
-      <CommunityMenuItem base64String={mobileMenuTwitterIcon} itemText="Twitter" />
-      <CommunityMenuItem base64String={mobileMenuTelegramIcon} itemText="Telegram" />
-      <CommunityMenuItem base64String={mobileMenuDiscordIcon} itemText="Discord" />
-      <CommunityMenuItem base64String={mobileMenuMediumIcon} itemText="Medium" />
-      <CommunityMenuItem base64String={mobileMenuLinktreeIcon} itemText="Linktree" />
+      <CommunityMenuItem onClick={presetSensors.header.twitter} base64String={mobileMenuTwitterIcon} itemText="Twitter" />
+      <CommunityMenuItem onClick={presetSensors.header.telegram} base64String={mobileMenuTelegramIcon} itemText="Telegram" />
+      <CommunityMenuItem onClick={presetSensors.header.discord} base64String={mobileMenuDiscordIcon} itemText="Discord" />
+      <CommunityMenuItem onClick={presetSensors.header.medium} base64String={mobileMenuMediumIcon} itemText="Medium" />
+      <CommunityMenuItem onClick={presetSensors.header.linktree} base64String={mobileMenuLinktreeIcon} itemText="Linktree" />
     </Flex>
   )
 }
@@ -478,9 +480,10 @@ function ToolMenuSubBlock({ title, children }: { title?: string } & FlexProps) {
   )
 }
 
-function ToolMenuItem({ itemText }: { itemText: string }) {
+function ToolMenuItem({ itemText, onClick }: { itemText: string; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
   return (
     <Text
+      onClick={onClick}
       sx={{
         whiteSpace: 'nowrap',
         fontFamily: 'Poppins',
@@ -512,18 +515,18 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
     >
       <ToolMenuBlock title="Faucet">
         <ToolMenuSubBlock title="Faucet (TELE)">
-          <ToolMenuItem itemText="Discord" />
+          <ToolMenuItem itemText="Discord" onClick={presetSensors.header.discord} />
         </ToolMenuSubBlock>
         <ToolMenuSubBlock title=" Faucet (TUSDT)">
-          <ToolMenuItem itemText="Teleport Testnet" />
-          <ToolMenuItem itemText="BNB Testnet" />
-          <ToolMenuItem itemText="Rinkeby" />
+          {/* <ToolMenuItem itemText="Teleport Testnet" /> */}
+          <ToolMenuItem itemText="BNB Testnet" onClick={presetSensors.header.bscFaucet} />
+          <ToolMenuItem itemText="Rinkeby" onClick={presetSensors.header.rinkebyFaucet} />
         </ToolMenuSubBlock>
       </ToolMenuBlock>
       <ToolMenuBlock title="Explorer">
         <ToolMenuSubBlock>
-          <ToolMenuItem itemText="EVM" />
-          <ToolMenuItem itemText="Tendermint" />
+          <ToolMenuItem itemText="EVM" onClick={presetSensors.header.evmExplorer} />
+          <ToolMenuItem itemText="Tendermint" onClick={presetSensors.header.tendermintExplorer} />
         </ToolMenuSubBlock>
       </ToolMenuBlock>
     </Flex>

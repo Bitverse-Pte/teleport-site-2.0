@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Flex, Text } from 'rebass'
 
 import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } from './Components'
+import { presetSensors } from 'utils/presetSensors'
 export default function DocsDropdown() {
   return (
     <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.125rem 0">
@@ -38,7 +39,7 @@ export default function DocsDropdown() {
                 {'Faucet (TELE)'}
               </Flex>
               <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
-              <HeadingLink noMarginBottom color="white">
+              <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.teleFaucet}>
                 Discord
               </HeadingLink>
             </Flex>
@@ -57,13 +58,13 @@ export default function DocsDropdown() {
                 {'Faucet (TUSDT)'}
               </Flex>
               <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
-              <HeadingLink noMarginBottom color="white">
+              {/* <HeadingLink noMarginBottom color="white">
                 Teleport Testnet
-              </HeadingLink>
-              <HeadingLink noMarginBottom color="white">
+              </HeadingLink> */}
+              <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.bscFaucet}>
                 BNB Testnet
               </HeadingLink>
-              <HeadingLink noMarginBottom color="white">
+              <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.rinkebyFaucet}>
                 Rinkeby
               </HeadingLink>
             </Flex>
@@ -84,10 +85,10 @@ export default function DocsDropdown() {
             Explorer
           </Flex>
           <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
-          <HeadingLink noMarginBottom color="white">
+          <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.evmExplorer}>
             EVM
           </HeadingLink>
-          <HeadingLink noMarginBottom color="white">
+          <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.tendermintExplorer}>
             Tendermint
           </HeadingLink>
         </Flex>
