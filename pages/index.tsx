@@ -4,6 +4,7 @@ import getConfig from 'next/config'
 
 import { NextApiRequest, NextApiResponse } from 'next'
 import { parse, UserAgent } from 'next-useragent'
+import WithLoading from 'components/WithLoading'
 
 const { publicRuntimeConfig } = getConfig()
 
@@ -25,7 +26,7 @@ function getSize() {
   }
 }
 
-export default function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
+function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
   useEffect(() => {
     publicRuntimeConfig.BUILD_ENV !== 'development' &&
       import('utils/skynet').then(({ start }) => {
@@ -66,6 +67,7 @@ export default function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
 
   return <Suspense fallback={() => <Text>loading</Text>}>{<Components />}</Suspense>
 }
+export default WithLoading(Home)
 
 export async function getServerSideProps({ req, res }: { req: NextApiRequest; res: NextApiResponse }) {
   const ua = parse(req.headers['user-agent'] || '')
