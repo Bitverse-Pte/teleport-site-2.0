@@ -7,8 +7,11 @@ import web3Svg from 'public/web3.svg'
 import leftBottomArrow from 'public/leftBottomArrow.svg'
 import circledT from 'public/circledT.svg'
 import welcomeGif from 'public/gif/welcome.gif'
+import welcomeThumbGif from 'public/gif/welcome-thumb.gif'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
+import { welcomeGifFirstFrame } from 'components/Image/base64Images'
+import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
 import { presetSensors } from 'utils/presetSensors'
 
 export default function WelcomeBlock() {
@@ -155,7 +158,7 @@ export default function WelcomeBlock() {
           transformOrigin: 'center',
         }}
       >
-        <Image src={welcomeGif} alt="welcome-gif"></Image>
+        <Image src={welcomeGif} alt="welcome-gif" placeholder="blur" blurDataURL={'data:image/png;base64,' + welcomeGifFirstFrame}></Image>
       </Box>
       <Flex
         sx={{

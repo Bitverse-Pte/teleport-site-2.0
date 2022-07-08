@@ -4,5 +4,5 @@ const customLoader: ImageLoader = ({ src }: ImageLoaderProps) => {
   return src
 }
 export default function OriginalSrcImage(props: Omit<ImageProps, 'loader'>) {
-  return <Image {...props} alt={props.alt ?? ''} quality={100} loader={customLoader} />
+  return <Image alt={''} quality={100} loader={customLoader} {...props} />
 }
