@@ -47,21 +47,21 @@ const CommunityBlock = styled.div`
           right: 0;
           margin: auto;
           transition: all 0.2s ease-in-out;
-          height: 124px;
+          height: 84px;
         }
         .textCommunity {
           display: inline-block;
           margin-top: 148px;
           font-family: Dela Gothic One;
           color: #05050e;
-          font-size: 24px;
+          font-size: 20px;
           line-height: 100%;
         }
         .lineCommunity {
           width: 0px;
           height: 2px;
           margin-top: 6px;
-          transition-duration: 0.3s;
+          transition-duration: 0.2s;
           color: black;
           background-color: black;
           display: block;
@@ -69,8 +69,7 @@ const CommunityBlock = styled.div`
 
         &:hover {
           .imgCommunity {
-            transform: scale(1.2);
-            height: 130px;
+            transform: scale(1.1);
           }
           .lineCommunity {
             background-color: black;

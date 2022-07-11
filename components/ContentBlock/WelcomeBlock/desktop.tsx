@@ -39,6 +39,9 @@ export default function WelcomeBlock() {
         transition: 'all 0.2s ease-in-out',
         justifyContent: 'space-between',
         ':hover': {
+          'button': {
+            margin: 0,
+          },
           height: '480px',
           '.welcome-teleport': {
             transform: `translateX(calc(${(containerWidth ? containerWidth : 0) / 2}px - 50%)) translateY(-20%)`,
@@ -243,6 +246,7 @@ export default function WelcomeBlock() {
               fontSize: '24px',
               lineHeight: '24px',
               borderRadius: '12px',
+              marginBottom: '24px',
             }}
           >
             Docs
@@ -271,7 +275,7 @@ export default function WelcomeBlock() {
               fontSize: '24px',
               lineHeight: '24px',
               borderColor: 'white',
-              borderWidth: '2px',
+              borderWidth: '0.5px',
               borderStyle: 'solid',
               borderRadius: '12px',
             }}

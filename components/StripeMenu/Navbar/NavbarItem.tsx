@@ -9,8 +9,8 @@ const NavbarItemTitle = styled.button`
   font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 18px;
   color: white;
   display: flex;
   justify-content: center;

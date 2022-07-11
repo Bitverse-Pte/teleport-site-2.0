@@ -48,7 +48,7 @@ export default function Header() {
           fontFamily: 'IBM Plex Sans',
           fontStyle: 'normal',
           fontWeight: 500,
-          fontSize: '24px',
+          fontSize: '18px',
           color: '#0ACBE4',
           cursor: 'pointer',
         }}

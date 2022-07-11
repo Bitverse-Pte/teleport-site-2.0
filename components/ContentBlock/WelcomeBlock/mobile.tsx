@@ -31,11 +31,11 @@ export default function WelcomeBlock() {
       <Flex width={'100%'} justifyContent="space-between" alignItems={'center'}>
         <Button
           sx={{
-            fontFamily: 'IBM Plex Sans',
+            fontFamily: 'Poppins',
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: '16px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             lineHeight: '16px',
           }}
           onClick={presetSensors.body.doc}
@@ -49,11 +49,11 @@ export default function WelcomeBlock() {
         </Button>
         <Button
           sx={{
-            fontFamily: 'IBM Plex Sans',
+            fontFamily: 'Poppins',
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: '16px',
-            borderRadius: '12px',
+            borderRadius: '6px',
             lineHeight: '16px',
             border: 'solid 1px white',
           }}

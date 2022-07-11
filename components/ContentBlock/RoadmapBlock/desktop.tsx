@@ -6,11 +6,11 @@ import staredLine from 'public/images/roadmap-stared-line.svg'
 
 export default function RoadmapBlock() {
   return (
-    <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} marginBottom="1rem">
+    <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} marginBottom="108px">
       <Text
         sx={{
           fontFamily: 'Dela Gothic One',
-          fontSize: '64px',
+          fontSize: '54px',
           lineHeight: '123.76%',
           color: '#05050e',
           width: '100%',
@@ -48,11 +48,11 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
         },
       }}
     >
-      <Text textAlign={'center'} height={'40px'} fontWeight={400} fontSize="24px" fontFamily={'Dela Gothic One'} color="#05050e">
+      <Text textAlign={'center'} height={'40px'} fontWeight={400} fontSize="20px" fontFamily={'Dela Gothic One'} color="#05050e">
         {milestoneDate}
       </Text>
       <Box height={'100px'}></Box>
-      <Text textAlign={'center'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="18px">
+      <Text textAlign={'center'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="16px">
         {description}
       </Text>
     </Flex>

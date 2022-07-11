@@ -30,9 +30,9 @@ function Desktop() {
       >
         <Image src={bg} alt={'background-image'} layout="fill" objectFit="contain" objectPosition={'left top'} quality={100}></Image>
         <Header />
-        <Flex marginTop={'240px'} minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
+        <Flex marginTop={'120px'} minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
           <WelcomeBlock />
-          <Box marginTop={64}>
+          <Box marginTop={84}>
             <Image src={colorfulDownArrow} alt="colorful-down-arrow" />
           </Box>
           <FeaturesBlock />

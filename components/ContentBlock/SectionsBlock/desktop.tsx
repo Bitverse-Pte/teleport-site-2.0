@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Flex } from 'rebass'
+import { Box, Button, Flex } from 'rebass'
 import Link from 'next/link'
 import Image from 'components/Image'
 
@@ -36,15 +36,15 @@ const SectionStyle = styled.div`
       .wrapColumn {
         .textTitle {
           font-family: Dela Gothic One;
-          font-size: 72px;
-          line-height: 72px;
+          font-size: 60px;
+          line-height: 60px;
         }
         .textSubTitle {
           max-width: 800px;
           margin-top: 32px;
           font-family: Poppins;
           font-size: 24px;
-          line-height: 24px;
+          line-height: 44px;
           letter-spacing: 0.06em;
           opacity: 0.8;
         }
@@ -61,7 +61,6 @@ const SectionStyle = styled.div`
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
-        
         &:hover {
           transition: all 0.2s ease 0s;
           box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
@@ -86,7 +85,11 @@ function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle, placeHolde
           </div>
           {RenderButton(ButtonTitle)}
         </div>
-        <Image className="gifFeature" src={ImageRes} alt={'section-icon'} placeholder="blur" blurDataURL={'data:image/png;base64,' + placeHolderSrc} />
+        <Box style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Box style={{ maxWidth: 900 }}>
+            <Image className="gifFeature" src={ImageRes} alt={'section-icon'} placeholder="blur" blurDataURL={'data:image/png;base64,' + placeHolderSrc} />
+          </Box>
+        </Box>
       </div>
     </SectionStyle>
   )

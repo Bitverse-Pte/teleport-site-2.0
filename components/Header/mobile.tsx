@@ -104,7 +104,7 @@ export default function Header() {
             ...(atTop
               ? {}
               : {
-                  left: '6%',
+                  left: '36px',
                   transform: 'translateX(0)',
                 }),
             ...headerLogoStyle,
@@ -172,7 +172,7 @@ export default function Header() {
           maxWidth="50%"
           minWidth="45%"
           sx={{
-            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.5)',
+            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.26)',
             padding: '20px 0',
           }}
         >
@@ -224,8 +224,8 @@ function Banner({ sx }: FlexProps) {
         transition: 'all 0.2s ease-in-out, opacity 1s ease-in-out',
         height: '100%',
         alignItems: 'center',
-        minWidth: '240px',
-        maxWidth: '240px',
+        minWidth: '133px',
+        maxWidth: '133px',
         /*  '& > span': {
           position: 'absolute',
         }, */
@@ -241,11 +241,11 @@ function Banner({ sx }: FlexProps) {
         ...sx,
       }}
     >
-      <Box className="mobile-logo white-text" style={{ position: 'absolute' }}>
-        <Image src={mobileLogo} alt={'main-logo'} height="55px" width={'266px'} />
+      <Box className="mobile-logo white-text" style={{ position: 'absolute', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Image src={mobileLogo} alt={'main-logo'} height="55px" width={'133px'} />
       </Box>
-      <Box className="mobile-logo black-text" style={{ position: 'absolute' }}>
-        <Image src={mobileLogoBlackText} alt={'main-logo'} height="55px" width={'266px'} />
+      <Box className="mobile-logo black-text" style={{ position: 'absolute', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Image src={mobileLogoBlackText} alt={'main-logo'} height="55px" width={'133px'} />
       </Box>
     </Flex>
   )

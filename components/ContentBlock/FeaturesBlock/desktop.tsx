@@ -87,8 +87,8 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
                 color: 'white',
                 fontWeight: 900,
                 height: '80%',
-                fontSize: '64px',
-                lineHeight: '80px',
+                fontSize: '54px',
+                lineHeight: '70px',
               }}
             >
               {MainTitle}
@@ -116,12 +116,14 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
             sx={{
               fontFamily: 'Poppins',
               fontStyle: 'normal',
-              maxHeight: '20%',
-              maxWidth: '420px',
-              textAlign: 'end',
-              lineHeight: '32px',
+              fontWeight: 300,
               fontSize: '24px',
-              fontWeight: 400,
+              lineHeight: '32px',
+              textAlign: 'right',
+              letterSpacing: '0.02em',
+              color: '#FFFFFF',
+              opacity: 0.7,
+              width: 350,
             }}
           >
             {instruction}

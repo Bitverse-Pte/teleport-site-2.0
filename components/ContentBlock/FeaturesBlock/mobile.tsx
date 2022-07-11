@@ -76,7 +76,9 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
             fontWeight: 300,
             fontSize: '12px',
             lineHeight: '16px',
-            textAlign: 'left',
+            letterSpacing: '0.02em',
+            color: '#FFFFFF',
+            opacity: 0.7,
           }}
         >
           {instruction}
