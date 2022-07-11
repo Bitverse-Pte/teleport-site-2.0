@@ -37,10 +37,7 @@ const CommunityBlock = styled.div`
       transition-duration: all 0.2s ease-in-out;
       transform-origin: 0 50%;
       .itemCommunity {
-        width: 160px;
         position: relative;
-        height: 172px;
-
         .imgCommunity {
           position: absolute;
           left: 0;
@@ -48,10 +45,11 @@ const CommunityBlock = styled.div`
           margin: auto;
           transition: all 0.2s ease-in-out;
           height: 84px;
+          width: 84px;
         }
         .textCommunity {
           display: inline-block;
-          margin-top: 148px;
+          margin-top: 96px;
           font-family: Dela Gothic One;
           color: #05050e;
           font-size: 20px;
