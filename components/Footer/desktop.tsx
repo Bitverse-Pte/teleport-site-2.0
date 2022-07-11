@@ -9,27 +9,28 @@ import { presetSensors } from 'utils/presetSensors'
 import { ambassador_link, discord_link, docs_link, github_link } from 'constants/url'
 
 const StyledLink = (props: { text: string } & LinkProps) => {
-  return (
-    <Link {...props} passHref={true}>
-      <Text
-        sx={{
-          fontFamily: 'Poppins',
-          fontStyle: 'normal',
-          fontWeight: '400',
-          fontSize: '18px',
-          lineHeight: '27px',
-          color: '#000000',
-          marginBottom: '16px',
-          cursor: 'pointer',
-          ':hover': {
-            color: '#59C3AA',
-          },
-        }}
-      >
-        {props.text}
-      </Text>
-    </Link>
-  )
+    return (
+        <Link {...props} passHref={true}>
+            <Text
+                sx={{
+                    fontFamily: 'Poppins',
+                    fontStyle: 'normal',
+                    fontWeight: '400',
+                    fontSize: '18px',
+                    lineHeight: '27px',
+                    color: '#000000',
+                    marginBottom: '16px',
+                    cursor: 'pointer',
+                    ':hover': {
+                        color: '#59C3AA',
+                        fontWeight: '800',
+                    },
+                }}
+            >
+                {props.text}
+            </Text>
+        </Link>
+    )
 }
 
 const Footer = () => {
