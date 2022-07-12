@@ -78,9 +78,11 @@ export default function WelcomeBlock() {
               width: '40%',
               minWidth: '180px',
               maxWidth: '260px',
-              height: '64px',
+              height: '54px',
             },
             flexWrap: 'nowrap',
+            justifyContent: 'space-around',
+            alignItems: 'baseline',
             maxWidth: 'unset!important',
             flex: 1,
             minWidth: '45%!important',
@@ -88,7 +90,6 @@ export default function WelcomeBlock() {
               '.shrink-button': {
                 width: '160px',
                 minWidth: '160px',
-                height: '64px',
               },
               minWidth: '380px!important',
             },
@@ -179,7 +180,7 @@ export default function WelcomeBlock() {
       >
         <Flex
           className="with-after-border"
-          flexDirection={'row'}
+          flexDirection={'column'}
           justifyContent="flex-start"
           sx={{
             transition: 'all 0.2s ease-in-out',
@@ -190,42 +191,47 @@ export default function WelcomeBlock() {
           }}
           css={css`
             &:after {
-              margin-top: 10px;
               display: block;
               content: '';
               border-bottom: solid white 2px;
               transform: scaleX(1);
               transition: all 0.2s ease-in-out;
               transform-origin: 0% 50%;
+              width: 100%;
             }
           `}
         >
-          <Box
-            className="vanish-to-left"
-            sx={{
-              transformOrigin: '50% 0',
-              transition: 'all 0.2s ease-in-out',
-            }}
-          >
-            <Image src={leftBottomArrow} alt="welcome-gif"></Image>
-          </Box>
-          <Box
-            className="translate-to-left"
-            sx={{
-              transition: 'all 0.2s ease-in-out',
-              transformOrigin: '0% 50%',
-            }}
-          >
-            <Image src={web3Svg} alt="welcome-gif"></Image>
-          </Box>
+          <Flex width="100%" height="100%">
+            <Box
+              className="vanish-to-left"
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                transformOrigin: '50% 0',
+                transition: 'all 0.2s ease-in-out',
+              }}
+            >
+              <Image src={leftBottomArrow} alt="welcome-gif"></Image>
+            </Box>
+            <Box
+              className="translate-to-left"
+              sx={{
+                transition: 'all 0.2s ease-in-out',
+                transformOrigin: '0% 50%',
+              }}
+            >
+              <Image src={web3Svg} alt="welcome-gif"></Image>
+            </Box>
+          </Flex>
         </Flex>
         <Flex
           flex={1}
           alignItems="center"
-          justifyContent={'space-around'}
           className="flatten-div"
           flexWrap="wrap"
           sx={{
+            justifyContent: 'space-between',
+            paddingTop: '16px',
             maxWidth: '200px!important',
             '@media screen and (max-width: 1300px)': {
               maxWidth: '155px!important',
@@ -237,11 +243,11 @@ export default function WelcomeBlock() {
         >
           <Button
             className="shrink-button"
-            height={'45%'}
             backgroundColor="white"
             color="#161929"
             onClick={presetSensors.body.doc}
             sx={{
+              height: '54px',
               minWidth: '200px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',
@@ -257,18 +263,17 @@ export default function WelcomeBlock() {
               fontSize: '24px',
               lineHeight: '24px',
               borderRadius: '12px',
-              marginBottom: '24px',
             }}
           >
             Docs
           </Button>
           <Button
             className="shrink-button"
-            height={'45%'}
             backgroundColor="transparent"
             color="white"
             onClick={presetSensors.body.whitepaper}
             sx={{
+              height: '54px',
               minWidth: '200px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',

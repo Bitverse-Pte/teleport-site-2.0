@@ -38,7 +38,7 @@ export const FooterStyled = styled.div`
     }
 
     .lineFooter {
-      height: 1px;
+      height: 0.5px;
       transform: scaleY(0.5);
       background-color: black;
       margin: 20px 0;

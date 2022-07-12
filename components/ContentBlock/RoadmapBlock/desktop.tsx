@@ -15,7 +15,7 @@ export default function RoadmapBlock() {
           color: '#05050e',
           width: '100%',
           textAlign: 'center',
-          marginBottom: '0.5rem',
+          marginBottom: '108px',
         }}
       >
         Teleport Roadmap

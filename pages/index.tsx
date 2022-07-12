@@ -48,7 +48,7 @@ function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
   useEffect(() => {
     if (isDesktop && windowSize && windowSize < 720) {
       setComponentsName('Mobile')
-    } else if (isMobile || (isTablet && windowSize && windowSize < 720)) {
+    } else if ((isMobile || isTablet) && windowSize && windowSize < 720) {
       setComponentsName('Mobile')
     } else if (isTablet && windowSize && windowSize >= 720) {
       setComponentsName('Desktop')

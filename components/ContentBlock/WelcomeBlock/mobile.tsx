@@ -11,16 +11,16 @@ import { presetSensors } from 'utils/presetSensors'
 export default function WelcomeBlock() {
   return (
     <Flex flexDirection={'column'} width="100%" sx={{ zIndex: 1 }} minHeight={'fit-content'} justifyContent="space-between" alignItems={'center'} margin={'57px 0'}>
-      <Flex marginBottom={12}>
+      <Flex marginBottom={12} width={264}>
         <Image src={welcomeTeleport} alt="welcome-main-title" objectFit="contain"></Image>
       </Flex>
-      <Flex marginBottom={28.64}>
+      <Flex marginBottom={28.64} width={264}>
         <Image src={welcomeSubTitle} alt="welcome-sub-title" objectFit="contain"></Image>
       </Flex>
       <Flex marginBottom={30.15}>
         <Image src={mobileWelcomeImg} alt="welcome-main-img" objectFit="contain"></Image>
       </Flex>
-      <Flex marginBottom={30}>
+      <Flex marginBottom={30} width={220}>
         <Box sx={{ display: 'flex', alignItems: 'end' }}>
           <Image src={leftBottomArrow} alt="welcome-gif"></Image>
         </Box>
@@ -41,7 +41,7 @@ export default function WelcomeBlock() {
           onClick={presetSensors.body.doc}
           padding={'15px 0'}
           height={'100%'}
-          width={'45%'}
+          width={'48.5%'}
           backgroundColor="white"
           color="#161929"
         >
@@ -60,7 +60,7 @@ export default function WelcomeBlock() {
           onClick={presetSensors.body.downloadWallet}
           padding={'15px 0'}
           height={'100%'}
-          width={'45%'}
+          width={'48.5%'}
           backgroundColor="transparent"
           color="white"
         >

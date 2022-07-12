@@ -36,8 +36,8 @@ const SectionStyle = styled.div`
       .wrapColumn {
         .textTitle {
           font-family: Dela Gothic One;
-          font-size: 60px;
-          line-height: 60px;
+          font-size: 54px;
+          line-height: 54px;
         }
         .textSubTitle {
           max-width: 800px;
@@ -73,7 +73,6 @@ const SectionStyle = styled.div`
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 
 function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle, placeHolderSrc }: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string; placeHolderSrc: string }) {
-  console.log(placeHolderSrc.substring(0, 10))
   return (
     <SectionStyle>
       <div className="wrapSection centerView">
