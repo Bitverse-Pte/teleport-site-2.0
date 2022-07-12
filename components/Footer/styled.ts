@@ -46,8 +46,8 @@ export const FooterStyled = styled.div`
     }
 
     .textCopyright {
-      font-size: 1.6rem;
-      color: #05050e;
+      font-size: 12px;
+      color: rgba(5, 5, 14, 0.5);
       font-family: Poppins;
       line-height: 2.4rem;
     }
@@ -63,7 +63,7 @@ export const FooterStyled = styled.div`
           font-family: Poppins;
           font-style: normal;
           font-weight: 600;
-          font-size: 2.4rem;
+          font-size: 20px;
           line-height: 7rem;
           color: #05050e;
         }

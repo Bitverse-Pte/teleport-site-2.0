@@ -53,7 +53,7 @@ function Mobile() {
               sx={{
                 borderBottomLeftRadius: '48px',
                 borderBottomRightRadius: '48px',
-                paddingTop: '100px',
+                paddingTop: '60px',
               }}
             >
               <Flex width={'88%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">

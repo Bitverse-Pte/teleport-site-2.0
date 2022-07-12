@@ -40,8 +40,8 @@ export default function WelcomeBlock() {
           }}
           onClick={presetSensors.body.doc}
           padding={'15px 0'}
-          height={'100%'}
-          width={'48.5%'}
+          height={'48px'}
+          width={'164px'}
           backgroundColor="white"
           color="#161929"
         >
@@ -59,8 +59,8 @@ export default function WelcomeBlock() {
           }}
           onClick={presetSensors.body.downloadWallet}
           padding={'15px 0'}
-          height={'100%'}
-          width={'48.5%'}
+          height={'48px'}
+          width={'164px'}
           backgroundColor="transparent"
           color="white"
         >

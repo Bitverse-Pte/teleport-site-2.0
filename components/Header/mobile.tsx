@@ -88,7 +88,7 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        minHeight: '96px',
+        height: '72px',
         width: '100%',
         alignItems: 'center',
         top: 0,
@@ -98,13 +98,13 @@ export default function Header() {
         background: 'rgba(0, 0, 0, 0.5)',
       }}
     >
-      <Flex sx={{ backdropFilter: 'blur(5px)', alignItems: 'center', width: '100%', minHeight: '96px', position: 'fixed', justifyContent: 'center', ...headerBackground, transition: 'all 0.2 ease-in-out' }}>
+      <Flex sx={{ backdropFilter: 'blur(5px)', alignItems: 'center', width: '100%', minHeight: '72px', position: 'fixed', justifyContent: 'center', ...headerBackground, transition: 'all 0.2 ease-in-out' }}>
         <Banner
           sx={{
             ...(atTop
               ? {}
               : {
-                  left: '36px',
+                  left: '6%',
                   transform: 'translateX(0)',
                 }),
             ...headerLogoStyle,
@@ -169,11 +169,12 @@ export default function Header() {
       >
         <Flex
           flexDirection={'column'}
-          maxWidth="50%"
-          minWidth="45%"
+          maxWidth="45%"
           sx={{
             boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.26)',
-            padding: '20px 0',
+            paddingTop: '20px',
+            paddingLeft: '24px',
+            paddingRight: '24px',
           }}
         >
           <MobileMenuItem
@@ -230,7 +231,7 @@ function Banner({ sx }: FlexProps) {
           position: 'absolute',
         }, */
         '.mobile-logo': {
-          transition: 'all 0.2s ease-in-out, opacity 1s ease-in-out',
+          transition: 'all 0.2s ease-in-out, opacity 0.2s ease-in-out',
         },
         '.white-text': {
           opacity: 1,
@@ -271,13 +272,16 @@ function MobileMenuAmbassadorItem({ title, onClick }: { title: string; showArrow
           fontWeight: 500,
           fontSize: '14px',
           lineHeight: '14px',
-          color: `rgba(5,5,14,1)`,
-          minWidth: '70%',
+          color: `rgba(5,5,14,0.5)`,
+          width: 'fit-content',
+          marginRight: '6px',
+          ':active,:hover': {
+            color: `rgba(5,5,14,1)`,
+          },
         }}
       >
         {title}
       </Text>
-      &nbsp;
       <Image src={ambassadorFire} width={14} height={14} alt={'mobile-menu-icon'} />
     </Flex>
   )
@@ -330,7 +334,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
         fontStyle: 'normal',
         fontWeight: 500,
         fontSize: '14px',
-        lineHeight: showBottomBorder ? '59px' : '60px',
+        lineHeight: /* showBottomBorder ? '59px' : */ '60px',
         width: '100%',
         color: '#05050E',
         // margin: '24px 0',
@@ -342,7 +346,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
         },
         // }),
       }}
-      {...(showBottomBorder
+      /* {...(showBottomBorder
         ? {
             css: css`
               &:after {
@@ -352,7 +356,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
               }
             `,
           }
-        : {})}
+        : {})} */
     >
       {itemText}
     </Text>
@@ -377,12 +381,12 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       }}
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
-      {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
       <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
       <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
       {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
-      {/* <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr> */}
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
   )
@@ -435,7 +439,7 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
 
 function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
   return (
-    <Flex width={'100%'} margin="12px 0" flexDirection={'column'}>
+    <Flex width={'100%'} margin="15px 0" flexDirection={'column'}>
       <Text
         sx={{
           fontFamily: 'Poppins',
@@ -445,12 +449,21 @@ function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
           lineHeight: '14px',
           color: '#05050E',
           opacity: 0.5,
-          marginBottom: '12px',
+          marginBottom: '15px',
         }}
       >
         {title}
       </Text>
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
+      <hr
+        style={{
+          margin: '15px 0',
+          borderWidth: 0,
+          borderStyle: 'solid',
+          borderColor: 'rgba(0,0,0, 0.26)',
+          borderBottomWidth: '1px',
+          width: '100%',
+        }}
+      ></hr>
       {children}
     </Flex>
   )
@@ -458,7 +471,7 @@ function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
 
 function ToolMenuSubBlock({ title, children }: { title?: string } & FlexProps) {
   return (
-    <Flex width={'100%'} margin="12px 0" flexDirection={'column'}>
+    <Flex width={'100%'} margin={title ? '15px 0' : '0'} flexDirection={'column'}>
       {title && (
         <Text
           sx={{
@@ -475,7 +488,7 @@ function ToolMenuSubBlock({ title, children }: { title?: string } & FlexProps) {
           {title}
         </Text>
       )}
-      <Flex flexDirection={'column'} alignItems="flex-start" justifyContent={'space-between'} padding="12px">
+      <Flex flexDirection={'column'} alignItems="flex-start" justifyContent={'space-between'} padding={title ? '15px' : '0 15px'}>
         {children}
       </Flex>
     </Flex>
@@ -494,7 +507,7 @@ function ToolMenuItem({ itemText, onClick }: { itemText: string; onClick?: React
         fontSize: '14px',
         lineHeight: '14px',
         color: '#05050E',
-        margin: '12px 0',
+        margin: '15px 0',
       }}
     >
       {itemText}

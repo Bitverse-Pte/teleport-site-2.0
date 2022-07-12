@@ -16,7 +16,7 @@ const StyledLink = (props: { text: string } & LinkProps) => {
                     fontFamily: 'Poppins',
                     fontStyle: 'normal',
                     fontWeight: '400',
-                    fontSize: '18px',
+                    fontSize: '14px',
                     lineHeight: '27px',
                     color: '#000000',
                     marginBottom: '16px',
