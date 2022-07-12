@@ -7,11 +7,9 @@ import web3Svg from 'public/web3.svg'
 import leftBottomArrow from 'public/leftBottomArrow.svg'
 import circledT from 'public/circledT.svg'
 import welcomeGif from 'public/gif/welcome.gif'
-import welcomeThumbGif from 'public/gif/welcome-thumb.gif'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
 import { welcomeGifFirstFrame } from 'components/Image/base64Images'
-import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
 import { presetSensors } from 'utils/presetSensors'
 
 export default function WelcomeBlock() {
@@ -39,7 +37,7 @@ export default function WelcomeBlock() {
         transition: 'all 0.2s ease-in-out',
         justifyContent: 'space-between',
         ':hover': {
-          'button': {
+          button: {
             margin: 0,
           },
           height: '480px',
@@ -60,6 +58,11 @@ export default function WelcomeBlock() {
             width: '100%',
             transform: 'translateY(-10%)',
           },
+          '.with-after-border': {
+            minWidth: '50%',
+            flex: 0,
+            alignItems: 'center',
+          },
           '.with-after-border:after': {
             transform: 'scale(0)',
           },
@@ -72,11 +75,15 @@ export default function WelcomeBlock() {
           },
           '.flatten-div': {
             '.shrink-button': {
-              width: '260px',
-              minWidth: '260px',
+              width: '40%',
+              minWidth: '180px',
+              maxWidth: '260px',
               height: '64px',
             },
-            minWidth: '640px!important',
+            flexWrap: 'nowrap',
+            maxWidth: 'unset!important',
+            flex: 1,
+            minWidth: '45%!important',
             '@media screen and (max-width: 1300px)': {
               '.shrink-button': {
                 width: '160px',
@@ -174,10 +181,12 @@ export default function WelcomeBlock() {
           className="with-after-border"
           flexDirection={'row'}
           justifyContent="flex-start"
-          alignItems={'baseline'}
           sx={{
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
+            maxWidth: '70%',
+            flex: 1,
+            alignItems: 'flex-end',
           }}
           css={css`
             &:after {
@@ -217,9 +226,13 @@ export default function WelcomeBlock() {
           className="flatten-div"
           flexWrap="wrap"
           sx={{
-            maxWidth: '100px!important',
+            maxWidth: '200px!important',
+            '@media screen and (max-width: 1300px)': {
+              maxWidth: '155px!important',
+            },
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
+            minHeight: '160px',
           }}
         >
           <Button
@@ -229,9 +242,7 @@ export default function WelcomeBlock() {
             color="#161929"
             onClick={presetSensors.body.doc}
             sx={{
-              width: '270px',
-              minWidth: '270px',
-              maxWidth: '270px',
+              minWidth: '200px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
@@ -258,9 +269,7 @@ export default function WelcomeBlock() {
             color="white"
             onClick={presetSensors.body.whitepaper}
             sx={{
-              width: '270px',
-              minWidth: '270px',
-              maxWidth: '270px',
+              minWidth: '200px',
               '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',

@@ -30,7 +30,7 @@ function Desktop() {
       >
         <Image src={bg} alt={'background-image'} layout="fill" objectFit="contain" objectPosition={'left top'} quality={100}></Image>
         <Header />
-        <Flex marginTop={'120px'} minWidth={802} width={'70%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
+        <Flex marginTop={'120px'} minWidth={802} width={'55%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center">
           <WelcomeBlock />
           <Box marginTop={84}>
             <Image src={colorfulDownArrow} alt="colorful-down-arrow" />
@@ -39,7 +39,7 @@ function Desktop() {
         </Flex>
       </Flex>
       <Flex height={'100%'} width={'100%'} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
-        <Flex minWidth={802} width={'70%'} maxWidth="1132px" flexDirection="column" justifyContent={'flex-start'} alignItems="center">
+        <Flex minWidth={802} width={'55%'} maxWidth="1132px" flexDirection="column" justifyContent={'flex-start'} alignItems="center">
           <SectionsBlock />
           <RoadmapBlock />
           <Community />

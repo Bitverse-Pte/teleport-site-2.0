@@ -8,13 +8,14 @@ export const FooterStyled = styled.div`
   .wrapFooter {
     max-width: 1132px;
     margin: 0 auto;
-    width: 70%;
+    width: 55%;
+    min-width: 802px;
     .imgLogoHorizontal {
       height: 7rem;
     }
 
-    @media(max-width: 900px) {
-      &{
+    @media (max-width: 900px) {
+      & {
         width: 80%;
         .flexTop {
           flex-direction: row;
@@ -22,15 +23,15 @@ export const FooterStyled = styled.div`
       }
     }
 
-    @media(max-width: 600px) {
-      &{
+    @media (max-width: 600px) {
+      & {
         width: 86%;
         text-align: center;
         .flexTop {
           flex-direction: column;
         }
       }
-      
+
       .wrapLinks {
         display: none;
       }
@@ -38,7 +39,7 @@ export const FooterStyled = styled.div`
 
     .lineFooter {
       height: 1px;
-      transform:scaleY(0.5);
+      transform: scaleY(0.5);
       background-color: black;
       margin: 20px 0;
       opacity: 0.3;
