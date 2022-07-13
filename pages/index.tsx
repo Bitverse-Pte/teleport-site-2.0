@@ -21,8 +21,8 @@ const isClient = typeof window === 'object'
 
 function getSize() {
   return {
-    width: isClient ? window.innerWidth : undefined,
-    height: isClient ? window.innerHeight : undefined,
+    width: isClient ? window.document.documentElement.clientWidth : undefined,
+    height: isClient ? window.document.documentElement.clientHeight : undefined,
   }
 }
 
