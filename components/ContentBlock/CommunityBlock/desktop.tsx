@@ -20,8 +20,8 @@ const CommunityBlock = styled.div`
 
     .textHeader {
       font-family: Dela Gothic One;
-      font-size: 6.4rem;
-      line-height: 123.76%;
+      font-size: 54px;
+      line-height: 72px;
       color: #05050e;
     }
 
