@@ -36,8 +36,8 @@ export default function Header() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        marginRight: '5%',
-        backdropFilter: 'blur(5px)',
+        background: 'rgba(5, 5, 14, 0.7)',
+        backdropFilter: 'blur(79px)',
       }}
     >
       <Banner />

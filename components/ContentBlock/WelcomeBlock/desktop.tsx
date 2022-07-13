@@ -3,7 +3,7 @@ import { css } from 'styled-components'
 import { Box, Button, Flex, Text } from 'rebass'
 
 import Image from 'components/Image'
-import web3Svg from 'public/web3.svg'
+import web3Png from 'public/web3.png'
 import leftBottomArrow from 'public/leftBottomArrow.svg'
 import circledT from 'public/circledT.svg'
 import welcomeGif from 'public/gif/welcome.gif'
@@ -59,7 +59,7 @@ export default function WelcomeBlock() {
             transform: 'translateY(-10%)',
           },
           '.with-after-border': {
-            minWidth: '50%',
+            minWidth: '360px',
             flex: 0,
             alignItems: 'center',
           },
@@ -71,14 +71,15 @@ export default function WelcomeBlock() {
             opacity: '0',
           },
           '.translate-to-left': {
-            transform: 'translateX(-45px)',
+            minWidth: '360px',
+            // transform: 'translateX(-45px)',
           },
           '.flatten-div': {
             '.shrink-button': {
               width: '40%',
-              minWidth: '180px',
+              minWidth: '200px',
               maxWidth: '260px',
-              height: '54px',
+              height: '60px',
             },
             flexWrap: 'nowrap',
             justifyContent: 'space-around',
@@ -87,11 +88,11 @@ export default function WelcomeBlock() {
             flex: 1,
             minWidth: '45%!important',
             '@media screen and (max-width: 1300px)': {
-              '.shrink-button': {
+              /*  '.shrink-button': {
                 width: '160px',
                 minWidth: '160px',
-              },
-              minWidth: '380px!important',
+              }, */
+              minWidth: '420px!important',
             },
           },
         },
@@ -169,12 +170,14 @@ export default function WelcomeBlock() {
           transformOrigin: 'center',
         }}
       >
+        {/* <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} /> */}
         <Image src={welcomeGif} alt="welcome-gif" placeholder="blur" blurDataURL={'data:image/png;base64,' + welcomeGifFirstFrame}></Image>
       </Box>
       <Flex
         sx={{
           justifyContent: 'space-between',
           marginTop: 30,
+          height: '135px',
           transition: 'all 0.2s ease-in-out',
         }}
       >
@@ -185,8 +188,8 @@ export default function WelcomeBlock() {
           sx={{
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
-            maxWidth: '70%',
             flex: 1,
+            marginRight: '24px',
             alignItems: 'flex-end',
           }}
           css={css`
@@ -218,24 +221,27 @@ export default function WelcomeBlock() {
               sx={{
                 transition: 'all 0.2s ease-in-out',
                 transformOrigin: '0% 50%',
+                display: 'flex',
+                alignItems: 'baseline',
               }}
             >
-              <Image src={web3Svg} alt="welcome-gif"></Image>
+              <Image src={web3Png} alt="welcome-gif"></Image>
             </Box>
           </Flex>
         </Flex>
         <Flex
           flex={1}
-          alignItems="center"
+          alignItems="baseline"
           className="flatten-div"
           flexWrap="wrap"
           sx={{
             justifyContent: 'space-between',
-            paddingTop: '16px',
             maxWidth: '200px!important',
-            '@media screen and (max-width: 1300px)': {
+            minWidth: '200px!important',
+            /*  '@media screen and (max-width: 1300px)': {
+              minWidth: '155px!important',
               maxWidth: '155px!important',
-            },
+            }, */
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
             minHeight: '160px',
@@ -249,12 +255,12 @@ export default function WelcomeBlock() {
             sx={{
               height: '54px',
               minWidth: '200px',
-              '@media screen and (max-width: 1300px)': {
+              /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
                 maxWidth: '155px',
                 fontSize: '20px',
-              },
+              }, */
               transition: 'all 0.2s ease-in-out',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
@@ -275,12 +281,12 @@ export default function WelcomeBlock() {
             sx={{
               height: '54px',
               minWidth: '200px',
-              '@media screen and (max-width: 1300px)': {
+              /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
                 maxWidth: '155px',
                 fontSize: '20px',
-              },
+              }, */
               transition: 'all 0.2s ease-in-out',
               fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',

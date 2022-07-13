@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { Box, Button, Flex, Text } from 'rebass'
 import Image from 'components/Image'
@@ -8,9 +8,6 @@ import iconGraph2 from 'public/images/icon-graph-2.svg'
 import iconGraph3 from 'public/images/icon-graph-3.svg'
 import iconGraph4 from 'public/images/icon-graph-4.svg'
 
-import image1 from 'public/mobile-section-image-1.svg'
-import image2 from 'public/mobile-section-image-2.svg'
-import image3 from 'public/mobile-section-image-3.svg'
 import { presetSensors } from 'utils/presetSensors'
 
 const SectionStyle = styled.div`
@@ -99,14 +96,24 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column" width={'100%'}>
-      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} imageSrc={image1} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
-      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} imageSrc={image2} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
-      <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} imageSrc={image3} />
+      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} videoIndex={'bridge'} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
+      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} videoIndex={'wallet'} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
+      <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} videoIndex={'metaverse'} />
     </Flex>
   )
 }
 
-function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { imageSrc: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string; buttonOnClick?: React.MouseEventHandler<HTMLButtonElement> }) {
+function Section({ iconSrc, videoIndex, mainTitle, instruction, buttonValue }: { videoIndex: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string; buttonOnClick?: React.MouseEventHandler<HTMLButtonElement> }) {
+  const VideoElement = useMemo(() => {
+    switch (videoIndex) {
+      case 'bridge':
+        return <video src={require('../../../public/bridge.mp4')} autoPlay loop muted width={'100%'} />
+      case 'wallet':
+        return <video src={require('../../../public/wallet.mp4')} autoPlay loop muted width={'100%'} />
+      case 'metaverse':
+        return <video src={require('../../../public/metaverse.mp4')} autoPlay loop muted width={'100%'} />
+    }
+  }, [videoIndex])
   return (
     <Flex flexDirection={'column'} margin="36px 0" alignItems="flex-start">
       <Box width={30} height={30}>
@@ -142,7 +149,8 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
         {instruction}
       </Text>
       <Box margin={'30px 0'} width="100%">
-        <Image src={imageSrc} layout="responsive" alt={'section-image'} />
+        {/* <Image src={imageSrc} layout="responsive" alt={'section-image'} /> */}
+        {VideoElement}
       </Box>
       {buttonValue && (
         <Flex width="100%" justifyContent={'center'} alignItems="center">

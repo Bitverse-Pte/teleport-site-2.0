@@ -1,5 +1,5 @@
 const withPlugins = require('next-compose-plugins')
-
+const withVideos = require('next-videos')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -15,10 +15,12 @@ const nextConfig = {
   },
 }
 
-module.exports = withPlugins(
-  [
-    [withBundleAnalyzer],
-    // your other plugins here
-  ],
-  nextConfig
+module.exports = withVideos(
+  withPlugins(
+    [
+      [withBundleAnalyzer],
+      // your other plugins here
+    ],
+    nextConfig
+  )
 )

@@ -24,7 +24,7 @@ export default function WelcomeBlock() {
         <Box sx={{ display: 'flex', alignItems: 'end' }}>
           <Image src={leftBottomArrow} alt="welcome-gif"></Image>
         </Box>
-        <Box>
+        <Box sx={{ display: 'flex', alignItems: 'end' }}>
           <Image src={web3Svg} alt="welcome-gif"></Image>
         </Box>
       </Flex>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { Box, Button, Flex } from 'rebass'
 import Link from 'next/link'
@@ -71,8 +71,17 @@ const SectionStyle = styled.div`
 `
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
-
-function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle, placeHolderSrc }: { Index: number; Title: string; SubTitle: string; ImageRes: any; ButtonTitle: string; placeHolderSrc: string }) {
+function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle, placeHolderSrc }: { Index: number; Title: string; SubTitle: string; videoIndex: string; ButtonTitle: string; placeHolderSrc: string }) {
+  const VideoElement = useMemo(() => {
+    switch (videoIndex) {
+      case 'bridge':
+        return <video src={require('../../../public/bridge.mp4')} autoPlay loop muted width={'100%'} />
+      case 'wallet':
+        return <video src={require('../../../public/wallet.mp4')} autoPlay loop muted width={'100%'} />
+      case 'metaverse':
+        return <video src={require('../../../public/metaverse.mp4')} autoPlay loop muted width={'100%'} />
+    }
+  }, [videoIndex])
   return (
     <SectionStyle>
       <div className="wrapSection centerView">
@@ -86,7 +95,8 @@ function SectionItem({ Index, Title, SubTitle, ImageRes, ButtonTitle, placeHolde
         </div>
         <Box style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Box style={{ maxWidth: 900 }}>
-            <Image className="gifFeature" src={ImageRes} alt={'section-icon'} placeholder="blur" blurDataURL={'data:image/png;base64,' + placeHolderSrc} />
+            {/* <Image className="gifFeature" src={ImageRes} alt={'section-icon'} placeholder="blur" blurDataURL={'data:image/png;base64,' + placeHolderSrc} /> */}
+            {VideoElement}
           </Box>
         </Box>
       </div>
@@ -117,9 +127,9 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" ImageRes={gifBridge} placeHolderSrc={bridgeGifFirstFrame} ButtonTitle="Launch App" />
-      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" ImageRes={gifWallet} placeHolderSrc={metaverseGifFirstFrame} ButtonTitle="Download" />
-      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" ImageRes={gifMetaverse} placeHolderSrc={walletGifFirstFrame} ButtonTitle="" />
+      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" placeHolderSrc={bridgeGifFirstFrame} ButtonTitle="Launch App" />
+      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" placeHolderSrc={metaverseGifFirstFrame} ButtonTitle="Download" />
+      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" placeHolderSrc={walletGifFirstFrame} ButtonTitle="" />
     </Flex>
   )
 }
