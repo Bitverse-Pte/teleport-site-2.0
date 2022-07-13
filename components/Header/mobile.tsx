@@ -161,7 +161,7 @@ export default function Header() {
           color: 'black',
           top: '100%',
           // boxShadow: '0px 5px 10px 0px rgba(128,128,128,0.5)',
-          borderTop: '1px solid rgba(0, 0, 0, 0.26)',
+          borderTop: '1px solid rgba(0, 0, 0, 0.1)',
           backdropFilter: 'blur(15px)',
           background: 'rgba(255,255,255, 1)',
           ...(menuSpread || {}),
@@ -171,7 +171,7 @@ export default function Header() {
           flexDirection={'column'}
           maxWidth="45%"
           sx={{
-            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.26)',
+            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.1)',
             paddingTop: '20px',
             paddingLeft: '24px',
             paddingRight: '24px',
@@ -313,14 +313,16 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
       >
         {title}
       </Text>
-      <Box
+      <Flex
         sx={{
           transition: 'all 0.2s ease-in-out',
           opacity: opacityOrNot ? 1 : 0,
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Image src={imageSrc} width={14} height={14} alt={'mobile-menu-icon'} />
-      </Box>
+      </Flex>
     </Flex>
   )
 }
@@ -342,7 +344,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
         '::after': {
           display: 'block',
           content: '',
-          borderBottom: 'solid rgba(0,0,0, 0.26) 1px',
+          borderBottom: 'solid rgba(0,0,0, 0.1) 1px',
         },
         // }),
       }}
@@ -352,7 +354,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
               &:after {
                 display: block;
                 content: '';
-                border-bottom: solid rgba(0, 0, 0, 0.26) 1px;
+                border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
               }
             `,
           }
@@ -381,12 +383,12 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       }}
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.1)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
       <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
       <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
       {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.26)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.1)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
   )
@@ -456,10 +458,11 @@ function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
       </Text>
       <hr
         style={{
-          margin: '15px 0',
+          marginTop: '7px',
+          marginBottom: '15px',
           borderWidth: 0,
           borderStyle: 'solid',
-          borderColor: 'rgba(0,0,0, 0.26)',
+          borderColor: 'rgba(0,0,0, 0.1)',
           borderBottomWidth: '1px',
           width: '100%',
         }}
@@ -525,7 +528,7 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         opacity: opacityOrNot ? 1 : 0,
         zIndex: opacityOrNot ? 1 : 0,
       }}
-      padding="32px"
+      padding="20px"
       flexDirection={'column'}
       width={'100%'}
     >

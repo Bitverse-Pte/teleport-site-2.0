@@ -152,7 +152,7 @@ function Section({ iconSrc, imageSrc, mainTitle, instruction, buttonValue }: { i
               borderRadius: '8px',
               width: '200px',
               height: '48px',
-              fontFamily: 'IBM Plex Sans',
+              fontFamily: 'Poppins',
               fontStyle: 'normal',
               fontWeight: 600,
               fontSize: '16px',

@@ -11,7 +11,7 @@ import Image from 'components/Image'
 import { presetSensors } from 'utils/presetSensors'
 import { discord_link, linktree_link, medium_link, telegram_link, twitter_link } from 'constants/url'
 
-const CommunityBlock = styled.div`
+const CommunityContainer = styled.div`
   width: 100%;
   .wrapCommunity {
     text-align: center;
@@ -79,7 +79,7 @@ const CommunityBlock = styled.div`
   }
 `
 
-const Community = () => {
+const CommunityBlock = () => {
   const items = useMemo(() => {
     return [
       {
@@ -131,13 +131,13 @@ const Community = () => {
     })
   }, [])
   return (
-    <CommunityBlock>
+    <CommunityContainer>
       <div className="wrapCommunity">
         <h1 className="textHeader">Owned by the community</h1>
         <div className="boxCommunity">{items}</div>
       </div>
-    </CommunityBlock>
+    </CommunityContainer>
   )
 }
 
-export default memo(Community)
+export default CommunityBlock

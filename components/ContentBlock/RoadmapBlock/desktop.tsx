@@ -6,7 +6,7 @@ import staredLine from 'public/images/roadmap-stared-line.svg'
 
 export default function RoadmapBlock() {
   return (
-    <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} marginBottom="108px">
+    <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} margin="108px 0">
       <Text
         sx={{
           fontFamily: 'Dela Gothic One',

@@ -27,14 +27,17 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        height: '120px',
+        height: '96px',
         width: '100%',
         display: 'flex',
+        top: 0,
+        zIndex: 999,
+        position: 'fixed',
         flexDirection: 'row',
         alignItems: 'center',
-        position: 'relative',
         justifyContent: 'flex-end',
         marginRight: '5%',
+        backdropFilter: 'blur(5px)',
       }}
     >
       <Banner />
