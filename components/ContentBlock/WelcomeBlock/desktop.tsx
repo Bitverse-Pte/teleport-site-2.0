@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { css } from 'styled-components'
 import { Box, Button, Flex, Text } from 'rebass'
+import { throttle } from 'lodash-es'
 
 import Image from 'components/Image'
 import web3Png from 'public/web3.png'
@@ -11,7 +12,6 @@ import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
 import { welcomeGifFirstFrame } from 'components/Image/base64Images'
 import { presetSensors } from 'utils/presetSensors'
-import { throttle } from 'lodash-es'
 
 export default function WelcomeBlock() {
   const containerRef = useRef<HTMLDivElement>()
@@ -20,8 +20,18 @@ export default function WelcomeBlock() {
   useEffect(() => {
     const onResize = throttle(function () {
       containerRef.current && setContainerWidth(containerRef.current!.offsetWidth)
+      const arrow = document.getElementById('arrow-container')
+      const web3Svg = document.getElementById('web3svg')
+      if (arrow && web3Svg) {
+        arrow.style.height = web3Svg.clientHeight + 'px'
+      }
     }, 200)
     containerRef.current && setContainerWidth(containerRef.current!.offsetWidth)
+    const arrow = document.getElementById('arrow-container')
+    const web3Svg = document.getElementById('web3svg')
+    if (arrow && web3Svg) {
+      arrow.style.height = web3Svg.clientHeight + 'px'
+    }
     window.addEventListener('resize', onResize)
     return () => {
       window.removeEventListener('resize', onResize)
@@ -86,16 +96,16 @@ export default function WelcomeBlock() {
             flexWrap: 'nowrap',
             justifyContent: 'space-around',
             alignItems: 'baseline',
-            maxWidth: 'unset!important',
+            maxWidth: '450px!important',
+            minWidth: '400px!important',
             flex: 1,
-            minWidth: '45%!important',
             '@media screen and (max-width: 1300px)': {
               '.shrink-button': {
                 width: '180px',
                 minWidth: '180px',
                 maxWidth: '180px',
               },
-              minWidth: '420px!important',
+              maxWidth: '400px!important',
             },
           },
         },
@@ -209,10 +219,12 @@ export default function WelcomeBlock() {
           <Flex width="100%" height="100%">
             <Box
               className="vanish-to-left"
+              id={'arrow-container'}
               sx={{
                 width: '10%',
                 display: 'flex',
                 justifyContent: 'center',
+                alignItems: 'end',
                 transformOrigin: '50% 0',
                 transition: 'all 0.2s ease-in-out',
               }}
@@ -229,7 +241,7 @@ export default function WelcomeBlock() {
                 alignItems: 'baseline',
               }}
             >
-              <Image src={web3Png} alt="welcome-gif"></Image>
+              <Image id={'web3svg'} src={web3Png} alt="welcome-gif"></Image>
             </Box>
           </Flex>
         </Flex>
@@ -257,7 +269,7 @@ export default function WelcomeBlock() {
             color="#161929"
             onClick={presetSensors.body.doc}
             sx={{
-              height: '54px',
+              height: '60px',
               minWidth: '316px',
               /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
@@ -282,7 +294,7 @@ export default function WelcomeBlock() {
             color="white"
             onClick={presetSensors.body.whitepaper}
             sx={{
-              height: '54px',
+              height: '60px',
               minWidth: '316px',
               /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
