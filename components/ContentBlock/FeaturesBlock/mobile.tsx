@@ -37,7 +37,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
       <Flex marginBottom={'20px'}>
         <Image src={logoSrc} width={30} height={30} alt="feature-logo"></Image>
       </Flex>
-      <Flex marginBottom={'6px'}>
+      <Flex marginBottom={'9px'}>
         <Text
           className="main-title"
           sx={{
@@ -53,7 +53,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
           {MainTitle}
         </Text>
       </Flex>
-      <Flex marginBottom={'18px'}>
+      <Flex marginBottom={'16px'}>
         <Text
           sx={{
             fontFamily: 'Dela Gothic One',

@@ -160,8 +160,9 @@ export default function Header() {
           transform: 'scaleY(0)',
           color: 'black',
           top: '100%',
+          padding: '0 6%',
           // boxShadow: '0px 5px 10px 0px rgba(128,128,128,0.5)',
-          borderTop: '1px solid rgba(0, 0, 0, 0.1)',
+          borderTop: '1px solid rgba(0, 0, 0, 0.05)',
           backdropFilter: 'blur(15px)',
           background: 'rgba(255,255,255, 1)',
           ...(menuSpread || {}),
@@ -169,12 +170,10 @@ export default function Header() {
       >
         <Flex
           flexDirection={'column'}
-          maxWidth="45%"
+          width="40%"
           sx={{
-            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.1)',
+            boxShadow: '5px 1px 5px 0px rgba(128,128,128,0.05)',
             paddingTop: '20px',
-            paddingLeft: '24px',
-            paddingRight: '24px',
           }}
         >
           <MobileMenuItem
@@ -203,7 +202,7 @@ export default function Header() {
           />
           <MobileMenuAmbassadorItem title="Ambassador" onClick={presetSensors.header.ambassador} />
         </Flex>
-        <Flex sx={{ width: '55%', height: '100%', minHeight: 'fit-content', position: 'relative' }}>
+        <Flex sx={{ flex: 1, height: '100%', minHeight: 'fit-content', position: 'relative' }}>
           <Flex sx={{ width: '100%', height: '100%', minHeight: 'fit-content', position: 'absolute', overflowY: 'auto' }}>
             <DocsMenu opacityOrNot={selectedMenu === 'Docs'} />
             <ToolMenu opacityOrNot={selectedMenu === 'Tool'} />
@@ -261,7 +260,7 @@ function MobileMenuAmbassadorItem({ title, onClick }: { title: string; showArrow
       height="60px"
       alignItems="center"
       width={'100%'}
-      padding="0 10px"
+      paddingRight="10px"
       justifyContent={'flex-start'}
       onClick={onClick}
     >
@@ -296,7 +295,7 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
       height="60px"
       alignItems="center"
       width={'100%'}
-      padding="0 10px"
+      paddingRight="10px"
       justifyContent={'space-between'}
       onClick={onClick}
     >
@@ -344,7 +343,7 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
         '::after': {
           display: 'block',
           content: '',
-          borderBottom: 'solid rgba(0,0,0, 0.1) 1px',
+          borderBottom: 'solid rgba(0,0,0, 0.05) 1px',
         },
         // }),
       }}
@@ -373,7 +372,8 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       flexDirection={'column'}
       alignItems="flex-start"
       justifyContent="flex-start"
-      padding="20px"
+      paddingTop="20px"
+      paddingLeft="20px"
       color="black"
       sx={{
         position: 'absolute',
@@ -383,12 +383,12 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
       }}
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.1)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
       <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
       <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
       {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
-      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.1)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
+      <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
     </Flex>
   )
@@ -422,7 +422,8 @@ function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolea
       minHeight="100%"
       flexDirection={'column'}
       alignItems="flex-start"
-      padding="20px"
+      paddingTop="20px"
+      paddingLeft="20px"
       sx={{
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',
@@ -462,7 +463,7 @@ function ToolMenuBlock({ title, children }: { title: string } & FlexProps) {
           marginBottom: '15px',
           borderWidth: 0,
           borderStyle: 'solid',
-          borderColor: 'rgba(0,0,0, 0.1)',
+          borderColor: 'rgba(0,0,0, 0.05)',
           borderBottomWidth: '1px',
           width: '100%',
         }}
@@ -510,7 +511,7 @@ function ToolMenuItem({ itemText, onClick }: { itemText: string; onClick?: React
         fontSize: '14px',
         lineHeight: '14px',
         color: '#05050E',
-        margin: '15px 0',
+        margin: '23px 0',
       }}
     >
       {itemText}
@@ -528,7 +529,8 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
         opacity: opacityOrNot ? 1 : 0,
         zIndex: opacityOrNot ? 1 : 0,
       }}
-      padding="20px"
+      paddingTop="20px"
+      paddingLeft="20px"
       flexDirection={'column'}
       width={'100%'}
     >

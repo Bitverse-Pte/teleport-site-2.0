@@ -48,11 +48,11 @@ function Mobile() {
               flexDirection={'column'}
               alignItems="center"
               backgroundColor="#05050E"
-              paddingBottom={'48px'}
+              paddingBottom={'36px'}
               minHeight="fit-content"
               sx={{
-                borderBottomLeftRadius: '48px',
-                borderBottomRightRadius: '48px',
+                borderBottomLeftRadius: '36px',
+                borderBottomRightRadius: '36px',
                 paddingTop: '60px',
               }}
             >

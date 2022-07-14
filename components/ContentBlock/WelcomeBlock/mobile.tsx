@@ -35,13 +35,13 @@ export default function WelcomeBlock() {
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: '16px',
-            borderRadius: '6px',
+            borderRadius: '8px',
             lineHeight: '16px',
           }}
           onClick={presetSensors.body.doc}
           padding={'15px 0'}
           height={'48px'}
-          width={'164px'}
+          width={'48%'}
           backgroundColor="white"
           color="#161929"
         >
@@ -53,14 +53,14 @@ export default function WelcomeBlock() {
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: '16px',
-            borderRadius: '6px',
+            borderRadius: '8px',
             lineHeight: '16px',
             border: 'solid 1px white',
           }}
           onClick={presetSensors.body.downloadWallet}
           padding={'15px 0'}
           height={'48px'}
-          width={'164px'}
+          width={'48%'}
           backgroundColor="transparent"
           color="white"
         >
