@@ -68,7 +68,7 @@ export default function WelcomeBlock() {
             opacity: 1,
             height: '100%',
             width: '100%',
-            transform: 'translateY(-10%)',
+            transform: 'scale(1.2) translateY(-15%)',
           },
           '.with-after-border': {
             minWidth: '360px',
@@ -164,6 +164,7 @@ export default function WelcomeBlock() {
               minWidth: '200px',
               height: '100%',
               transition: 'all 0.2s ease-in-out',
+              // transform: 'scale(1.3)',
             }}
           >
             <Image src={circledT} alt="circled-T" layout="fill" objectFit="contain" /* objectPosition={'right -50px'} */ quality={100}></Image>
@@ -254,10 +255,9 @@ export default function WelcomeBlock() {
             justifyContent: 'space-between',
             maxWidth: '300px!important',
             minWidth: '300px!important',
-            /*  '@media screen and (max-width: 1300px)': {
-              minWidth: '155px!important',
-              maxWidth: '155px!important',
-            }, */
+            '@media screen and (max-width: 1300px)': {
+              justifyContent: 'end',
+            },
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
             minHeight: '160px',
@@ -271,12 +271,12 @@ export default function WelcomeBlock() {
             sx={{
               height: '60px',
               minWidth: '316px',
-              /*  '@media screen and (max-width: 1300px)': {
-                width: '155px',
-                minWidth: '155px',
-                maxWidth: '155px',
+              '@media screen and (max-width: 1300px)': {
+                width: '240px',
+                minWidth: '240px',
+                maxWidth: '240px',
                 fontSize: '20px',
-              }, */
+              },
               transition: 'all 0.2s ease-in-out',
               fontStyle: 'normal',
               cursor: 'pointer',
@@ -296,12 +296,12 @@ export default function WelcomeBlock() {
             sx={{
               height: '60px',
               minWidth: '316px',
-              /*  '@media screen and (max-width: 1300px)': {
-                width: '155px',
-                minWidth: '155px',
-                maxWidth: '155px',
+              '@media screen and (max-width: 1300px)': {
+                width: '240px',
+                minWidth: '240px',
+                maxWidth: '240px',
                 fontSize: '20px',
-              }, */
+              },
               transition: 'all 0.2s ease-in-out',
               fontStyle: 'normal',
               fontWeight: 600,

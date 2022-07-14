@@ -203,7 +203,7 @@ export default function Header() {
           <MobileMenuAmbassadorItem title="Ambassador" onClick={presetSensors.header.ambassador} />
         </Flex>
         <Flex sx={{ flex: 1, height: '100%', minHeight: 'fit-content', position: 'relative' }}>
-          <Flex sx={{ width: '100%', height: '100%', minHeight: 'fit-content', position: 'absolute', overflowY: 'auto' }}>
+          <Flex sx={{ width: '100%', height: 'calc(100vh - 73px)', minHeight: 'fit-content', position: 'absolute', overflowY: 'auto' }}>
             <DocsMenu opacityOrNot={selectedMenu === 'Docs'} />
             <ToolMenu opacityOrNot={selectedMenu === 'Tool'} />
             <CommunityMenu opacityOrNot={selectedMenu === 'Community'} />
