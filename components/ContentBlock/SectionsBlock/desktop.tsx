@@ -48,16 +48,16 @@ const SectionStyle = styled.div`
       .buttonSection {
         margin-left: 36px;
         cursor: pointer;
-        width: 280px;
-        max-width: 280px;
-        min-width: 280px;
+        width: 240px;
+        max-width: 240px;
+        min-width: 240px;
         height: 72px;
         background: #59c3aa;
         border-radius: 12px;
         color: #05050e;
         font-style: normal;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 20px;
         &:hover {
           transition: all 0.2s ease 0s;
           box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
