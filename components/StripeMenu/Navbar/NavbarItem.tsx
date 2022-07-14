@@ -6,7 +6,7 @@ const NavbarItemTitle = styled.button`
   background: transparent;
   cursor: auto;
   border: 0;
-  font-family: 'IBM Plex Sans';
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;

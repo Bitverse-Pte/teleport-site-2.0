@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <Flex
       sx={{
-        height: '96px',
+        height: '72px',
         width: '100%',
         display: 'flex',
         top: 0,
@@ -38,6 +38,7 @@ export default function Header() {
         justifyContent: 'flex-end',
         background: 'rgba(5, 5, 14, 0.7)',
         backdropFilter: 'blur(79px)',
+        paddingRight: '5%',
       }}
     >
       <Banner />
@@ -48,7 +49,6 @@ export default function Header() {
         minWidth={168}
         onClick={presetSensors.header.ambassador}
         sx={{
-          fontFamily: 'IBM Plex Sans',
           fontStyle: 'normal',
           fontWeight: 500,
           fontSize: '18px',
@@ -72,6 +72,7 @@ function Banner() {
         height: '100%',
         alignItems: 'center',
         minWidth: '180px',
+        width: '200px',
       }}
     >
       <Image src={mainLogo} alt={'main-logo'} height="55px" />

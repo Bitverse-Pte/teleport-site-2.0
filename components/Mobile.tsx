@@ -76,4 +76,5 @@ function Mobile() {
   )
 }
 
-export default WithLoading(Mobile)
+// export default WithLoading(Mobile)
+export default Mobile

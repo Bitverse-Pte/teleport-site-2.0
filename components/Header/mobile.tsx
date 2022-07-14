@@ -11,9 +11,9 @@ import mobileMenuCloseIcon from 'public/mobile-menu-close-icon.svg'
 import arrow from 'public/mobile-menu-arrow.svg'
 import ambassadorFire from 'public/ambassador.svg'
 import { Base64SvgHolder } from 'components/Image/Base64SvgHolder'
-import { mobileMenuDiscordIcon, mobileMenuLinktreeIcon, mobileMenuMediumIcon, mobileMenuTelegramIcon, mobileMenuTwitterIcon } from 'components/Image/base64Images'
 import { SCROLL_ROOT_ID } from 'components/Mobile'
 import { presetSensors } from 'utils/presetSensors'
+import { mobileMenuDiscordIcon, mobileMenuLinktreeIcon, mobileMenuMediumIcon, mobileMenuTelegramIcon, mobileMenuTwitterIcon } from 'components/Image/mobileBase64Images'
 
 export default function Header() {
   const [menuSpread, setMenuSpread] = useState<SxStyleProp | undefined>(undefined)

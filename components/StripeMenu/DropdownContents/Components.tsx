@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const Heading = styled.h3<{ noMarginBottom?: boolean; notAllowSelect?: boolean }>`
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
   margin-top: 0;
   display: flex;

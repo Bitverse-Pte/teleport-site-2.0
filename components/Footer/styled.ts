@@ -60,12 +60,14 @@ export const FooterStyled = styled.div`
         margin-bottom: 10px;
 
         .textTitle {
+          padding-top: 10px;
           font-family: Poppins;
           font-style: normal;
           font-weight: 600;
           font-size: 20px;
-          line-height: 7rem;
+          line-height: 20px;
           color: #05050e;
+          margin-bottom: 24px;
         }
 
         a {

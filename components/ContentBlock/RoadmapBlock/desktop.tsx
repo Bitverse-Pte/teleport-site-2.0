@@ -15,7 +15,7 @@ export default function RoadmapBlock() {
           color: '#05050e',
           width: '100%',
           textAlign: 'center',
-          marginBottom: '108px',
+          marginBottom: '84px',
         }}
       >
         Teleport Roadmap
@@ -36,15 +36,15 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
   return (
     <Flex
       flexDirection={'column'}
-      width="210px"
+      width="18%"
       alignItems={'center'}
       sx={{
-        transformOrigin: '50% 0%',
+        transformOrigin: 'center center',
         transition: 'transform 0.2s ease-in-out',
         zIndex: 1,
         color: 'black',
         '&:hover': {
-          transform: 'scale(1.1)',
+          transform: 'scale(1.08)',
         },
       }}
     >

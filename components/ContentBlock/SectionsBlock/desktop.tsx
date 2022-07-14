@@ -8,11 +8,7 @@ import iconGraph1 from 'public/images/icon-graph-1.svg'
 import iconGraph2 from 'public/images/icon-graph-2.svg'
 import iconGraph3 from 'public/images/icon-graph-3.svg'
 import iconGraph4 from 'public/images/icon-graph-4.svg'
-import gifBridge from 'public/gif/bridge.gif'
-import gifWallet from 'public/gif/wallet.gif'
-import gifMetaverse from 'public/gif/metaverse.gif'
 import { presetSensors } from 'utils/presetSensors'
-import { bridgeGifFirstFrame, metaverseGifFirstFrame, walletGifFirstFrame } from 'components/Image/base64Images'
 
 const SectionStyle = styled.div`
   .wrapSection {
@@ -32,12 +28,12 @@ const SectionStyle = styled.div`
       flex-direction: row;
       justify-content: space-between;
       margin: 60px 0;
-
       .wrapColumn {
         .textTitle {
           font-family: Dela Gothic One;
           font-size: 54px;
           line-height: 54px;
+          white-space: nowrap;
         }
         .textSubTitle {
           max-width: 800px;
@@ -50,13 +46,14 @@ const SectionStyle = styled.div`
         }
       }
       .buttonSection {
+        margin-left: 36px;
         cursor: pointer;
-        width: 316px;
+        width: 280px;
+        max-width: 280px;
+        min-width: 280px;
         height: 72px;
         background: #59c3aa;
-        cursor: pointer;
         border-radius: 12px;
-
         color: #05050e;
         font-style: normal;
         font-weight: 600;
@@ -71,7 +68,7 @@ const SectionStyle = styled.div`
 `
 
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
-function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle, placeHolderSrc }: { Index: number; Title: string; SubTitle: string; videoIndex: string; ButtonTitle: string; placeHolderSrc: string }) {
+function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Index: number; Title: string; SubTitle: string; videoIndex: string; ButtonTitle: string }) {
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
       case 'bridge':
@@ -127,9 +124,9 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" placeHolderSrc={bridgeGifFirstFrame} ButtonTitle="Launch App" />
-      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" placeHolderSrc={metaverseGifFirstFrame} ButtonTitle="Download" />
-      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" placeHolderSrc={walletGifFirstFrame} ButtonTitle="" />
+      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" ButtonTitle="Launch App" />
+      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" ButtonTitle="Download" />
+      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" ButtonTitle="" />
     </Flex>
   )
 }

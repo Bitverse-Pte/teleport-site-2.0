@@ -11,12 +11,12 @@ const { publicRuntimeConfig } = getConfig()
 type COMPONENTS_NAMES = 'Desktop' | 'Mobile' | 'Default'
 const DefaultComponent = () => <></>
 DefaultComponent.displayName = 'DefaultComponent'
-const components = {
+/* const components = {
   Desktop: lazy(() => import('components/Desktop')),
   Mobile: lazy(() => import('components/Mobile')),
   Default: DefaultComponent,
 }
-
+ */
 const isClient = typeof window === 'object'
 
 function getSize() {
@@ -50,22 +50,31 @@ function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
       setComponentsName('Mobile')
     } else if ((isMobile || isTablet) && windowSize && windowSize < 720) {
       setComponentsName('Mobile')
-    } else if (isTablet && windowSize && windowSize >= 720) {
+    } else if ((isTablet || isDesktop) && windowSize && windowSize >= 720) {
       setComponentsName('Desktop')
     } else {
-      setComponentsName('Desktop')
+      setComponentsName('Default')
     }
   }, [isMobile, isTablet, isDesktop, windowSize])
 
   const Components = useMemo(() => {
-    if (componentsName) {
+    switch (componentsName) {
+      case 'Desktop':
+        return lazy(() => import('components/Desktop'))
+      case 'Mobile':
+        return lazy(() => import('components/Mobile'))
+      default:
+        return DefaultComponent
+    }
+    /* if (componentsName) {
       return components[componentsName]
     } else {
       return components['Default']
-    }
+    } */
   }, [componentsName])
 
   return <Suspense fallback={() => <Text>loading</Text>}>{<Components />}</Suspense>
+  // return <Components />
 }
 export default WithLoading(Home)
 

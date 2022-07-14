@@ -15,7 +15,7 @@ const CommunityContainer = styled.div`
   width: 100%;
   .wrapCommunity {
     text-align: center;
-    padding-bottom: 250px;
+    padding-bottom: 160px;
     margin: 0 auto;
 
     .textHeader {
@@ -23,17 +23,18 @@ const CommunityContainer = styled.div`
       font-size: 54px;
       line-height: 72px;
       color: #05050e;
+      margin: 0;
     }
 
     .boxCommunity {
-      margin-top: 108px;
+      margin-top: 84px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
       row-gap: 5rem;
       border: 1px solid #000000;
       border-radius: 48px;
-      padding: 84px 0px;
+      padding: 64px 0px;
       transition-duration: all 0.2s ease-in-out;
       transform-origin: 0 50%;
       .itemCommunity {

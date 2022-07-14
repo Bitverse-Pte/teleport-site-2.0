@@ -9,7 +9,7 @@ import alternativeCrossLogo from 'public/alternative-cross.svg'
 import dappLogo from 'public/dapp.svg'
 
 const FeatureBlock = styled(Box)`
-	height: 280px;
+	height: 260px;
   z-index: 0;
 	min-height: 280px;
 	width: 100%;
@@ -38,14 +38,14 @@ const FeatureBlock = styled(Box)`
 		transform-origin: left; 
 	}
 	&:hover .main-title {
-    transform: scale(1.25);
+    transform: scale(1.20);
   }
   @media screen and (max-width: 1300px) {
       & .main-title {
-        transform: scale(0.7);
+        transform: scale(0.85);
       }
       &:hover .main-title {
-        transform: scale(0.95);
+        transform: scale(1.0625);
       }
     }
 	}
@@ -75,9 +75,16 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
       >
         <Image src={featureBlockBg} layout="fill" alt={'feature-block-bg'} objectFit="cover" objectPosition={'left bottom'} quality={100}></Image>
       </Box>
-      <Flex height="100%" justifyContent={'space-between'} padding="60px 0">
+      <Flex height="100%" justifyContent={'space-between'} padding="60px 0 40px 0">
         <Flex flexDirection={'column'}>
-          <Flex justifyContent={'start'} alignItems="start" height={'80%'}>
+          <Flex
+            justifyContent={'start'}
+            alignItems="start"
+            sx={{
+              marginBottom: '54px',
+              height: 'fit-content',
+            }}
+          >
             <Text
               className="main-title"
               sx={{
@@ -86,8 +93,8 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
                 fontStyle: 'normal',
                 color: 'white',
                 fontWeight: 900,
-                height: '80%',
-                fontSize: '54px',
+                height: '60px',
+                fontSize: '50px',
                 lineHeight: '70px',
               }}
             >
@@ -99,7 +106,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
               fontFamily: 'Dela Gothic One',
               fontStyle: 'normal',
               color: 'white',
-              maxHeight: '20%',
+              height: 'fit-content',
               fontWeight: 75000,
               fontSize: '32px',
               lineHeight: '32px',
@@ -109,14 +116,16 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
           </Text>
         </Flex>
         <Flex flexDirection={'column'} alignItems="end">
-          <Flex width="200px" height="80%" flex={1} justifyContent="end" alignItems={'start'}>
-            <Image src={logoSrc} alt="feature-logo"></Image>
+          <Flex width="200px" flex={1} justifyContent="end" alignItems={'start'}>
+            <Flex height="60px" alignItems={'end'}>
+              <Image src={logoSrc} alt="feature-logo"></Image>
+            </Flex>
           </Flex>
           <Text
             sx={{
               fontFamily: 'Poppins',
               fontStyle: 'normal',
-              fontWeight: 300,
+              fontWeight: 100,
               fontSize: '24px',
               lineHeight: '32px',
               textAlign: 'right',

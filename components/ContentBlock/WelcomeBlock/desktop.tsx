@@ -11,14 +11,16 @@ import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
 import { welcomeGifFirstFrame } from 'components/Image/base64Images'
 import { presetSensors } from 'utils/presetSensors'
+import { throttle } from 'lodash-es'
 
 export default function WelcomeBlock() {
   const containerRef = useRef<HTMLDivElement>()
   const [containerWidth, setContainerWidth] = useState<number>(0)
+
   useEffect(() => {
-    const onResize = function () {
+    const onResize = throttle(function () {
       containerRef.current && setContainerWidth(containerRef.current!.offsetWidth)
-    }
+    }, 200)
     containerRef.current && setContainerWidth(containerRef.current!.offsetWidth)
     window.addEventListener('resize', onResize)
     return () => {
@@ -78,7 +80,7 @@ export default function WelcomeBlock() {
             '.shrink-button': {
               width: '40%',
               minWidth: '200px',
-              maxWidth: '260px',
+              maxWidth: '240px',
               height: '60px',
             },
             flexWrap: 'nowrap',
@@ -88,10 +90,11 @@ export default function WelcomeBlock() {
             flex: 1,
             minWidth: '45%!important',
             '@media screen and (max-width: 1300px)': {
-              /*  '.shrink-button': {
-                width: '160px',
-                minWidth: '160px',
-              }, */
+              '.shrink-button': {
+                width: '180px',
+                minWidth: '180px',
+                maxWidth: '180px',
+              },
               minWidth: '420px!important',
             },
           },
@@ -188,7 +191,6 @@ export default function WelcomeBlock() {
           sx={{
             transition: 'all 0.2s ease-in-out',
             transformOrigin: '0% 50%',
-            flex: 1,
             marginRight: '24px',
             alignItems: 'flex-end',
           }}
@@ -208,6 +210,7 @@ export default function WelcomeBlock() {
             <Box
               className="vanish-to-left"
               sx={{
+                width: '10%',
                 display: 'flex',
                 justifyContent: 'center',
                 transformOrigin: '50% 0',
@@ -219,6 +222,7 @@ export default function WelcomeBlock() {
             <Box
               className="translate-to-left"
               sx={{
+                width: '90%',
                 transition: 'all 0.2s ease-in-out',
                 transformOrigin: '0% 50%',
                 display: 'flex',
@@ -236,8 +240,8 @@ export default function WelcomeBlock() {
           flexWrap="wrap"
           sx={{
             justifyContent: 'space-between',
-            maxWidth: '200px!important',
-            minWidth: '200px!important',
+            maxWidth: '300px!important',
+            minWidth: '300px!important',
             /*  '@media screen and (max-width: 1300px)': {
               minWidth: '155px!important',
               maxWidth: '155px!important',
@@ -254,7 +258,7 @@ export default function WelcomeBlock() {
             onClick={presetSensors.body.doc}
             sx={{
               height: '54px',
-              minWidth: '200px',
+              minWidth: '316px',
               /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
@@ -262,7 +266,6 @@ export default function WelcomeBlock() {
                 fontSize: '20px',
               }, */
               transition: 'all 0.2s ease-in-out',
-              fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               cursor: 'pointer',
               fontWeight: 600,
@@ -280,7 +283,7 @@ export default function WelcomeBlock() {
             onClick={presetSensors.body.whitepaper}
             sx={{
               height: '54px',
-              minWidth: '200px',
+              minWidth: '316px',
               /*  '@media screen and (max-width: 1300px)': {
                 width: '155px',
                 minWidth: '155px',
@@ -288,7 +291,6 @@ export default function WelcomeBlock() {
                 fontSize: '20px',
               }, */
               transition: 'all 0.2s ease-in-out',
-              fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
               fontWeight: 600,
               cursor: 'pointer',

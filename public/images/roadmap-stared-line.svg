@@ -1,13 +1,13 @@
 <svg width="1132" height="48" viewBox="0 0 1132 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1132" height="1" transform="matrix(1 0 0 -1 0 25)" fill="#05050E" />
+    <rect width="1132" height="0.5" transform="matrix(1 0 0 -1 0 25)" fill="#05050E" />
     <path d="M100 32H82L91.2267 16L82.0002 0H100.48L109.707 16H127.707L118.48 32L127.707 48H109.227L100 32Z"
-        fill="black" />
+        fill="#05050E" />
     <path d="M331 32H313L322.227 16L313 0H331.48L340.707 16H358.707L349.48 32L358.707 48H340.227L331 32Z"
-        fill="black" />
+        fill="#05050E" />
     <path d="M562 32H544L553.227 16L544 0H562.48L571.707 16H589.707L580.48 32L589.707 48H571.227L562 32Z"
-        fill="black" />
+        fill="#05050E" />
     <path d="M793 32H775L784.227 16L775 0H793.48L802.707 16H820.707L811.48 32L820.707 48H802.227L793 32Z"
-        fill="black" />
+        fill="#05050E" />
     <path d="M1024 32H1006L1015.23 16L1006 0H1024.48L1033.71 16H1051.71L1042.48 32L1051.71 48H1033.23L1024 32Z"
-        fill="black" />
+        fill="#05050E" />
 </svg>

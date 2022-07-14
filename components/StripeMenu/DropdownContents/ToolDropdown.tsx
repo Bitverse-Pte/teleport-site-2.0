@@ -12,9 +12,8 @@ export default function DocsDropdown() {
           <Flex
             justifyContent={'flex-start'}
             sx={{
-              fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
-              fontWeight: 700,
+              fontWeight: 400,
               fontSize: '16px',
               lineHeight: '20px',
               opacity: 0.5,
@@ -28,9 +27,8 @@ export default function DocsDropdown() {
               <Flex
                 sx={{
                   whiteSpace: 'nowrap',
-                  fontFamily: 'IBM Plex Sans',
                   fontStyle: 'normal',
-                  fontWeight: 400,
+                  fontWeight: 300,
                   fontSize: '14px',
                   opacity: 0.5,
                   lineHeight: '18px',
@@ -47,9 +45,8 @@ export default function DocsDropdown() {
               <Flex
                 sx={{
                   whiteSpace: 'nowrap',
-                  fontFamily: 'IBM Plex Sans',
                   fontStyle: 'normal',
-                  fontWeight: 400,
+                  fontWeight: 300,
                   fontSize: '14px',
                   opacity: 0.5,
                   lineHeight: '18px',
@@ -74,9 +71,8 @@ export default function DocsDropdown() {
           <Flex
             justifyContent={'flex-start'}
             sx={{
-              fontFamily: 'IBM Plex Sans',
               fontStyle: 'normal',
-              fontWeight: 700,
+              fontWeight: 400,
               fontSize: '16px',
               lineHeight: '20px',
               opacity: 0.5,
