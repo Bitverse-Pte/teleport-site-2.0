@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Image from 'components/Image'
 
@@ -6,6 +6,8 @@ import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
 import ambassadorLogo from 'public/ambassador.svg'
 import { presetSensors } from 'utils/presetSensors'
+import { SCROLL_ROOT_ID } from 'components/Desktop'
+import { throttle } from 'lodash-es'
 /* 
 const Container = styled.div`
 	width: 100%;
@@ -24,6 +26,26 @@ const BannerContainer = styled.div`
 ` */
 
 export default function Header() {
+  const [atTop, setAtTop] = useState(true)
+
+  const scroll = useCallback(() => {
+    const scrollTop = document.getElementById(SCROLL_ROOT_ID)!.scrollTop
+    if (scrollTop === 0) {
+      setAtTop(true)
+    } else {
+      setAtTop(false)
+      console.log('abc')
+    }
+  }, [])
+  useEffect(() => {
+    const throttledScroll = throttle(scroll, 16)
+    const scrollRoot = document.getElementById(SCROLL_ROOT_ID)
+    scroll()
+    scrollRoot && scrollRoot!.addEventListener('scroll', throttledScroll)
+    return () => {
+      scrollRoot && scrollRoot!.removeEventListener('scroll', throttledScroll)
+    }
+  }, [scroll])
   return (
     <Flex
       sx={{
@@ -36,9 +58,9 @@ export default function Header() {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        background: 'rgba(5, 5, 14, 0.7)',
-        backdropFilter: 'blur(79px)',
         paddingRight: '5%',
+        ...(atTop ? { background: 'transparent', backdropFilter: 'unset' } : { background: 'rgba(5, 5, 14, 0.7)', backdropFilter: 'blur(79px)' }),
+        // ...headerLogoStyle,
       }}
     >
       <Banner />

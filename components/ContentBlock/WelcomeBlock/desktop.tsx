@@ -25,7 +25,7 @@ export default function WelcomeBlock() {
       if (arrow && web3Svg) {
         arrow.style.height = web3Svg.clientHeight + 'px'
       }
-    }, 200)
+    }, 16)
     containerRef.current && setContainerWidth(containerRef.current!.offsetWidth)
     const arrow = document.getElementById('arrow-container')
     const web3Svg = document.getElementById('web3svg')
@@ -253,8 +253,8 @@ export default function WelcomeBlock() {
           flexWrap="wrap"
           sx={{
             justifyContent: 'space-between',
-            maxWidth: '300px!important',
-            minWidth: '300px!important',
+            maxWidth: '220px!important',
+            minWidth: '220px!important',
             '@media screen and (max-width: 1300px)': {
               justifyContent: 'end',
             },
@@ -270,7 +270,7 @@ export default function WelcomeBlock() {
             onClick={presetSensors.body.doc}
             sx={{
               height: '60px',
-              minWidth: '316px',
+              minWidth: '240px',
               '@media screen and (max-width: 1300px)': {
                 width: '240px',
                 minWidth: '240px',
@@ -295,7 +295,7 @@ export default function WelcomeBlock() {
             onClick={presetSensors.body.whitepaper}
             sx={{
               height: '60px',
-              minWidth: '316px',
+              minWidth: '240px',
               '@media screen and (max-width: 1300px)': {
                 width: '240px',
                 minWidth: '240px',
