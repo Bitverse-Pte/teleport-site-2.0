@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useLayoutEffect, useState } from 'react'
-import { Flex, Box, SxStyleProp, Text, FlexProps } from 'rebass/styled-components'
+import { Flex, Box, SxStyleProp, Text, FlexProps, TextProps } from 'rebass/styled-components'
 import Image from 'components/Image'
 import throttle from 'lodash-es/throttle'
 import { css } from 'styled-components'
@@ -326,7 +326,7 @@ function MobileMenuItem({ title, showArrow = true, opacityOrNot = true, imageSrc
   )
 }
 
-function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: string; showBottomBorder?: boolean; onClick?: React.MouseEventHandler<HTMLDivElement> }) {
+function DocsMenuItem({ itemText, showBottomBorder, onClick, className }: { itemText: string; showBottomBorder?: boolean; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string }) {
   return (
     <Text
       onClick={onClick}
@@ -335,29 +335,16 @@ function DocsMenuItem({ itemText, showBottomBorder, onClick }: { itemText: strin
         fontStyle: 'normal',
         fontWeight: 500,
         fontSize: '14px',
-        lineHeight: /* showBottomBorder ? '59px' : */ '60px',
+        lineHeight: '60px',
         width: '100%',
         color: '#05050E',
-        // margin: '24px 0',
-        // ...(showBottomBorder && {
         '::after': {
           display: 'block',
           content: '',
           borderBottom: 'solid rgba(0,0,0, 0.05) 1px',
         },
-        // }),
       }}
-      /* {...(showBottomBorder
-        ? {
-            css: css`
-              &:after {
-                display: block;
-                content: '';
-                border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
-              }
-            `,
-          }
-        : {})} */
+      className={className}
     >
       {itemText}
     </Text>
@@ -384,9 +371,9 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
       <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
-      <DocsMenuItem itemText=" Teleport Network" onClick={presetSensors.header.network} />
-      <DocsMenuItem itemText=" XIBC" onClick={presetSensors.header.xibc} />
-      <DocsMenuItem itemText=" Developer" onClick={presetSensors.header.developer} />
+      <DocsMenuItem className="notranslate" itemText=" Teleport Network" onClick={presetSensors.header.network} />
+      <DocsMenuItem className="notranslate" itemText=" XIBC" onClick={presetSensors.header.xibc} />
+      <DocsMenuItem className="notranslate" itemText=" Developer" onClick={presetSensors.header.developer} />
       {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
       <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
       <DocsMenuItem itemText=" Wallet" onClick={presetSensors.header.walletDoc} />
@@ -418,6 +405,7 @@ function CommunityMenuItem({ base64String, itemText, onClick }: { base64String: 
 function CommunityMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } & FlexProps) {
   return (
     <Flex
+      className="notranslate"
       width={'100%'}
       minHeight="100%"
       flexDirection={'column'}
@@ -523,6 +511,7 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
   return (
     <Flex
       color="black"
+      className="notranslate"
       sx={{
         position: 'absolute',
         transition: 'all 0.2s ease-in-out',

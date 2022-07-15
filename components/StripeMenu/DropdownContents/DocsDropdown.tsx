@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { Flex, Text } from 'rebass'
 
@@ -13,13 +13,13 @@ export default function DocsDropdown() {
           White Paper
         </HeadingLink>
         <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
-        <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.network}>
+        <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.network}>
           Teleport Network
         </HeadingLink>
-        <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.xibc}>
+        <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.xibc}>
           XIBC
         </HeadingLink>
-        <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.developer}>
+        <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.developer}>
           Developer
         </HeadingLink>
         {/*     <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.validator}>

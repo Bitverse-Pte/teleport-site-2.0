@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { Flex, Text } from 'rebass'
 
@@ -7,7 +7,7 @@ import { presetSensors } from 'utils/presetSensors'
 export default function DocsDropdown() {
   return (
     <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.125rem 0">
-      <Flex width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content" padding="20px 24px">
+      <Flex className="notranslate" width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content" padding="20px 24px">
         <Flex flexDirection={'column'} flex={2} minWidth="fit-content">
           <Flex
             justifyContent={'flex-start'}

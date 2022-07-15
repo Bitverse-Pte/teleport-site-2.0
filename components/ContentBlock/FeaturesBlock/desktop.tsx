@@ -86,7 +86,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
             }}
           >
             <Text
-              className="main-title"
+              className="main-title notranslate"
               sx={{
                 whiteSpace: 'nowrap',
                 fontFamily: 'Dela Gothic One',
@@ -102,6 +102,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc }: { MainTitle: 
             </Text>
           </Flex>
           <Text
+            className="notranslate"
             sx={{
               fontFamily: 'Dela Gothic One',
               fontStyle: 'normal',

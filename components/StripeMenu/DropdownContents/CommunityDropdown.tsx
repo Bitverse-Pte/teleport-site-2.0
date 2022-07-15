@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { Flex, Text } from 'rebass'
 import styled from 'styled-components'
 
@@ -11,7 +11,7 @@ import { presetSensors } from 'utils/presetSensors'
 export default function CommunityDropdown() {
   return (
     <DropdownEl maxWidth="180px" width="180px" minHeight={'240px'} display="flex" padding="0.125rem 0">
-      <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
+      <Flex className="notranslate" width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
         <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.twitter}>
           <Base64SvgHolder base64String={twitterLogoBase64String} />
           {/* &nbsp; */}

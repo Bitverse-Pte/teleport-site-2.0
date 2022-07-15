@@ -8,6 +8,7 @@ export default function RoadmapBlock() {
   return (
     <Flex width={'100%'} height="500px" flexDirection={'column'} padding="60px 0" justifyContent={'center'} margin="108px 0">
       <Text
+        className="notranslate"
         sx={{
           fontFamily: 'Dela Gothic One',
           fontSize: '54px',

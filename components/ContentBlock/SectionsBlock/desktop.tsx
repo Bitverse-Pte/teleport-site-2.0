@@ -85,7 +85,7 @@ function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Inde
         <Image className="icon" src={graphArr[Index - 1]} alt={'section-icon'} />
         <div className="wrapRow" style={{ marginRight: '10px' }}>
           <div className="wrapColumn">
-            <h1 className="textTitle">{Title}</h1>
+            <h1 className="textTitle notranslate">{Title}</h1>
             <h6 className="textSubTitle">{SubTitle}</h6>
           </div>
           {RenderButton(ButtonTitle)}

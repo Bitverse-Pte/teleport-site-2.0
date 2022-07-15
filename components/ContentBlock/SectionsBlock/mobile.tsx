@@ -120,6 +120,7 @@ function Section({ iconSrc, videoIndex, mainTitle, instruction, buttonValue }: {
         <Image src={iconSrc} width={30} height={30} alt="section-icon" quality={100}></Image>
       </Box>
       <Text
+        className="notranslate"
         sx={{
           width: '100%',
           fontFamily: 'Dela Gothic One',

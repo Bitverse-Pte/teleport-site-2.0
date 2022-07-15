@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps): ReactElement {
         <meta property="og:site_name" content="Teleport Network" />
         <meta name="google-site-verification" content="2OFRwzykwoKPyUADzZ9JCA4jED2l5zZy31Q5lFsaHes" />
         <meta name="google-site-verification" content="lix4hrWneSKRDr7ooDLj1wz3tuRDo1Zitxm_WAJZ8nY" />
-        <title>Teleport Network</title>
+        <title className="notranslate">Teleport Network</title>
         <link rel="icon" href="/dark-tab-icon.svg" />
       </Head>
       <ConvertedComponent {...pageProps} />

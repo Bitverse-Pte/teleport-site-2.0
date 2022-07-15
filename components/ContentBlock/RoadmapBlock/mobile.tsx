@@ -8,6 +8,7 @@ export default function RoadmapBlock() {
   return (
     <Flex width={'100%'} height="500px" flexDirection={'column'} justifyContent={'center'}>
       <Text
+        className="notranslate"
         sx={{
           fontFamily: 'Dela Gothic One',
           fontSize: '20px',
@@ -43,7 +44,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
           {milestoneDate}
         </Text>
       </Flex>
-      <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="12px" lineHeight={'18px'} color='#000000'>
+      <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="12px" lineHeight={'18px'} color="#000000">
         {description}
       </Text>
     </Flex>

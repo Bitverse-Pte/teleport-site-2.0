@@ -121,7 +121,7 @@ const CommunityBlock = () => {
               <div className={'imgCommunity'}>
                 <Image src={item.image} alt={'community-item-icon'} />
               </div>
-              <div className="textCommunity">
+              <div className="textCommunity notranslate">
                 {item.title}
                 <span className="lineCommunity"></span>
               </div>
@@ -134,7 +134,7 @@ const CommunityBlock = () => {
   return (
     <CommunityContainer>
       <div className="wrapCommunity">
-        <h1 className="textHeader">Owned by the community</h1>
+        <h1 className="textHeader notranslate">Owned by the community</h1>
         <div className="boxCommunity">{items}</div>
       </div>
     </CommunityContainer>

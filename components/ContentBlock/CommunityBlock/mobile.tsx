@@ -61,7 +61,7 @@ const Community = () => {
     })
   }, [])
   return (
-    <Flex flexDirection={'column'} margin="48px 0 72px 0" alignItems={'flex-start'} width="100%">
+    <Flex className="notranslate" flexDirection={'column'} margin="48px 0 72px 0" alignItems={'flex-start'} width="100%">
       <Text
         width={'100%'}
         sx={{

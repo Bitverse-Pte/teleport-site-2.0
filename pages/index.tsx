@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense, lazy, useMemo, LazyExoticComponent } from 'react'
+import React, { useEffect, useState, Suspense, lazy, useMemo, LazyExoticComponent, HTMLAttributes } from 'react'
 import { Box, Text } from 'rebass'
 import getConfig from 'next/config'
 
@@ -66,11 +66,6 @@ function Home({ isMobile, isTablet, isDesktop }: UserAgent) {
       default:
         return DefaultComponent
     }
-    /* if (componentsName) {
-      return components[componentsName]
-    } else {
-      return components['Default']
-    } */
   }, [componentsName])
 
   return <Suspense fallback={() => <Text>loading</Text>}>{<Components />}</Suspense>

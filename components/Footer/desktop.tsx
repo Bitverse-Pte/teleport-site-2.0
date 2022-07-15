@@ -2,33 +2,37 @@ import React, { memo } from 'react'
 import { FooterStyled } from './styled'
 import Link, { LinkProps } from 'next/link'
 import Image from 'components/Image'
-import { Flex, Text } from 'rebass/styled-components'
+import styled from 'styled-components'
+import { Box, Flex, Text } from 'rebass'
 
 import teleportHorizontal from 'public/images/teleport-horizontal.svg'
 import { presetSensors } from 'utils/presetSensors'
 import { ambassador_link, discord_link, docs_link, github_link } from 'constants/url'
 
-const StyledLink = (props: { text: string } & LinkProps) => {
+const StyledDivForLink = styled.div`
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: nowrap;
+  :hover {
+    color: #59c3aa;
+    font-weight: 400;
+  }
+`
+
+const StyledLink = (props: { text: string; children?: React.ReactNode } & LinkProps) => {
   return (
     <Link {...props} passHref={true}>
-      <Text
-        sx={{
-          fontFamily: 'Poppins',
-          fontStyle: 'normal',
-          fontWeight: '200',
-          fontSize: '14px',
-          lineHeight: '27px',
-          color: '#000000',
-          marginBottom: '16px',
-          cursor: 'pointer',
-          ':hover': {
-            color: '#59C3AA',
-            fontWeight: '400',
-          },
-        }}
-      >
-        {props.text}
-      </Text>
+      <StyledDivForLink>
+        <Text>{props.text}</Text>
+        {props.children}
+      </StyledDivForLink>
     </Link>
   )
 }
@@ -61,12 +65,14 @@ const Footer = () => {
               <div className={'textTitle'}>Developer</div>
               <StyledLink href={docs_link} key={'doc'} text="Document" onClick={presetSensors.footer.doc} />
               <StyledLink href={github_link} key={'github'} text="Github" onClick={presetSensors.footer.github} />
-              <StyledLink href={discord_link} key={'community'} text="Community (Discord)" onClick={presetSensors.footer.discord} />
+              <StyledLink href={discord_link} key={'community'} text="Community" onClick={presetSensors.footer.discord}>
+                <div className="notranslate">(Discord)</div>
+              </StyledLink>
             </Flex>
           </Flex>
         </Flex>
         <div className="lineFooter"></div>
-        <div className="textCopyright">©2022 Teleport. All rights reserved.</div>
+        <div className="textCopyright notranslate">©2022 Teleport. All rights reserved.</div>
       </div>
     </FooterStyled>
   )

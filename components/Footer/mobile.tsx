@@ -6,12 +6,13 @@ import footLogo from 'public/mobile-footer-logo.svg'
 
 export default function Footer() {
   return (
-    <Flex marginBottom={'32px'} width={'88%'} flexDirection={'column'} alignItems="center" >
+    <Flex marginBottom={'32px'} width={'88%'} flexDirection={'column'} alignItems="center">
       <Box>
         <Image src={footLogo} alt={'mobile-footer-logo'} height={35} />
       </Box>
       <hr style={{ margin: '12px 0', borderWidth: 0, borderBottom: '0.125px solid rgba(0,0,0,0.2)', width: '100%' }}></hr>
       <Text
+        className="notranslate"
         sx={{
           fontFamily: 'Poppins',
           fontStyle: 'normal',

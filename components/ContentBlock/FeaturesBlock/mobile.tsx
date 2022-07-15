@@ -39,7 +39,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
       </Flex>
       <Flex marginBottom={'9px'}>
         <Text
-          className="main-title"
+          className="main-title notranslate"
           sx={{
             fontFamily: 'Dela Gothic One',
             fontStyle: 'normal',
@@ -55,6 +55,7 @@ function Feature({ MainTitle, SecondTitle, instruction, logoSrc, showLine = fals
       </Flex>
       <Flex marginBottom={'16px'}>
         <Text
+          className="notranslate"
           sx={{
             fontFamily: 'Dela Gothic One',
             fontStyle: 'normal',
