@@ -33,7 +33,7 @@ function Desktop() {
           }}
         >
           <Header />
-          <Flex marginTop={'240px'} minWidth={802} width={CONTENT_BLOCK_WIDTH} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center" paddingBottom={48}>
+          <Flex marginTop={'22.5vh'} minWidth={802} width={CONTENT_BLOCK_WIDTH} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center" paddingBottom={48}>
             <WelcomeBlock />
             <Box marginTop={84} width={120} height={120}>
               <Image src={colorfulDownArrow} alt="colorful-down-arrow" />

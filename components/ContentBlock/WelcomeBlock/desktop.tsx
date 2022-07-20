@@ -118,7 +118,7 @@ export default function WelcomeBlock() {
           justifyContent: 'space-between',
         }}
       >
-        <Flex minHeight="140px">
+        <Flex minHeight="160px">
           <Flex flexDirection={'column'} width="84%" justifyContent={'space-between'}>
             <Box
               className="welcome-teleport"
