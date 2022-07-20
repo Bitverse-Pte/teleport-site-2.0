@@ -35,8 +35,12 @@ export default function WelcomeBlock() {
             fontStyle: 'normal',
             fontWeight: 600,
             fontSize: '16px',
+            transition: 'all 0.2s ease-in-out',
             borderRadius: '8px',
             lineHeight: '16px',
+            ':active': {
+              backgroundColor: 'rgba(80, 175, 153,1)',
+            },
           }}
           onClick={presetSensors.body.doc}
           padding={'15px 0'}
@@ -55,7 +59,12 @@ export default function WelcomeBlock() {
             fontSize: '16px',
             borderRadius: '8px',
             lineHeight: '16px',
+            transition: 'all 0.2s ease-in-out',
             border: 'solid 1px white',
+            ':active': {
+              color: 'rgba(80, 175, 153,1)',
+              borderColor: 'rgba(80, 175, 153,1)',
+            },
           }}
           onClick={presetSensors.body.downloadWallet}
           padding={'15px 0'}

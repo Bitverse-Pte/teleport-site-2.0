@@ -53,7 +53,7 @@ export default function Header() {
     return () => {
       scrollRoot && scrollRoot!.removeEventListener('scroll', throttledScroll)
     }
-  }, [])
+  }, [scroll])
 
   const menuButtonClick = useCallback(() => {
     if (menuSpread) {

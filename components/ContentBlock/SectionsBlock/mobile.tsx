@@ -157,7 +157,11 @@ function Section({ iconSrc, videoIndex, mainTitle, instruction, buttonValue }: {
         <Flex width="100%" justifyContent={'center'} alignItems="center">
           <Button
             sx={{
+              ':active': {
+                background: 'rgba(80, 175, 153, 1)',
+              },
               background: '#59C3AA',
+              transition: 'all 0.2s ease-in-out',
               borderRadius: '8px',
               width: '200px',
               height: '48px',

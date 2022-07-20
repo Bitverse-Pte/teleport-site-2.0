@@ -7,10 +7,8 @@ import Image from 'components/Image'
 import web3Png from 'public/web3.png'
 import leftBottomArrow from 'public/leftBottomArrow.svg'
 import circledT from 'public/circledT.svg'
-import welcomeGif from 'public/gif/welcome.gif'
 import welcomeTeleport from 'public/welcome-teleport.svg'
 import welcomeSubTitle from 'public/welcome-sub-title.svg'
-import { welcomeGifFirstFrame } from 'components/Image/base64Images'
 import { presetSensors } from 'utils/presetSensors'
 
 export default function WelcomeBlock() {
@@ -151,7 +149,7 @@ export default function WelcomeBlock() {
             width: '20%',
             minWidth: '200px',
             height: '200px',
-            transition: 'all 0.2s ease-in-out',
+            transition: 'all 0.2s ease-in-out 0.05s',
           }}
           className="vanish-to-right"
         >
@@ -276,6 +274,12 @@ export default function WelcomeBlock() {
                 maxWidth: '240px',
                 fontSize: '20px',
               },
+              ':hover': {
+                transform: 'translateY(-1px)',
+              },
+              ':active': {
+                backgroundColor: 'rgba(80, 175, 153,1)',
+              },
               transition: 'all 0.2s ease-in-out',
               fontStyle: 'normal',
               cursor: 'pointer',
@@ -300,6 +304,13 @@ export default function WelcomeBlock() {
                 minWidth: '240px',
                 maxWidth: '240px',
                 fontSize: '20px',
+              },
+              ':hover': {
+                transform: 'translateY(-1px)',
+              },
+              ':active': {
+                color: 'rgba(80, 175, 153,1)',
+                borderColor: 'rgba(80, 175, 153,1)',
               },
               transition: 'all 0.2s ease-in-out',
               fontStyle: 'normal',

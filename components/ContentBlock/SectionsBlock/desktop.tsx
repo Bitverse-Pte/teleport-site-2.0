@@ -52,15 +52,20 @@ const SectionStyle = styled.div`
         max-width: 240px;
         min-width: 240px;
         height: 72px;
-        background: #59c3aa;
+        background: rgba(89, 195, 170, 1);
         border-radius: 12px;
         color: #05050e;
         font-style: normal;
         font-weight: 600;
         font-size: 20px;
+        transition: all 0.2s ease 0s;
+        opacity: 1;
         &:hover {
-          transition: all 0.2s ease 0s;
-          box-shadow: rgb(0 0 0 / 10%) 0px 2px 10px;
+          transform: translate(1px, -1px);
+          box-shadow: rgb(0 0 0 / 5%) -3px 3px 3px;
+        }
+        &:active {
+          background: rgba(80, 175, 153, 1);
         }
       }
     }
