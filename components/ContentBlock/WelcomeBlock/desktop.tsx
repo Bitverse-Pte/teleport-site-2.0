@@ -39,7 +39,7 @@ export default function WelcomeBlock() {
     <Flex
       sx={{
         position: 'relative',
-        width: '100%',
+        width: '110%',
         transition: 'all 0.2s ease-in-out',
         height: '380px',
         ':hover': {
@@ -109,7 +109,13 @@ export default function WelcomeBlock() {
         ref={containerRef}
         sx={{
           position: 'absolute',
-          width: '100%',
+          width: '90.9090909090909091%',
+          minWidth: '802px',
+          maxWidth: '1132px',
+          left:0,
+          right:0,
+          marginLeft: "auto",
+          marginRight: "auto",
           top: '40px',
           height: '300px',
           flexDirection: 'column',
