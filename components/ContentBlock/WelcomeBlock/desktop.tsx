@@ -111,13 +111,14 @@ export default function WelcomeBlock() {
           position: 'absolute',
           width: '100%',
           top: '40px',
+          height: '300px',
           flexDirection: 'column',
           transformOrigin: 'center',
           transition: 'all 0.2s ease-in-out',
           justifyContent: 'space-between',
         }}
       >
-        <Flex minHeight="160px">
+        <Flex minHeight="140px">
           <Flex flexDirection={'column'} width="84%" justifyContent={'space-between'}>
             <Box
               className="welcome-teleport"
