@@ -53,7 +53,7 @@ const FeatureBlock = styled(Box)`
 
 export default function FeaturesBlock() {
   return (
-    <Flex flexDirection={'column'} alignItems="center" width={'100%'} padding="60px 0">
+    <Flex flexDirection={'column'} alignItems="center" width={'100%'} margin="120px 0 60px 0">
       <Feature MainTitle="Omni-Chain" SecondTitle="Chain Integration" instruction="Support EVM & non-EVM chains via XIBC protocol" logoSrc={omniChainLogo} />
       <Feature MainTitle="Alternative Cross -" SecondTitle="Chain Approach" instruction="State Relay - Trustless Oracle TSS - Cost effective" logoSrc={alternativeCrossLogo} />
       <Feature MainTitle="Dapp -" SecondTitle="Interoperability" instruction="Non-invasive SDK for seamless dApp integration" logoSrc={dappLogo} />

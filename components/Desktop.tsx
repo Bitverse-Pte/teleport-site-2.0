@@ -5,13 +5,14 @@ import SectionsBlock from 'components/ContentBlock/SectionsBlock/desktop'
 import Footer from './Footer/desktop'
 import Header from './Header/desktop'
 import RoadmapBlock from './ContentBlock/RoadmapBlock/desktop'
-import bg from 'public/background.svg'
+import bg from 'public/new-background.svg'
 import colorfulDownArrow from 'public/colorful-down-arrow.svg'
 import Image from 'components/Image'
 import WelcomeBlock from 'components/ContentBlock/WelcomeBlock/desktop'
 import CommunityBlock from './ContentBlock/CommunityBlock/desktop'
 
 export const SCROLL_ROOT_ID = 'scroll_root'
+export const CONTENT_BLOCK_WIDTH = '50%'
 
 function Desktop() {
   return (
@@ -21,8 +22,6 @@ function Desktop() {
       </Box>
       <Flex minHeight={'fit-content'} width={'100%'} justifyContent="center" flexDirection={'column'} alignItems="center">
         <Flex
-          /*  height={'100%'}
-        width={'100%'} */
           width={'100%'}
           justifyContent="center"
           flexDirection={'column'}
@@ -34,7 +33,7 @@ function Desktop() {
           }}
         >
           <Header />
-          <Flex marginTop={'200px'} minWidth={802} width={'55%'} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center" paddingBottom={48}>
+          <Flex marginTop={'280px'} minWidth={802} width={CONTENT_BLOCK_WIDTH} maxWidth="1132px" minHeight={1280} flexDirection="column" justifyContent={'space-between'} alignItems="center" paddingBottom={48}>
             <WelcomeBlock />
             <Box marginTop={84} width={120} height={120}>
               <Image src={colorfulDownArrow} alt="colorful-down-arrow" />
@@ -42,8 +41,8 @@ function Desktop() {
             <FeaturesBlock />
           </Flex>
         </Flex>
-        <Flex /* height={'100%'}  */ width={'100%'} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
-          <Flex minWidth={802} width={'55%'} maxWidth="1132px" flexDirection="column" justifyContent={'flex-start'} alignItems="center">
+        <Flex width={'100%'} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
+          <Flex minWidth={802} width={CONTENT_BLOCK_WIDTH} maxWidth="1132px" flexDirection="column" justifyContent={'flex-start'} alignItems="center">
             <SectionsBlock />
             <RoadmapBlock />
             <CommunityBlock />
@@ -54,5 +53,4 @@ function Desktop() {
     </Box>
   )
 }
-// export default WithLoading(Desktop)
 export default Desktop

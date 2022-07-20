@@ -14,13 +14,13 @@ export default function WelcomeBlock() {
       <Flex marginBottom={12} width={264}>
         <Image src={welcomeTeleport} alt="welcome-main-title" objectFit="contain"></Image>
       </Flex>
-      <Flex marginBottom={28.64} width={264}>
+      <Flex marginBottom={20} width={264}>
         <Image src={welcomeSubTitle} alt="welcome-sub-title" objectFit="contain"></Image>
       </Flex>
-      <Flex marginBottom={30.15}>
-        <Image src={mobileWelcomeImg} alt="welcome-main-img" objectFit="contain"></Image>
+      <Flex marginBottom={20}>
+        <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} />
       </Flex>
-      <Flex marginBottom={30} width={220}>
+      <Flex marginBottom={20} width={220}>
         <Box sx={{ display: 'flex', alignItems: 'end' }}>
           <Image src={leftBottomArrow} alt="welcome-gif"></Image>
         </Box>

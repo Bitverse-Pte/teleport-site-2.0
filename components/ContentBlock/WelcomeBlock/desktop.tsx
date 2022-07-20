@@ -184,8 +184,7 @@ export default function WelcomeBlock() {
           transformOrigin: 'center',
         }}
       >
-        {/* <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} /> */}
-        <Image src={welcomeGif} alt="welcome-gif" placeholder="blur" blurDataURL={'data:image/png;base64,' + welcomeGifFirstFrame}></Image>
+        <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} />
       </Box>
       <Flex
         sx={{

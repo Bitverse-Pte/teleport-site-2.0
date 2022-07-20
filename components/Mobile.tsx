@@ -32,7 +32,9 @@ function Mobile() {
             position: 'relative',
           }}
         >
-          <Image src={bg} alt={'background-image'} layout="fill" objectFit="cover" objectPosition={'left top'} quality={100}></Image>
+          <Box sx={{ position: 'absolute', height: '220px', width: '100%' }}>
+            <Image src={bg} alt={'background-image'} layout="fill" objectFit="cover" objectPosition={'left top'} quality={100} />
+          </Box>
           <Header />
           <Flex
             width={'100%'}

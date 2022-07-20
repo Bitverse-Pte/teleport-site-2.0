@@ -34,7 +34,6 @@ export default function Header() {
       setAtTop(true)
     } else {
       setAtTop(false)
-      console.log('abc')
     }
   }, [])
   useEffect(() => {
