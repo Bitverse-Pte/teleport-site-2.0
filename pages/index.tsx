@@ -1,10 +1,11 @@
 import React, { useEffect, useState, Suspense, lazy, useMemo, LazyExoticComponent, HTMLAttributes } from 'react'
 import { Box, Text } from 'rebass'
 import getConfig from 'next/config'
-
 import { NextApiRequest, NextApiResponse } from 'next'
 import { parse, UserAgent } from 'next-useragent'
 import WithLoading from 'components/WithLoading'
+
+import 'animate.css';
 
 const { publicRuntimeConfig } = getConfig()
 
