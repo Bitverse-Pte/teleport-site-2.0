@@ -65,7 +65,7 @@ const SectionStyle = styled.div`
           box-shadow: rgb(0 0 0 / 5%) -3px 3px 3px;
         }
         &:active {
-          background: rgba(80, 175, 153, 1);
+          background: rgba(78, 215, 182, 1);
         }
       }
     }

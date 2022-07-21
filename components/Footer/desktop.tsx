@@ -109,7 +109,7 @@ const StyledDivForLink = styled.div`
   display: flex;
   flex-wrap: nowrap;
   :hover {
-    color: #59c3aa;
+    color: rgba(78, 215, 182, 1);
     font-weight: 400;
   }
 `
