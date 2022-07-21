@@ -290,7 +290,7 @@ export default function WelcomeBlock() {
                   fontSize: '20px',
                 },
                 ':hover': {
-                  transform: 'translateY(-1px)',
+                  transform: 'translateY(-4px)',
                 },
                 ':active': {
                   backgroundColor: 'rgba(80, 175, 153,1)',
@@ -321,7 +321,7 @@ export default function WelcomeBlock() {
                   fontSize: '20px',
                 },
                 ':hover': {
-                  transform: 'translateY(-1px)',
+                  transform: 'translateY(-4px)',
                 },
                 ':active': {
                   color: 'rgba(80, 175, 153,1)',

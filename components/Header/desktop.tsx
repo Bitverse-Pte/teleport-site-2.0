@@ -73,12 +73,22 @@ export default function Header() {
           fontStyle: 'normal',
           fontWeight: 500,
           fontSize: '18px',
-          color: '#0ACBE4',
+          color: 'rgba(57, 225, 186, 1)',
           cursor: 'pointer',
+          marginLeft: '37px',
+          '@media screen and (max-width: 1300px)': {
+            marginLeft: '16px',
+          },
+          '@media screen and (max-width: 1000px)': {
+            marginLeft: '7px',
+          },
+          '@media screen and (max-width: 840px)': {
+            marginLeft: '1px',
+          },
         }}
       >
         <Image src={ambassadorLogo} alt="ambassador-logo"></Image>
-        {'Ambassador'}
+        &nbsp;{'Ambassador'}
       </Flex>
     </Flex>
   )

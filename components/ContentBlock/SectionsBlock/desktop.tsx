@@ -52,7 +52,7 @@ const SectionStyle = styled.div`
         max-width: 240px;
         min-width: 240px;
         height: 72px;
-        background: rgba(89, 195, 170, 1);
+        background: rgba(57, 225, 186, 1);
         border-radius: 12px;
         color: #05050e;
         font-style: normal;
@@ -61,7 +61,7 @@ const SectionStyle = styled.div`
         transition: all 0.2s ease 0s;
         opacity: 1;
         &:hover {
-          transform: translate(1px, -1px);
+          transform: translateY(-4px);
           box-shadow: rgb(0 0 0 / 5%) -3px 3px 3px;
         }
         &:active {
