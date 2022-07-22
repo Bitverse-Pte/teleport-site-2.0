@@ -76,6 +76,8 @@ const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
 function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Index: number; Title: string; SubTitle: string; videoIndex: string; ButtonTitle: string }) {
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
+      case 'swap':
+        return <video src={require('../../../public/swap.mp4')} autoPlay loop muted width={'100%'} />
       case 'bridge':
         return <video src={require('../../../public/bridge.mp4')} autoPlay loop muted width={'100%'} />
       case 'wallet':
@@ -108,6 +110,13 @@ function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Inde
 
 function RenderButton(title: string) {
   if (title !== '') {
+     if (title === 'Swap') {
+      return (
+        <Button className="buttonSection" onClick={presetSensors.body.goToSwap}>
+          {title}
+        </Button>
+      )
+    }
     if (title === 'Launch App') {
       return (
         <Button className="buttonSection" onClick={presetSensors.body.launchBridge}>
@@ -129,9 +138,10 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" ButtonTitle="Launch App" />
-      <SectionItem Index={2} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" ButtonTitle="Download" />
-      <SectionItem Index={3} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" ButtonTitle="" />
+      <SectionItem Index={1} Title="Teleswap" SubTitle="Cross-chain liquidity aggregator Support token swap between any two chains" videoIndex="swap" ButtonTitle="Swap" />
+      <SectionItem Index={2} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" ButtonTitle="Launch App" />
+      <SectionItem Index={3} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" ButtonTitle="Download" />
+      <SectionItem Index={4} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" ButtonTitle="" />
     </Flex>
   )
 }

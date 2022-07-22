@@ -96,9 +96,10 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column" width={'100%'}>
-      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph1} videoIndex={'bridge'} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
-      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph2} videoIndex={'wallet'} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
-      <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} videoIndex={'metaverse'} />
+      <Section mainTitle="Teleswap" instruction="Cross-chain liquidity aggregator Support token swap between any two chains" iconSrc={iconGraph1} videoIndex={'swap'} buttonValue={'Swap'} buttonOnClick={presetSensors.body.goToSwap} />
+      <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph2} videoIndex={'bridge'} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
+      <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} videoIndex={'wallet'} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
+      <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph4} videoIndex={'metaverse'} />
     </Flex>
   )
 }
@@ -106,6 +107,8 @@ export default function SectionsBlock() {
 function Section({ iconSrc, videoIndex, mainTitle, instruction, buttonValue }: { videoIndex: string; iconSrc: string; mainTitle: string; instruction: string; buttonValue?: string; buttonOnClick?: React.MouseEventHandler<HTMLButtonElement> }) {
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
+      case 'swap':
+        return <video src={require('../../../public/swap.mp4')} autoPlay loop muted width={'100%'} />
       case 'bridge':
         return <video src={require('../../../public/bridge.mp4')} autoPlay loop muted width={'100%'} />
       case 'wallet':

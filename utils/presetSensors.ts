@@ -19,6 +19,7 @@ import {
   wallet_download_link,
   whitepaper_link,
   XIBC_link,
+  swap_link,
 } from 'constants/url'
 import { genSensorCallback } from './skynet'
 
@@ -50,6 +51,7 @@ export const presetSensors = {
     linktree: genSensorCallback('body', 'linktree'),
     launchBridge: genSensorCallback('body', 'launchBridge', bridge_link),
     downloadWallet: genSensorCallback('body', 'downloadWallet', wallet_download_link),
+    goToSwap: genSensorCallback('body', 'goToSwap', swap_link),
     doc: genSensorCallback('body', 'doc', docs_link),
     whitepaper: genSensorCallback('body', 'whitepaper', whitepaper_link),
   },
