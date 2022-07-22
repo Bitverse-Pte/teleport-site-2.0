@@ -31,6 +31,7 @@ export default function Header() {
   const spreadMenu = useCallback(() => {
     setMenuSpread({
       transform: 'scaleY(1)',
+      opacity: 1,
       height: '100vh',
     })
   }, [])
@@ -160,6 +161,7 @@ export default function Header() {
           transform: 'scaleY(0)',
           color: 'black',
           top: '100%',
+          opacity: 0,
           padding: '0 6%',
           // boxShadow: '0px 5px 10px 0px rgba(128,128,128,0.5)',
           borderTop: '1px solid rgba(0, 0, 0, 0.05)',
