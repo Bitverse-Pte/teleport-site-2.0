@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 import { Box, Button, Flex } from 'rebass'
-import Link from 'next/link'
 import Image from 'components/Image'
 
 import iconGraph1 from 'public/images/icon-graph-1.svg'
@@ -72,8 +71,15 @@ const SectionStyle = styled.div`
   }
 `
 
+const FirstLetterSpan = styled.span`
+  display: block;
+  &:first-letter {
+    font-weight: 900;
+  }
+`
+
 const graphArr = [iconGraph1, iconGraph2, iconGraph3, iconGraph4]
-function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Index: number; Title: string; SubTitle: string; videoIndex: string; ButtonTitle: string }) {
+function SectionItem({ Index, Title, descriptions, videoIndex, ButtonTitle }: { Index: number; Title: string; descriptions: string[]; videoIndex: string; ButtonTitle: string }) {
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
       case 'swap':
@@ -93,7 +99,11 @@ function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Inde
         <div className="wrapRow" style={{ marginRight: '10px' }}>
           <div className="wrapColumn">
             <h1 className="textTitle notranslate">{Title}</h1>
-            <h6 className="textSubTitle">{SubTitle}</h6>
+            <h6 className="textSubTitle">
+              {descriptions.map((e) => {
+                return <FirstLetterSpan key={e.substring(0, 2)}>{e}</FirstLetterSpan>
+              })}
+            </h6>
           </div>
           {RenderButton(ButtonTitle)}
         </div>
@@ -110,7 +120,7 @@ function SectionItem({ Index, Title, SubTitle, videoIndex, ButtonTitle }: { Inde
 
 function RenderButton(title: string) {
   if (title !== '') {
-     if (title === 'Swap') {
+    if (title === 'Swap') {
       return (
         <Button className="buttonSection" onClick={presetSensors.body.goToSwap}>
           {title}
@@ -138,10 +148,10 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column">
-      <SectionItem Index={1} Title="Teleswap" SubTitle="Cross-chain liquidity aggregator Support token swap between any two chains" videoIndex="swap" ButtonTitle="Swap" />
-      <SectionItem Index={2} Title="Teleport Bridge" SubTitle="Empower cross-chain token transfer" videoIndex="bridge" ButtonTitle="Launch App" />
-      <SectionItem Index={3} Title="Teleport Wallet" SubTitle="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" videoIndex="wallet" ButtonTitle="Download" />
-      <SectionItem Index={4} Title="Metaverse Hub" SubTitle="First EVM-compatible relay chain for DeFi, NFT, and game" videoIndex="metaverse" ButtonTitle="" />
+      <SectionItem Index={1} Title="Teleswap" descriptions={['Cross-chain liquidity aggregator', 'Support token swap between any two chains']} videoIndex="swap" ButtonTitle="Swap" />
+      <SectionItem Index={2} Title="Teleport Bridge" descriptions={['Empower cross-chain token transfer']} videoIndex="bridge" ButtonTitle="Launch App" />
+      <SectionItem Index={3} Title="Teleport Wallet" descriptions={['Multi-Chain & Multi-Identity supported', 'Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction']} videoIndex="wallet" ButtonTitle="Download" />
+      <SectionItem Index={4} Title="Metaverse Hub" descriptions={['First EVM-compatible relay chain for', 'DeFi, NFT, and game']} videoIndex="metaverse" ButtonTitle="" />
     </Flex>
   )
 }

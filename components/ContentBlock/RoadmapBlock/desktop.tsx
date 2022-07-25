@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Flex, Text } from 'rebass'
 import Image from 'components/Image'
 
-import staredLine from 'public/images/roadmap-stared-line.svg'
+import roadmapDiamondDecoratedLine from 'public/images/roadmap-diamond-decorated-line.svg'
 
 export default function RoadmapBlock() {
   return (
@@ -22,18 +22,18 @@ export default function RoadmapBlock() {
         Teleport Roadmap
       </Text>
       <Flex width={'100%'} style={{ position: 'relative' }} justifyContent="space-between">
-        <Image src={staredLine} alt={'roadmap-stared-line'} layout="fill" objectFit="contain" objectPosition={'left 70px'}></Image>
-        <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
-        <MapColumn milestoneDate="2022.Q1" description="Testnet launch Cross-chain transfer & contract call via IBC& TSS" />
-        <MapColumn milestoneDate="2022.Q2" description="Mainnet launch  EVM chain support Cross-chain relayer Incentive Program Multi-chain wallet release" />
-        <MapColumn milestoneDate="2022.Q3" description="Cross-chain DEX launch Connecting non-EVM chains  Plug&play SDK" />
-        <MapColumn milestoneDate="2022.Q4" description="TSS Node on-chain governance ZK cross-chain relay" />
+        <Image src={roadmapDiamondDecoratedLine} alt={'roadmap-diamond-decorated-line'} layout="fill" objectFit="contain" objectPosition={'left 60px'}></Image>
+        <MapColumn milestoneDate="2021.Q4" description={['Team setup', 'Product design & early-stage development']} />
+        <MapColumn milestoneDate="2022.Q1" description={['Testnet launch', 'Cross-chain transfer & contract call via IBC& TSS']} />
+        <MapColumn milestoneDate="2022.Q2" description={['Mainnet launch', 'EVM chain support', 'Cross-chain relayer', 'Incentive Program', 'Multi-chain wallet release']} />
+        <MapColumn milestoneDate="2022.Q3" description={['Cross-chain DEX launch', 'Connecting non-EVM chains', 'Plug&play SDK']} />
+        <MapColumn milestoneDate="2022.Q4" description={['TSS Node on-chain governance', 'ZK cross-chain relay']} />
       </Flex>
     </Flex>
   )
 }
 
-function MapColumn({ milestoneDate, description }: { milestoneDate: string; description: string }) {
+function MapColumn({ milestoneDate, description }: { milestoneDate: string; description: string[] }) {
   return (
     <Flex
       flexDirection={'column'}
@@ -49,13 +49,18 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
         },
       }}
     >
-      <Text textAlign={'center'} height={'40px'} fontWeight={400} fontSize="20px" fontFamily={'Dela Gothic One'} color="#05050e">
+      <Text textAlign={'left'} width={'100%'} height={'40px'} fontWeight={400} fontSize="20px" fontFamily={'Dela Gothic One'} color="#05050e">
         {milestoneDate}
       </Text>
-      <Box height={'100px'}></Box>
-      <Text textAlign={'center'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="16px">
-        {description}
-      </Text>
+      <Box height={'80px'}></Box>
+      {description.map((e) => {
+        return (
+          <Text key={e.substring(0, 2)} width={'100%'} textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="16px" lineHeight="24px" display={'flex'}>
+            <span style={{ display: 'inline-block', fontSize: '32px', lineHeight: '24px', height: '24px' }}>·</span>&nbsp;
+            {e}
+          </Text>
+        )
+      })}
     </Flex>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Flex, Text } from 'rebass'
 import Image from 'components/Image'
 
-import star from 'public/star.svg'
+import diamond from 'public/images/roadmap-diamond.svg'
 
 export default function RoadmapBlock() {
   return (
@@ -38,7 +38,7 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
     <Flex flexDirection={'column'} width="100%" alignItems={'flex-start'} margin="12px 0">
       <Flex width={'100%'} marginBottom="10px">
         <Box marginRight={12}>
-          <Image src={star} width={13} height={14} alt="section-icon"></Image>
+          <Image src={diamond} width={13} height={14} alt="section-icon"></Image>
         </Box>
         <Text fontWeight={400} fontSize="14px" lineHeight={'14px'} fontFamily={'Dela Gothic One'} color="#05050e">
           {milestoneDate}
