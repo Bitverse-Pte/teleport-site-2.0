@@ -73,6 +73,7 @@ const SectionStyle = styled.div`
 
 const FirstLetterSpan = styled.span`
   display: block;
+  white-space: nowrap;
   &:first-letter {
     font-weight: 900;
   }

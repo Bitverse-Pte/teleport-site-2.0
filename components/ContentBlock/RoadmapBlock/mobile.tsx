@@ -6,7 +6,7 @@ import diamond from 'public/images/roadmap-diamond.svg'
 
 export default function RoadmapBlock() {
   return (
-    <Flex width={'100%'} height="500px" flexDirection={'column'} justifyContent={'center'}>
+    <Flex width={'100%'} flexDirection={'column'} justifyContent={'center'}>
       <Text
         className="notranslate"
         sx={{
@@ -23,17 +23,17 @@ export default function RoadmapBlock() {
         Teleport Roadmap
       </Text>
       <Flex width={'100%'} style={{ position: 'relative' }} flexDirection="column" justifyContent="space-between">
-        <MapColumn milestoneDate="2021.Q4" description="Team setup Product design & early-stage development" />
-        <MapColumn milestoneDate="2022.Q1" description="Testnet launch Cross-chain transfer & contract call via IBC& TSS" />
-        <MapColumn milestoneDate="2022.Q2" description="Mainnet launch  EVM chain support Cross-chain relayer Incentive Program Multi-chain wallet release" />
-        <MapColumn milestoneDate="2022.Q3" description="Cross-chain DEX launch Connecting non-EVM chains  Plug&play SDK" />
-        <MapColumn milestoneDate="2022.Q4" description="TSS Node on-chain governance ZK cross-chain relay" />
+        <MapColumn milestoneDate="2021.Q4" descriptions={['Team setup', 'Product design & early-stage development']} />
+        <MapColumn milestoneDate="2022.Q1" descriptions={['Testnet launch', 'Cross-chain transfer & contract call via IBC& TSS']} />
+        <MapColumn milestoneDate="2022.Q2" descriptions={['Mainnet launch', 'EVM chain support', 'Cross-chain relayer', 'Incentive Program', 'Multi-chain wallet release']} />
+        <MapColumn milestoneDate="2022.Q3" descriptions={['Cross-chain DEX launch', 'Connecting non-EVM chains', 'Plug&play SDK']} />
+        <MapColumn milestoneDate="2022.Q4" descriptions={['TSS Node on-chain governance', 'ZK cross-chain relay']} />
       </Flex>
     </Flex>
   )
 }
 
-function MapColumn({ milestoneDate, description }: { milestoneDate: string; description: string }) {
+function MapColumn({ milestoneDate, descriptions }: { milestoneDate: string; descriptions: string[] }) {
   return (
     <Flex flexDirection={'column'} width="100%" alignItems={'flex-start'} margin="12px 0">
       <Flex width={'100%'} marginBottom="10px">
@@ -44,9 +44,17 @@ function MapColumn({ milestoneDate, description }: { milestoneDate: string; desc
           {milestoneDate}
         </Text>
       </Flex>
-      <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="12px" lineHeight={'18px'} color="#000000">
-        {description}
-      </Text>
+      {descriptions.map((e) => {
+        return (
+          <Text key={e.substring(0, 2)} width={'100%'} textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="12px" lineHeight="18px" display={'flex'} color="#000000">
+            <span style={{ display: 'inline-block', fontSize: '24px', lineHeight: '18px', height: '18px' }}>·</span>&nbsp;
+            {e}
+          </Text>
+        )
+      })}
+      {/*  <Text textAlign={'left'} fontFamily="Poppins" fontStyle="normal" fontWeight="400" fontSize="12px" lineHeight={'18px'} color="#000000">
+        {descriptions}
+      </Text> */}
     </Flex>
   )
 }
