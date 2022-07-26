@@ -11,9 +11,9 @@ import dappLogo from 'public/dapp.svg'
 export default function FeaturesBlock() {
   return (
     <Flex flexDirection={'column'} alignItems="center" width={'100%'}>
-      <Feature showLine={true} MainTitle="Omni-Chain" SecondTitle="Chain Integration" instruction="Support EVM & non-EVM; chains via XIBC protocol" logoSrc={omniChainLogo} />
+      <Feature showLine={true} MainTitle="Omni-Chain" SecondTitle="Chain Integration" instruction="Support EVM & non-EVM chains via XIBC protocol" logoSrc={omniChainLogo} />
       <Feature showLine={true} MainTitle="Alternative Cross -" SecondTitle="Chain Approach" instruction="State Relay - Trustless; Oracle TSS - Cost effective" logoSrc={alternativeCrossLogo} />
-      <Feature MainTitle="Dapp -" SecondTitle="Interoperability" instruction="Non-invasive SDK for; seamless dApp integration" logoSrc={dappLogo} />
+      <Feature MainTitle="Dapp -" SecondTitle="Interoperability" instruction="Non-invasive SDK for seamless dApp integration" logoSrc={dappLogo} />
     </Flex>
   )
 }
