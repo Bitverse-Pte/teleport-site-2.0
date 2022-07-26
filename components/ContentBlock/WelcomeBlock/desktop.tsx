@@ -62,7 +62,7 @@ export default function WelcomeBlock() {
             opacity: 1,
             height: '100%',
             width: '100%',
-            transform: 'scale(1.2) translateY(-15%)',
+            transform: 'scale(1.2) translateY(-20%)',
           },
           '.with-after-border': {
             minWidth: '360px',
@@ -127,7 +127,7 @@ export default function WelcomeBlock() {
           justifyContent: 'space-between',
         }}
       >
-        <Flex>
+        <Flex minHeight="160px">
           <Flex flexDirection={'column'} width="84%" justifyContent={'space-between'}>
             <Box
               className="welcome-teleport"
@@ -275,7 +275,7 @@ export default function WelcomeBlock() {
               },
               transition: 'all 0.2s ease-in-out',
               transformOrigin: '0% 50%',
-              minHeight: '160px',
+              // minHeight: '160px',
             }}
           >
             <Button
