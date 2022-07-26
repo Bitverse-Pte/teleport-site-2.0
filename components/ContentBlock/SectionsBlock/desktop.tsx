@@ -10,6 +10,7 @@ import iconGraph4 from 'public/images/icon-graph-4.svg'
 import { presetSensors } from 'utils/presetSensors'
 
 const SectionStyle = styled.div`
+  width: 100%;
   .wrapSection {
     color: #05050e;
     padding: 150px 0 0;
@@ -28,6 +29,7 @@ const SectionStyle = styled.div`
       justify-content: space-between;
       margin: 60px 0;
       .wrapColumn {
+        max-width: calc(100% - 272px);
         .textTitle {
           font-family: Dela Gothic One;
           font-size: 54px;
@@ -73,9 +75,12 @@ const SectionStyle = styled.div`
 
 const FirstLetterSpan = styled.span`
   display: block;
-  white-space: nowrap;
+  // white-space: nowrap;
   &:first-letter {
     font-weight: 900;
+  }
+  ::not(::first-line) {
+    text-indent: 20px;
   }
 `
 
@@ -148,7 +153,7 @@ function RenderButton(title: string) {
 
 export default function SectionsBlock() {
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" width={'100%'}>
       <SectionItem Index={1} Title="Teleswap" descriptions={['Cross-chain liquidity aggregator', 'Support token swap between any two chains']} videoIndex="swap" ButtonTitle="Swap" />
       <SectionItem Index={2} Title="Teleport Bridge" descriptions={['Empower cross-chain token transfer']} videoIndex="bridge" ButtonTitle="Launch App" />
       <SectionItem Index={3} Title="Teleport Wallet" descriptions={['Multi-Chain & Multi-Identity supported', 'Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction']} videoIndex="wallet" ButtonTitle="Download" />
