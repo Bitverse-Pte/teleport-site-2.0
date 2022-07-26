@@ -17,7 +17,7 @@ export default function WelcomeBlock() {
         <Image src={welcomeSubTitle} alt="welcome-sub-title" objectFit="contain"></Image>
       </Flex>
       <Flex marginBottom={20}>
-        <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} />
+        <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} poster={'../../../public/first-frame-welcome.png'} />
       </Flex>
       <Flex marginBottom={20} width={220}>
         <Box sx={{ display: 'flex', alignItems: 'end' }}>

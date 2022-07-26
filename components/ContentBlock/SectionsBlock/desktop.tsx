@@ -89,13 +89,13 @@ function SectionItem({ Index, Title, descriptions, videoIndex, ButtonTitle }: { 
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
       case 'swap':
-        return <video src={require('../../../public/swap.mp4')} autoPlay loop muted width={'100%'} />
+        return <video src={require('../../../public/swap.mp4')} poster={'../../../public/first-frame-welcome.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'bridge':
-        return <video src={require('../../../public/bridge.mp4')} autoPlay loop muted width={'100%'} />
+        return <video src={require('../../../public/bridge.mp4')} poster={'../../../public/first-frame-bridge.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'wallet':
-        return <video src={require('../../../public/wallet.mp4')} autoPlay loop muted width={'100%'} />
+        return <video src={require('../../../public/wallet.mp4')} poster={'../../../public/first-frame-wallet.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'metaverse':
-        return <video src={require('../../../public/metaverse.mp4')} autoPlay loop muted width={'100%'} />
+        return <video src={require('../../../public/metaverse.mp4')} poster={'../../../public/first-frame-wallet.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
     }
   }, [videoIndex])
   return (

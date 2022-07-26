@@ -86,6 +86,9 @@ export default function WelcomeBlock() {
               minWidth: '200px',
               maxWidth: '240px',
               height: '60px',
+              ':not(:first-child)': {
+                marginTop: '0',
+              },
             },
             flexWrap: 'nowrap',
             justifyContent: 'space-around',
@@ -124,7 +127,7 @@ export default function WelcomeBlock() {
           justifyContent: 'space-between',
         }}
       >
-        <Flex minHeight="160px">
+        <Flex>
           <Flex flexDirection={'column'} width="84%" justifyContent={'space-between'}>
             <Box
               className="welcome-teleport"
@@ -197,7 +200,7 @@ export default function WelcomeBlock() {
             transformOrigin: 'center',
           }}
         >
-          <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} />
+          <video src={require('../../../public/welcome.mp4')} autoPlay loop muted width={'100%'} poster={'../../../public/first-frame-welcome.png'} />
         </Box>
         <Flex
           sx={{
@@ -334,6 +337,7 @@ export default function WelcomeBlock() {
                 fontSize: '24px',
                 lineHeight: '24px',
                 borderColor: 'white',
+                marginTop: '15px',
                 borderWidth: '0.5px',
                 borderStyle: 'solid',
                 borderRadius: '12px',
