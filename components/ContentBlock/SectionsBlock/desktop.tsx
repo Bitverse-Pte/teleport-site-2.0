@@ -9,6 +9,12 @@ import iconGraph3 from 'public/images/icon-graph-3.svg'
 import iconGraph4 from 'public/images/icon-graph-4.svg'
 import { presetSensors } from 'utils/presetSensors'
 
+import posterOfWelcome from 'public/first-frame-swap.png'
+
+import posterOfBridge from 'public/first-frame-bridge.png'
+import posterOfWallet from 'public/first-frame-wallet.png'
+import posterOfMetaverse from 'public/first-frame-metaverse.png'
+
 const SectionStyle = styled.div`
   width: 100%;
   .wrapSection {
@@ -25,11 +31,11 @@ const SectionStyle = styled.div`
     }
     .wrapRow {
       display: flex;
+      position: relative;
       flex-direction: row;
       justify-content: space-between;
       margin: 60px 0;
       .wrapColumn {
-        max-width: calc(100% - 272px);
         .textTitle {
           font-family: Dela Gothic One;
           font-size: 54px;
@@ -48,6 +54,9 @@ const SectionStyle = styled.div`
       }
       .buttonSection {
         margin-left: 36px;
+        position: absolute;
+        right: 0;
+        top: 0;
         cursor: pointer;
         width: 240px;
         max-width: 240px;
@@ -89,13 +98,13 @@ function SectionItem({ Index, Title, descriptions, videoIndex, ButtonTitle }: { 
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
       case 'swap':
-        return <video src={require('../../../public/swap.mp4')} poster={'../../../public/first-frame-welcome.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
+        return <video src={require('../../../public/swap.mp4')} poster={posterOfWelcome.src} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'bridge':
-        return <video src={require('../../../public/bridge.mp4')} poster={'../../../public/first-frame-bridge.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
+        return <video src={require('../../../public/bridge.mp4')} poster={posterOfBridge.src} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'wallet':
-        return <video src={require('../../../public/wallet.mp4')} poster={'../../../public/first-frame-wallet.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
+        return <video src={require('../../../public/wallet.mp4')} poster={posterOfWallet.src} autoPlay playsInline loop muted width={'100%'} height="100%" />
       case 'metaverse':
-        return <video src={require('../../../public/metaverse.mp4')} poster={'../../../public/first-frame-wallet.png'} autoPlay playsInline loop muted width={'100%'} height="100%" />
+        return <video src={require('../../../public/metaverse.mp4')} poster={posterOfMetaverse.src} autoPlay playsInline loop muted width={'100%'} height="100%" />
     }
   }, [videoIndex])
   return (
