@@ -108,7 +108,7 @@ function Section({ iconSrc, videoIndex, mainTitle, instruction, buttonValue }: {
   const VideoElement = useMemo(() => {
     switch (videoIndex) {
       case 'swap':
-        return <video src={require('../../../public/swap.mp4')} poster={'../../../public/first-frame-welcome.png'} autoPlay loop muted width={'100%'} />
+        return <video src={require('../../../public/swap.mp4')} poster={'../../../public/first-frame-swap.png'} autoPlay loop muted width={'100%'} />
       case 'bridge':
         return <video src={require('../../../public/bridge.mp4')} poster={'../../../public/first-frame-bridge.png'} autoPlay loop muted width={'100%'} />
       case 'wallet':
