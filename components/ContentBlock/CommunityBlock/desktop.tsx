@@ -13,6 +13,7 @@ import { discord_link, linktree_link, medium_link, telegram_link, twitter_link }
 
 const CommunityContainer = styled.div`
   width: 100%;
+  margin: 280px 0 108px 0;
   .wrapCommunity {
     text-align: center;
     padding-bottom: 160px;

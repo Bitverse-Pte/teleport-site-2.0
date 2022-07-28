@@ -58,7 +58,7 @@ function Mobile() {
           <Flex width={'100%'} minHeight={900} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
             <Flex width={'88%'} height={'100%'} flexDirection="column" justifyContent={'space-between'} alignItems="center">
               <SectionsBlock />
-              <RoadmapBlock />
+              {/* <RoadmapBlock /> */}
               <CommunityBlock />
             </Flex>
             <Footer />

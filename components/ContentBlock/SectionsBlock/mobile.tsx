@@ -96,10 +96,10 @@ function RenderButton(title: string) {
 export default function SectionsBlock() {
   return (
     <Flex flexDirection="column" width={'100%'}>
-      <Section mainTitle="Teleswap" instruction="Cross-chain liquidity aggregator Support token swap between any two chains" iconSrc={iconGraph1} videoIndex={'swap'} buttonValue={'Swap'} buttonOnClick={presetSensors.body.goToSwap} />
+      <Section mainTitle="Teleswap" instruction="Cross-chain liquidity aggregator Support token swap between any two chains" iconSrc={iconGraph1} videoIndex={'swap'} /* buttonValue={'Swap'} */ buttonOnClick={presetSensors.body.goToSwap} />
       <Section mainTitle="Teleport Bridge" instruction="Empower cross-chain token transfer" iconSrc={iconGraph2} videoIndex={'bridge'} buttonValue={'Launch App'} buttonOnClick={presetSensors.body.launchBridge} />
       <Section mainTitle="Teleport Wallet" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph3} videoIndex={'wallet'} buttonValue={'Download'} buttonOnClick={presetSensors.body.downloadWallet} />
-      <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph4} videoIndex={'metaverse'} />
+      {/* <Section mainTitle="Metaverse Hub" instruction="Multi-Chain & Multi-Identity supported Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction" iconSrc={iconGraph4} videoIndex={'metaverse'} /> */}
     </Flex>
   )
 }

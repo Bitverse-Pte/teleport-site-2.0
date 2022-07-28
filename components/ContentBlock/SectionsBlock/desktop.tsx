@@ -135,13 +135,13 @@ function SectionItem({ Index, Title, descriptions, videoIndex, ButtonTitle }: { 
 
 function RenderButton(title: string) {
   if (title !== '') {
-    if (title === 'Swap') {
+    /*    if (title === 'Swap') {
       return (
         <Button className="buttonSection" onClick={presetSensors.body.goToSwap}>
           {title}
         </Button>
       )
-    }
+    } */
     if (title === 'Launch App') {
       return (
         <Button className="buttonSection" onClick={presetSensors.body.launchBridge}>
@@ -166,7 +166,7 @@ export default function SectionsBlock() {
       <SectionItem Index={1} Title="Teleswap" descriptions={['Cross-chain liquidity aggregator', 'Support token swap between any two chains']} videoIndex="swap" ButtonTitle="Swap" />
       <SectionItem Index={2} Title="Teleport Bridge" descriptions={['Empower cross-chain token transfer']} videoIndex="bridge" ButtonTitle="Launch App" />
       <SectionItem Index={3} Title="Teleport Wallet" descriptions={['Multi-Chain & Multi-Identity supported', 'Ethereum, Cosmos, Polkadot, Solana token transfers and dApp interaction']} videoIndex="wallet" ButtonTitle="Download" />
-      <SectionItem Index={4} Title="Metaverse Hub" descriptions={['First EVM-compatible relay chain for', 'DeFi, NFT, and game']} videoIndex="metaverse" ButtonTitle="" />
+      {/* <SectionItem Index={4} Title="Metaverse Hub" descriptions={['First EVM-compatible relay chain for', 'DeFi, NFT, and game']} videoIndex="metaverse" ButtonTitle="" /> */}
     </Flex>
   )
 }

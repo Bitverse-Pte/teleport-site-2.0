@@ -70,7 +70,7 @@ function Desktop() {
         <Flex width={'100%'} justifyContent="center" flexDirection={'column'} alignItems="center" backgroundColor="white">
           <Flex minWidth={802} width={CONTENT_BLOCK_WIDTH} maxWidth="1132px" flexDirection="column" justifyContent={'flex-start'} alignItems="center">
             <SectionsBlock />
-            <RoadmapBlock />
+            {/* <RoadmapBlock /> */}
             <CommunityBlock />
           </Flex>
           <Footer />
