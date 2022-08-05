@@ -2,43 +2,59 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Image from 'components/Image'
 import { ReactStripMenu } from 'react-strip-menu'
+import styled from 'styled-components'
 
 import mainLogo from 'public/main_logo.svg'
-import AnimatedNavbar from 'components/StripeMenu'
 import ambassadorLogo from 'public/ambassador.svg'
 import { presetSensors } from 'utils/presetSensors'
 import { SCROLL_ROOT_ID } from 'components/Desktop'
 import { throttle } from 'lodash-es'
-import CommunityDropdown from 'components/StripeMenu/DropdownContents/CommunityDropdown'
-import DocsDropdown from 'components/StripeMenu/DropdownContents/DocsDropdown'
-import ToolDropdown from 'components/StripeMenu/DropdownContents/ToolDropdown'
-import { NavbarItemEl, NavbarItemTitle } from 'components/StripeMenu/Navbar/NavbarItem'
-import { DropdownBackground } from 'components/StripeMenu/DropdownContainer/Components'
-/* 
-const Container = styled.div`
-	width: 100%;
-	height: 200px;
-	display: flex;
-	flex-direction: row;
-	align-items: start;
+import CommunityDropdown from 'components/Header/DropdownContents/CommunityDropdown'
+import DocsDropdown from 'components/Header/DropdownContents/DocsDropdown'
+import ToolDropdown from 'components/Header/DropdownContents/ToolDropdown'
+
+export const NavbarItemTitle = styled.button`
+  background: transparent;
+  cursor: auto;
+  border: 0;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  transition: transform 250ms ease-in-out;
+  /* position above the dropdown, otherwise the dropdown will cover up the bottom sliver of the buttons */
+  position: relative;
+  z-index: 2;
+  margin: 0 42px;
+  @media screen and (max-width: 1300px) {
+    margin: 0 21px;
+  }
+  @media screen and (max-width: 1000px) {
+    margin: 0 12px;
+  }
+  @media screen and (max-width: 840px) {
+    margin: 0 6px;
+  }
+  &:hover,
+  &:focus {
+    outline: none;
+    .nav-menu-title:after {
+      transform: scaleX(1);
+    }
+  }
+  & .nav-menu-title:after {
+    display: block;
+    content: '';
+    border-bottom: solid white 2px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+    transform-origin: 0% 50%;
+  }
 `
-
-const BannerContainer = styled.div`
-	width: 100%;
-	height: 200px;
-	display: flex;
-	flex-direction: row;
-	align-items: start;
-` */
-
-/* 
- { title: 'Docs', dropdown: DocsDropdown },
-  { title: 'Tool', dropdown: ToolDropdown },
-  // { title: 'Governance', dropdown: GovernanceDrop },
-  // { title: 'Ecosystem', dropdown: EcoSystemDrop },
-  { title: 'Community', dropdown: CommunityDropdown },
-  // {
-*/
 
 export default function Header() {
   const [atTop, setAtTop] = useState(true)
@@ -94,15 +110,15 @@ export default function Header() {
         fadeInMode="fade"
         dropdowns={[<DocsDropdown key="docs-dropdown" />, <ToolDropdown key="tool-dropdown" />, <CommunityDropdown key="community-dropdown" />]}
       >
-        <NavbarItemEl>
-          <NavbarItemTitle>Docs</NavbarItemTitle>
-        </NavbarItemEl>
-        <NavbarItemEl>
-          <NavbarItemTitle>Tool</NavbarItemTitle>
-        </NavbarItemEl>
-        <NavbarItemEl>
-          <NavbarItemTitle>Community</NavbarItemTitle>
-        </NavbarItemEl>
+        <NavbarItemTitle>
+          <Box className="nav-menu-title">Docs</Box>
+        </NavbarItemTitle>
+        <NavbarItemTitle>
+          <Box className="nav-menu-title">Tool</Box>
+        </NavbarItemTitle>
+        <NavbarItemTitle>
+          <Box className="nav-menu-title">Community</Box>
+        </NavbarItemTitle>
       </ReactStripMenu>
       <Flex
         alignItems={'center'}

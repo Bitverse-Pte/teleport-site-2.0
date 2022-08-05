@@ -3,7 +3,6 @@ import { AppProps } from 'next/app'
 
 import Head from 'next/head'
 
-import 'components/StripeMenu/index.css'
 import 'normalize.css'
 import 'common/reset.css'
 import 'common/base.css'
