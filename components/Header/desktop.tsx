@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Flex, Box } from 'rebass/styled-components'
 import Image from 'components/Image'
+import { ReactStripMenu } from 'react-strip-menu'
 
 import mainLogo from 'public/main_logo.svg'
 import AnimatedNavbar from 'components/StripeMenu'
@@ -8,6 +9,11 @@ import ambassadorLogo from 'public/ambassador.svg'
 import { presetSensors } from 'utils/presetSensors'
 import { SCROLL_ROOT_ID } from 'components/Desktop'
 import { throttle } from 'lodash-es'
+import CommunityDropdown from 'components/StripeMenu/DropdownContents/CommunityDropdown'
+import DocsDropdown from 'components/StripeMenu/DropdownContents/DocsDropdown'
+import ToolDropdown from 'components/StripeMenu/DropdownContents/ToolDropdown'
+import { NavbarItemEl, NavbarItemTitle } from 'components/StripeMenu/Navbar/NavbarItem'
+import { DropdownBackground } from 'components/StripeMenu/DropdownContainer/Components'
 /* 
 const Container = styled.div`
 	width: 100%;
@@ -24,6 +30,15 @@ const BannerContainer = styled.div`
 	flex-direction: row;
 	align-items: start;
 ` */
+
+/* 
+ { title: 'Docs', dropdown: DocsDropdown },
+  { title: 'Tool', dropdown: ToolDropdown },
+  // { title: 'Governance', dropdown: GovernanceDrop },
+  // { title: 'Ecosystem', dropdown: EcoSystemDrop },
+  { title: 'Community', dropdown: CommunityDropdown },
+  // {
+*/
 
 export default function Header() {
   const [atTop, setAtTop] = useState(true)
@@ -63,7 +78,32 @@ export default function Header() {
       }}
     >
       <Banner />
-      <AnimatedNavbar duration={300} />
+      {/* <AnimatedNavbar duration={300} /> */}
+      <ReactStripMenu
+        wrapperStyle={{
+          transformOrigin: '0 0',
+          background: 'rgba(10, 10, 10, 1)',
+          mixBlendMode: 'normal',
+          top: '50px',
+          color: '#ffffff',
+          border: 'solid rgba(255, 255, 255, 0.2) 0.5px',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          boxShadow: '0 50px 100px rgba(50, 50, 93, 0.1)',
+        }}
+        fadeInMode="fade"
+        dropdowns={[<DocsDropdown key="docs-dropdown" />, <ToolDropdown key="tool-dropdown" />, <CommunityDropdown key="community-dropdown" />]}
+      >
+        <NavbarItemEl>
+          <NavbarItemTitle>Docs</NavbarItemTitle>
+        </NavbarItemEl>
+        <NavbarItemEl>
+          <NavbarItemTitle>Tool</NavbarItemTitle>
+        </NavbarItemEl>
+        <NavbarItemEl>
+          <NavbarItemTitle>Community</NavbarItemTitle>
+        </NavbarItemEl>
+      </ReactStripMenu>
       <Flex
         alignItems={'center'}
         width="fit-content"

@@ -54,7 +54,7 @@ export const DropdownBackground = styled.div`
   border-radius: 12px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.1);
+  box-shadow: 0 50px 100px  rgba(50, 50, 93, 0.1);
   ${promoteLayer}
 `
 

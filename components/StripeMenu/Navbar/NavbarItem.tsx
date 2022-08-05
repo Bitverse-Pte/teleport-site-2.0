@@ -2,7 +2,7 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { Box, Flex } from 'rebass'
 import styled from 'styled-components'
 
-const NavbarItemTitle = styled.button`
+export const NavbarItemTitle = styled.button`
   background: transparent;
   cursor: auto;
   border: 0;
@@ -36,7 +36,7 @@ const NavbarItemTitle = styled.button`
   }
 `
 
-const NavbarItemEl = styled.li`
+export const NavbarItemEl = styled.li`
   padding: 0.5rem;
   position: relative;
   display: flex;
