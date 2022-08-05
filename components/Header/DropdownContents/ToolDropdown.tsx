@@ -6,7 +6,7 @@ import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } fro
 import { presetSensors } from 'utils/presetSensors'
 export default function DocsDropdown() {
   return (
-    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} display="flex" padding="0.125rem 0">
+    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} height={'fit-content'}  display="flex" padding="0.125rem 0">
       <Flex className="notranslate" width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content" padding="20px 24px">
         <Flex flexDirection={'column'} flex={2} minWidth="fit-content">
           <Flex
