@@ -96,6 +96,7 @@ export default function Header() {
       <Banner />
       {/* <AnimatedNavbar duration={300} /> */}
       <ReactStripMenu
+        alignInMode="left"
         wrapperStyle={{
           transformOrigin: '0 0',
           background: 'rgba(10, 10, 10, 1)',

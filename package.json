@@ -22,7 +22,7 @@
 		"react-dom": "^18.0.0-rc.3",
 		"react-flip-toolkit": "^7.0.14",
 		"react-loading-icons": "^1.1.0",
-		"react-strip-menu": "^0.1.7",
+		"react-strip-menu": "^0.1.8",
 		"rebass": "^4.0.7",
 		"sa-sdk-javascript": "^1.21.7",
 		"styled-components": "^5.3.5",
