@@ -2813,10 +2813,10 @@ react-loading-icons@^1.1.0:
   resolved "https://registry.npmjs.org/react-loading-icons/-/react-loading-icons-1.1.0.tgz"
   integrity sha512-Y9eZ6HAufmUd8DIQd6rFrx5Bt/oDlTM9Nsjvf8YpajTa3dI8cLNU8jUN5z7KTANU+Yd6/KJuBjxVlrU2dMw33g==
 
-react-strip-menu@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/react-strip-menu/-/react-strip-menu-0.2.0.tgz#7876c42c9149ce7f95e49f31af9099946d9d0977"
-  integrity sha512-TbnRdezLn/LM+l/m/nGSfTmVZvHpXtYStXNpslJYhGqB5SYxcGjx5gQDhKNrzJdm3zMXhdO23Qy2NbbIWQyh2g==
+react-strip-menu@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/react-strip-menu/-/react-strip-menu-0.2.1.tgz#3c91f3760978d9e89d8f049378d6686c98a1c333"
+  integrity sha512-O3DII+vTUOXVIzcKSLSaNni6KASkMd2aVmE7wWK9EIxjM3ABbffTA0YqmB9kt7OB8ktwzMKTW55Qd2MeVNwpcA==
 
 react@^18.2.0:
   version "18.2.0"
