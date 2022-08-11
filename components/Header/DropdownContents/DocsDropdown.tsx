@@ -13,12 +13,12 @@ export default function DocsDropdown() {
           White Paper
         </HeadingLink>
         <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(255,255,255, 0.26)', borderBottomWidth: '1px', width: '100%' }}></hr>
-        <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.network}>
+        {/*  <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.network}>
           Teleport Network
         </HeadingLink>
         <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.xibc}>
           XIBC
-        </HeadingLink>
+        </HeadingLink> */}
         <HeadingLink className="notranslate" noMarginBottom color="white" onClick={presetSensors.header.developer}>
           Developer
         </HeadingLink>

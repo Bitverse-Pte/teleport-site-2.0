@@ -6,7 +6,7 @@ import { Heading, HeadingLink, LinkList, DropdownSection, Icon, DropdownEl } fro
 import { presetSensors } from 'utils/presetSensors'
 export default function DocsDropdown() {
   return (
-    <DropdownEl width="426px" minWidth={'fit-content'} minHeight={'fit-content'} height={'fit-content'}  display="flex" padding="0.125rem 0">
+    <DropdownEl maxWidth="300px" width="fit-content" minHeight={'fit-content'} height={'fit-content'}  display="flex" padding="0.125rem 0">
       <Flex className="notranslate" width={'100%'} minHeight="100%" flexDirection={'row'} minWidth="fit-content" padding="20px 24px">
         <Flex flexDirection={'column'} flex={2} minWidth="fit-content">
           <Flex
@@ -67,7 +67,7 @@ export default function DocsDropdown() {
             </Flex>
           </Flex>
         </Flex>
-        <Flex flexDirection={'column'} flex={1} marginLeft="15px" alignItems={'flex-start'}>
+        {/* <Flex flexDirection={'column'} flex={1} marginLeft="15px" alignItems={'flex-start'}>
           <Flex
             justifyContent={'flex-start'}
             sx={{
@@ -87,7 +87,7 @@ export default function DocsDropdown() {
           <HeadingLink noMarginBottom color="white" onClick={presetSensors.header.tendermintExplorer}>
             Tendermint
           </HeadingLink>
-        </Flex>
+        </Flex> */}
         {/*  <Flex width={'100%'} minHeight="100%" flexDirection={'column'} alignItems="flex-start" justifyContent="space-around" padding="20px 24px">
           <HeadingLink noMarginBottom color="white" style={{ fontSize: '18px', maxHeight: '15%', minHeight: '15%' }}>
             Faucet

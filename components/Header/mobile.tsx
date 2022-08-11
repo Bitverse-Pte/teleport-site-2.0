@@ -373,8 +373,8 @@ function DocsMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
     >
       <DocsMenuItem itemText="White Paper" showBottomBorder={true} onClick={presetSensors.header.whitepaper} />
       <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
-      <DocsMenuItem className="notranslate" itemText=" Teleport Network" onClick={presetSensors.header.network} />
-      <DocsMenuItem className="notranslate" itemText=" XIBC" onClick={presetSensors.header.xibc} />
+      {/* <DocsMenuItem className="notranslate" itemText=" Teleport Network" onClick={presetSensors.header.network} />
+      <DocsMenuItem className="notranslate" itemText=" XIBC" onClick={presetSensors.header.xibc} /> */}
       <DocsMenuItem className="notranslate" itemText=" Developer" onClick={presetSensors.header.developer} />
       {/* <DocsMenuItem itemText=" Validator" showBottomBorder onClick={presetSensors.header.validator} /> */}
       <hr style={{ borderWidth: 0, borderStyle: 'solid', borderColor: 'rgba(0,0,0, 0.05)', borderBottomWidth: '1px', width: '100%', margin: '30px 0' }}></hr>
@@ -535,12 +535,12 @@ function ToolMenu({ opacityOrNot = true, onClick }: { opacityOrNot?: boolean } &
           <ToolMenuItem itemText="Rinkeby" onClick={presetSensors.header.rinkebyFaucet} />
         </ToolMenuSubBlock>
       </ToolMenuBlock>
-      <ToolMenuBlock title="Explorer">
+      {/*  <ToolMenuBlock title="Explorer">
         <ToolMenuSubBlock>
           <ToolMenuItem itemText="EVM" onClick={presetSensors.header.evmExplorer} />
           <ToolMenuItem itemText="Tendermint" onClick={presetSensors.header.tendermintExplorer} />
         </ToolMenuSubBlock>
-      </ToolMenuBlock>
+      </ToolMenuBlock> */}
     </Flex>
   )
 }
