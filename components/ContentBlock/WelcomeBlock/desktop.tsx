@@ -46,9 +46,9 @@ export default function WelcomeBlock() {
           button: {
             margin: 0,
           },
-          height: '480px',
+          height: '620px',
           '.welcome-teleport': {
-            transform: `translateX(calc(${(containerWidth ? containerWidth : 0) / 2}px - 50%)) translateY(-20%)`,
+            transform: `translateX(calc(${(containerWidth ? containerWidth : 0) / 2}px - 50%)) translateY(-40%)`,
           },
           '.welcome-subtitle': {
             transform: 'translateX(-100px)',
@@ -60,8 +60,9 @@ export default function WelcomeBlock() {
           },
           '.welcome-gif': {
             opacity: 1,
-            height: '100%',
-            width: '100%',
+            height: '90%',
+            width: '90%',
+            margin: 'auto',
             transform: 'scale(1.2) translateY(-20%)',
           },
           '.with-after-border': {
