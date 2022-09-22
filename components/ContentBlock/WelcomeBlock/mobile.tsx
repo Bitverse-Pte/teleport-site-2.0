@@ -72,7 +72,7 @@ export default function WelcomeBlock() {
           backgroundColor="transparent"
           color="white"
         >
-          Whitepaper
+          Teleport Wallet
         </Button>
       </Flex>
     </Flex>

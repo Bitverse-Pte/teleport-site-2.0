@@ -84,8 +84,7 @@ export default function WelcomeBlock() {
           '.flatten-div': {
             '.shrink-button': {
               width: '40%',
-              minWidth: '200px',
-              maxWidth: '240px',
+              minWidth: 'fit-content',
               height: '60px',
               ':not(:first-child)': {
                 marginTop: '0',
@@ -93,7 +92,7 @@ export default function WelcomeBlock() {
             },
             flexWrap: 'nowrap',
             justifyContent: 'space-around',
-            alignItems: 'baseline',
+            alignItems: 'self-start',
             maxWidth: '450px!important',
             minWidth: '400px!important',
             flex: 1,
@@ -314,10 +313,11 @@ export default function WelcomeBlock() {
               className="shrink-button"
               backgroundColor="transparent"
               color="white"
-              onClick={presetSensors.body.whitepaper}
+              onClick={presetSensors.body.downloadWallet}
               sx={{
                 height: '60px',
                 minWidth: '240px',
+                whiteSpace: 'nowrap',
                 '@media screen and (max-width: 1300px)': {
                   width: '240px',
                   minWidth: '240px',
@@ -344,7 +344,7 @@ export default function WelcomeBlock() {
                 borderRadius: '12px',
               }}
             >
-              Whitepaper
+              Teleport Wallet
             </Button>
           </Flex>
         </Flex>
